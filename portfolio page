@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PDF Example</title>
+    <title>PDF Example by Object Tag</title>
 </head>
 <body>
-    <h1>PDF Example</h1>
-    <p>Open a PDF file <a href="https://drive.google.com/file/d/16dpG0QTIJRvo46IycIStpSG7KV7VmPjd/view?usp=sharing">example</a>.</p>
+    <h1>PDF Example by Object Tag</h1>
+    <object data="https://drive.google.com/file/d/16dpG0QTIJRvo46IycIStpSG7KV7VmPjd/view?usp=sharing" type="application/pdf" width="100%" height="500px">
+        <p>Unable to display PDF file. <a href="https://drive.google.com/file/d/16dpG0QTIJRvo46IycIStpSG7KV7VmPjd/view?usp=sharing">Download</a> instead.</p>
+    </object>
 </body>
 </html>
