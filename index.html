@@ -21,12 +21,15 @@
         }
         #pdf-container {
             width: 100%;
-            overflow-x: hidden;
-            overflow-y: auto;
+            overflow: hidden;
+        }
+        .pdf-pages {
+            width: 100%;
+            padding: 20px; /* Adjust padding as needed */
         }
         .pdf-page {
-            width: 100%;
             display: block;
+            width: 100%;
             margin-bottom: 20px;
         }
     </style>
@@ -36,7 +39,8 @@
         Nitesh Neupane
     </div>
     <div id="pdf-container">
-        <img class="pdf-page" src="engeneering_portfolio-page-001.jpg" alt="Page 1">
+        <div class="pdf-pages">
+            <img class="pdf-page" src="engeneering_portfolio-page-001.jpg" alt="Page 1">
         <img class="pdf-page" src="engeneering_portfolio-page-002.jpg" alt="Page 2">
         <img class="pdf-page" src="engeneering_portfolio-page-003.jpg" alt="Page 3">
         <img class="pdf-page" src="engeneering_portfolio-page-004.jpg" alt="Page 4">
@@ -48,7 +52,8 @@
         <img class="pdf-page" src="engeneering_portfolio-page-010.jpg" alt="Page 10">
         <img class="pdf-page" src="engeneering_portfolio-page-011.jpg" alt="Page 11">
         <img class="pdf-page" src="engeneering_portfolio-page-012.jpg" alt="Page 12">
-        <!-- Include more image tags for additional pages -->
+            <!-- Include more image tags for additional pages -->
+        </div>
     </div>
 </body>
 </html>
