@@ -8,30 +8,32 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
 </head>
 <body>
+  <div class="stars"></div>
+
   <!-- Sidebar -->
   <div id="mySidebar" class="sidebar">
     <div class="sidebar-header">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     </div>
-    <a href="#contact" title="Contact"><i class="fas fa-envelope"></i></a>
-    <a href="https://www.youtube.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-    <a href="https://www.linkedin.com/in/nitesh-neupane/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="#about" title="About Me"><i class="fas fa-user"></i></a>
+    <a href="#contact" title="Contact"><i class="fas fa-envelope"></i><span class="tooltip">Contact</span></a>
+    <a href="https://www.youtube.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i><span class="tooltip">YouTube</span></a>
+    <a href="https://www.linkedin.com/in/nitesh-neupane/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i><span class="tooltip">LinkedIn</span></a>
+    <a href="#about" title="About Me"><i class="fas fa-user"></i><span class="tooltip">About Me</span></a>
   </div>
 
   <!-- Main Content -->
   <div id="main">
     <button class="openbtn" onclick="openNav()">☰</button>
-    <header>
+    <header class="fade-in">
       <div class="container">
-        <h1>Hi, I'm Nitesh Neupane</h1>
-        <p>A passionate [Your Profession/Field, e.g., Web Developer, Designer] dedicated to creating innovative solutions.</p>
-        <a href="resume.pdf" download class="btn">Download Resume</a>
+        <h1>Hi, I'm <span class="highlight">Nitesh Neupane</span></h1>
+        <p><span class="typing" data-text="A passionate Engineer | Designer | Innovator"></span></p>
+        <a href="resume.pdf" download class="btn bounce">Download Resume</a>
 
         <!-- Profile Picture -->
         <div class="photo-section">
           <div class="frame">
-            <img src="profile.jpg" alt="Nitesh Neupane" class="profile-pic">
+            <img src="profile.jpg" alt="Nitesh Neupane" class="profile-pic" />
           </div>
         </div>
       </div>
@@ -49,6 +51,21 @@
       document.getElementById("mySidebar").style.width = "0";
       document.getElementById("main").style.marginLeft = "0";
     }
+
+    // Typing Animation
+    const typingSpan = document.querySelector(".typing");
+    const text = typingSpan.getAttribute("data-text");
+    let index = 0;
+
+    function typeWriter() {
+      if (index < text.length) {
+        typingSpan.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 60);
+      }
+    }
+
+    window.onload = typeWriter;
   </script>
 </body>
 </html>
