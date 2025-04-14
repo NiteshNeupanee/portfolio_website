@@ -11,48 +11,38 @@
   <!-- Sidebar -->
   <div id="mySidebar" class="sidebar">
     <div class="sidebar-header">
-      <h2>Nitesh</h2>
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     </div>
-    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-    <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-    <a href="https://www.linkedin.com/in/nitesh-neupane/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a href="#about"><i class="fas fa-user"></i> About Me</a>
-    <a href="#projects"><i class="fas fa-folder-open"></i> Projects</a>
+    <a href="#contact" title="Contact"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.youtube.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.linkedin.com/in/nitesh-neupane/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#about" title="About Me"><i class="fas fa-user"></i></a>
   </div>
 
   <!-- Main Content -->
   <div id="main">
-    <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>
+    <button class="openbtn" onclick="openNav()">☰</button>
     <header>
       <div class="container">
         <h1>Hi, I'm Nitesh Neupane</h1>
         <p>A passionate [Your Profession/Field, e.g., Web Developer, Designer] dedicated to creating innovative solutions.</p>
         <a href="resume.pdf" download class="btn">Download Resume</a>
 
-        <!-- Photo Section -->
+        <!-- Profile Picture -->
         <div class="photo-section">
-          <img src="your-hosted-image-url.jpg" alt="Nitesh Neupane" class="profile-pic">
+          <div class="frame">
+            <img src="profile.jpg" alt="Nitesh Neupane" class="profile-pic">
+          </div>
         </div>
       </div>
     </header>
-
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2>My Projects</h2>
-      <ul class="project-list">
-        <li><i class="fas fa-code"></i> Project 1: Portfolio Website</li>
-        <li><i class="fas fa-database"></i> Project 2: Database Management System</li>
-        <li><i class="fas fa-mobile-alt"></i> Project 3: Mobile App Development</li>
-      </ul>
-    </section>
   </div>
 
   <!-- JavaScript -->
   <script>
     function openNav() {
-      document.getElementById("mySidebar").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px"; // remove if you want overlay behavior
+      document.getElementById("mySidebar").style.width = "80px";
+      document.getElementById("main").style.marginLeft = "80px";
     }
 
     function closeNav() {
