@@ -7,20 +7,17 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
 </head>
-<body>
+<body class="light-mode">
   <!-- Background Video -->
   <video autoplay muted loop id="bgVideo">
-    <source src="path_to_your_video.mp4" type="video/mp4">
+    <source src="assets/earth-orbit.mp4" type="video/mp4">
     Your browser does not support HTML5 video.
   </video>
 
-  <!-- Light/Dark Mode Toggle -->
-  <div class="theme-toggle">
-    <input type="checkbox" id="toggle-theme" />
-    <label for="toggle-theme">
-      <i class="fas fa-sun"></i>
-      <i class="fas fa-moon"></i>
-    </label>
+  <!-- Theme Toggle -->
+  <div class="theme-toggle" onclick="toggleTheme()">
+    <i class="fas fa-sun light-icon"></i>
+    <i class="fas fa-moon dark-icon"></i>
   </div>
 
   <!-- Sidebar -->
@@ -53,18 +50,9 @@
         </div>
       </div>
     </header>
-
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2>My Projects</h2>
-      <ul class="project-list">
-        <li><i class="fas fa-code"></i> Project 1: Portfolio Website</li>
-        <li><i class="fas fa-database"></i> Project 2: Database Management System</li>
-        <li><i class="fas fa-mobile-alt"></i> Project 3: Mobile App Development</li>
-      </ul>
-    </section>
   </div>
 
+  <!-- Scripts -->
   <script>
     function openNav() {
       document.getElementById("mySidebar").style.width = "220px";
@@ -76,11 +64,10 @@
       document.getElementById("main").style.marginLeft = "0";
     }
 
-    // Theme Toggle
-    const toggle = document.getElementById('toggle-theme');
-    toggle.addEventListener('change', () => {
+    function toggleTheme() {
       document.body.classList.toggle('dark-mode');
-    });
+      document.body.classList.toggle('light-mode');
+    }
   </script>
 </body>
 </html>
