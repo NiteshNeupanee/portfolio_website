@@ -7,8 +7,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #6c63ff, #f4f4f9);
-  color: #333;
+  background: linear-gradient(to bottom right, #000428, #004e92); /* Deep space gradient */
+  color: #fff;
 }
 
 /* Sidebar */
@@ -21,15 +21,14 @@ body {
   left: 0;
   background-color: #111;
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: width 0.5s ease-in-out;
 }
 
 .sidebar a {
-  padding: 10px 15px;
+  padding: 10px;
   text-decoration: none;
   font-size: 18px;
   color: #818181;
-  display: block;
 }
 
 .sidebar a:hover {
@@ -44,24 +43,9 @@ body {
 
 .openbtn {
   font-size: 20px;
-  cursor: pointer;
-  background-color: #111;
-  color: white;
-  padding: 10px;
 }
 
 .openbtn:hover {
-  background-color: #444;
-}
+ background:#444;}
 
-/* Main Content */
-#main {
- transition: margin-left .5s;
- padding:16px; 
-}
-
-/* Header Section */
-header {
- display:flex; 
- justify-content:center; 
- align-items:center; height100vh;background transparent;}
+/Header Section*/
