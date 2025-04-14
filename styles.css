@@ -9,59 +9,59 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(to bottom, #6c63ff, #f4f4f9);
   color: #333;
-  height: 200vh; /* To enable scrolling */
+}
+
+/* Sidebar */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.sidebar a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Main Content */
+#main {
+ transition: margin-left .5s;
+ padding:16px; 
 }
 
 /* Header Section */
 header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: transparent;
-}
-
-.container {
-  text-align: center;
-}
-
-h1 {
-  font-size: 2.5rem;
-  color: #fff;
-}
-
-p {
-  font-size: 1.2rem;
-  color: #eaeaea;
-  margin-top: 10px;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #fff;
-  color: #6c63ff;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-}
-
-.btn:hover {
-  background-color: #eaeaea;
-}
-
-.photo-placeholder {
-  margin-top: 20px;
-  width: 150px;
-  height: 150px;
-  background-color: #eaeaea; /* Placeholder color */
-  border-radius: 50%;
-  display: inline-block; /* Circle shape */
-  border: 2px solid #6c63ff; /* Border styling */
-}
-
-/* Gradient Background Scroll Effect */
-body {
-  background-attachment: fixed; /* Gradient stays fixed while scrolling */
-}
+ display:flex; 
+ justify-content:center; 
+ align-items:center; height100vh;background transparent;}
