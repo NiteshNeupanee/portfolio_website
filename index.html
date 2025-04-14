@@ -8,19 +8,31 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
 </head>
 <body>
-  <!-- Star Background -->
-  <div class="stars"></div>
+  <!-- Background Video -->
+  <video autoplay muted loop id="bgVideo">
+    <source src="path_to_your_video.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Light/Dark Mode Toggle -->
+  <div class="theme-toggle">
+    <input type="checkbox" id="toggle-theme" />
+    <label for="toggle-theme">
+      <i class="fas fa-sun"></i>
+      <i class="fas fa-moon"></i>
+    </label>
+  </div>
 
   <!-- Sidebar -->
   <div id="mySidebar" class="sidebar">
     <div class="sidebar-header">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     </div>
-    <a href="#projects"><i class="fas fa-folder-open"></i> <span>Projects</span></a>
-    <a href="#contact"><i class="fas fa-envelope"></i> <span>Contact</span></a>
-    <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i> <span>YouTube</span></a>
-    <a href="https://www.linkedin.com/in/nitesh-neupane/" target="_blank"><i class="fab fa-linkedin"></i> <span>LinkedIn</span></a>
-    <a href="#about"><i class="fas fa-user"></i> <span>About Me</span></a>
+    <a href="#projects" title="Projects"><i class="fas fa-folder-open"></i> <span>Projects</span></a>
+    <a href="#contact" title="Contact"><i class="fas fa-envelope"></i> <span>Contact</span></a>
+    <a href="https://www.youtube.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i> <span>YouTube</span></a>
+    <a href="https://www.linkedin.com/in/nitesh-neupane/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i> <span>LinkedIn</span></a>
+    <a href="#about" title="About Me"><i class="fas fa-user"></i> <span>About Me</span></a>
   </div>
 
   <!-- Main Content -->
@@ -31,6 +43,7 @@
         <h1>Hi, I'm Nitesh Neupane</h1>
         <p class="typing-text">A passionate Engineer | Innovator | Creator</p>
         <a href="resume.pdf" download class="btn">Download Resume</a>
+        <a href="#projects" class="btn">View Projects</a>
 
         <!-- Profile Picture -->
         <div class="photo-section">
@@ -40,6 +53,16 @@
         </div>
       </div>
     </header>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>My Projects</h2>
+      <ul class="project-list">
+        <li><i class="fas fa-code"></i> Project 1: Portfolio Website</li>
+        <li><i class="fas fa-database"></i> Project 2: Database Management System</li>
+        <li><i class="fas fa-mobile-alt"></i> Project 3: Mobile App Development</li>
+      </ul>
+    </section>
   </div>
 
   <script>
@@ -52,6 +75,12 @@
       document.getElementById("mySidebar").style.width = "0";
       document.getElementById("main").style.marginLeft = "0";
     }
+
+    // Theme Toggle
+    const toggle = document.getElementById('toggle-theme');
+    toggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark-mode');
+    });
   </script>
 </body>
 </html>
