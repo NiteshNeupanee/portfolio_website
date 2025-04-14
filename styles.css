@@ -24,11 +24,26 @@ body {
   transition: width 0.5s ease-in-out;
 }
 
+.sidebar-header {
+  padding: 15px;
+  background-color: #222;
+}
+
+.sidebar-header h2 {
+  color: #fff;
+}
+
 .sidebar a {
+  display: flex;
+  align-items: center;
   padding: 10px;
   text-decoration: none;
   font-size: 18px;
   color: #818181;
+}
+
+.sidebar a i {
+  margin-right: 10px; /* Space between icon and text */
 }
 
 .sidebar a:hover {
@@ -45,7 +60,6 @@ body {
   font-size: 20px;
 }
 
-.openbtn:hover {
- background:#444;}
-
-/Header Section*/
+/* Main Content */
+#main {
+ transition margin-left .5s;padding16px;}
