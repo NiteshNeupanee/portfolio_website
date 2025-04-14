@@ -1,8 +1,12 @@
-/* Reset */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -10,52 +14,7 @@ body {
   background: url('https://images.unsplash.com/photo-1470472304068-4398a9daab3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
   background-size: cover;
   color: #fff;
-  scroll-behavior: smooth;
-}
-
-.light-mode {
-  background-color: #eaeaea;
-  color: #111;
-}
-
-.dark-mode {
-  background-color: #000;
-  color: #fff;
-}
-
-/* Background Video */
-#bgVideo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
-  object-fit: cover;
-  opacity: 0.7;
-}
-
-/* Theme Toggle */
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  font-size: 24px;
-  z-index: 1000;
-  cursor: pointer;
-}
-
-.theme-toggle .fa-sun,
-.theme-toggle .fa-moon {
-  transition: 0.3s ease;
-}
-
-.light-mode .dark-icon {
-  display: none;
-}
-
-.dark-mode .light-icon {
-  display: none;
+  overflow-x: hidden;
 }
 
 /* Sidebar */
@@ -63,12 +22,12 @@ body {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 10;
+  z-index: 2;
   top: 0;
   left: 0;
-  background-color: rgba(5, 5, 15, 0.95);
+  background-color: rgba(17, 17, 17, 0.95);
   overflow-x: hidden;
-  transition: 0.4s;
+  transition: 0.5s;
   padding-top: 60px;
 }
 
@@ -77,8 +36,14 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 15px;
   background-color: #111;
+  padding: 15px;
+  text-align: center;
+}
+
+.sidebar-header h2 {
+  color: #fff;
+  font-size: 24px;
 }
 
 .sidebar a {
@@ -86,84 +51,106 @@ body {
   align-items: center;
   padding: 15px 20px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   color: #ccc;
-  transition: 0.3s ease;
-}
-
-.sidebar a i {
-  margin-right: 10px;
+  position: relative;
 }
 
 .sidebar a:hover {
-  background: #222;
   color: #fff;
 }
 
+.sidebar a .tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  left: 60px;
+  transition: all 0.3s;
+  background-color: #222;
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.sidebar a:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 30px;
+}
+
+/* Main */
+#main {
+  transition: margin-left 0.5s;
+  padding: 20px;
+}
+
 .openbtn {
-  font-size: 20px;
-  margin: 15px;
-  background: #111;
-  color: white;
-  padding: 10px 15px;
-  border: none;
+  font-size: 24px;
   cursor: pointer;
+  background-color: #111;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 4px;
 }
 
-/* Main Content */
-.container {
-  padding: 40px;
-  max-width: 900px;
-  margin: auto;
+header .container {
   text-align: center;
+  margin-top: 60px;
 }
 
-.typing-text {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  animation: fadeIn 2s ease-in-out;
+header h1 {
+  font-size: 2.8em;
+}
+
+.tagline {
+  font-size: 1.4em;
+  margin: 15px 0 30px;
+  color: #00d9ff;
 }
 
 .btn {
-  background-color: #1e90ff;
-  border: none;
-  color: white;
   padding: 10px 20px;
   margin: 10px;
-  border-radius: 8px;
+  background-color: #00d9ff;
+  color: #000;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
   text-decoration: none;
-  transition: 0.3s;
+  transition: background-color 0.3s;
 }
 
 .btn:hover {
-  background-color: #4682b4;
+  background-color: #00aacc;
 }
 
-/* Profile Picture */
-.photo-section .frame {
-  border: 5px solid white;
-  border-radius: 50%;
-  width: 160px;
-  height: 160px;
-  margin: 20px auto;
-  overflow: hidden;
+/* Profile Section */
+.photo-section {
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
 }
 
 .profile-pic {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   border: 4px solid #00d9ff;
   object-fit: cover;
-  box-shadow: 0 0 20px #00d9ff;
+  box-shadow: 0 0 25px #00d9ff;
   transition: transform 0.3s ease;
 }
+
 .profile-pic:hover {
   transform: scale(1.05);
-}
-
-/* Animations */
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(-10px); }
-  100% { opacity: 1; transform: translateY(0); }
 }
