@@ -7,66 +7,46 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
 </head>
-<body class="light-mode">
-  <!-- Background Video -->
-  <video autoplay muted loop id="bgVideo">
-    <source src="assets/earth-orbit.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
-
-  <!-- Theme Toggle -->
-  <div class="theme-toggle" onclick="toggleTheme()">
-    <i class="fas fa-sun light-icon"></i>
-    <i class="fas fa-moon dark-icon"></i>
-  </div>
-
+<body>
   <!-- Sidebar -->
   <div id="mySidebar" class="sidebar">
     <div class="sidebar-header">
+      <h2>N</h2>
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     </div>
-    <a href="#projects" title="Projects"><i class="fas fa-folder-open"></i> <span>Projects</span></a>
-    <a href="#contact" title="Contact"><i class="fas fa-envelope"></i> <span>Contact</span></a>
-    <a href="https://www.youtube.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i> <span>YouTube</span></a>
-    <a href="https://www.linkedin.com/in/nitesh-neupane/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i> <span>LinkedIn</span></a>
-    <a href="#about" title="About Me"><i class="fas fa-user"></i> <span>About Me</span></a>
+    <a href="#projects"><i class="fas fa-folder-open"></i><span class="tooltip">Projects</span></a>
+    <a href="#contact"><i class="fas fa-envelope"></i><span class="tooltip">Contact</span></a>
+    <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i><span class="tooltip">YouTube</span></a>
+    <a href="https://www.linkedin.com/in/nitesh-neupane/" target="_blank"><i class="fab fa-linkedin"></i><span class="tooltip">LinkedIn</span></a>
+    <a href="#about"><i class="fas fa-user"></i><span class="tooltip">About Me</span></a>
   </div>
 
   <!-- Main Content -->
   <div id="main">
-    <button class="openbtn" onclick="openNav()">☰ Menu</button>
+    <button class="openbtn" onclick="openNav()">☰</button>
     <header>
-      <div class="container fade-in">
+      <div class="container">
         <h1>Hi, I'm Nitesh Neupane</h1>
-        <p class="typing-text">A passionate Engineer | Innovator | Creator</p>
+        <p class="tagline">A passionate Engineer | Innovator | Creator</p>
         <a href="resume.pdf" download class="btn">Download Resume</a>
         <a href="#projects" class="btn">View Projects</a>
-
-        <!-- Profile Picture -->
-       <div class="photo-section">
-  <img src="images/profile.jpg" alt="Nitesh Neupane" class="profile-pic">
-</div>
-
+        <!-- Photo Section -->
+        <div class="photo-section">
+          <img src="images/profile.jpg" alt="Nitesh Neupane" class="profile-pic" />
         </div>
       </div>
     </header>
   </div>
 
-  <!-- Scripts -->
   <script>
     function openNav() {
-      document.getElementById("mySidebar").style.width = "220px";
-      document.getElementById("main").style.marginLeft = "220px";
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
     }
 
     function closeNav() {
       document.getElementById("mySidebar").style.width = "0";
       document.getElementById("main").style.marginLeft = "0";
-    }
-
-    function toggleTheme() {
-      document.body.classList.toggle('dark-mode');
-      document.body.classList.toggle('light-mode');
     }
   </script>
 </body>
