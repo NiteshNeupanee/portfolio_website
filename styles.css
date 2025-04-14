@@ -7,11 +7,21 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  color: #ffffff;
+  color: #fff;
   overflow-x: hidden;
   background-color: #000;
-  position: relative;
+  transition: background 0.3s ease;
   scroll-behavior: smooth;
+}
+
+.light-mode {
+  background-color: #eaeaea;
+  color: #111;
+}
+
+.dark-mode {
+  background-color: #000;
+  color: #fff;
 }
 
 /* Background Video */
@@ -31,29 +41,22 @@ body {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 1000;
-}
-
-.theme-toggle input {
-  display: none;
-}
-
-.theme-toggle label {
-  cursor: pointer;
   font-size: 24px;
-  color: #fff;
+  z-index: 1000;
+  cursor: pointer;
 }
 
-.theme-toggle label .fa-sun {
+.theme-toggle .fa-sun,
+.theme-toggle .fa-moon {
+  transition: 0.3s ease;
+}
+
+.light-mode .dark-icon {
   display: none;
 }
 
-body.dark-mode .theme-toggle label .fa-moon {
+.dark-mode .light-icon {
   display: none;
-}
-
-body.dark-mode .theme-toggle label .fa-sun {
-  display: inline;
 }
 
 /* Sidebar */
@@ -90,6 +93,71 @@ body.dark-mode .theme-toggle label .fa-sun {
 }
 
 .sidebar a i {
+  margin-right: 10px;
+}
 
-::contentReference[oaicite:13]{index=13}
- 
+.sidebar a:hover {
+  background: #222;
+  color: #fff;
+}
+
+.openbtn {
+  font-size: 20px;
+  margin: 15px;
+  background: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Main Content */
+.container {
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.typing-text {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.btn {
+  background-color: #1e90ff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #4682b4;
+}
+
+/* Profile Picture */
+.photo-section .frame {
+  border: 5px solid white;
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
