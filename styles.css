@@ -1,4 +1,4 @@
-/* General Reset */
+/* Reset and Base */
 * {
   margin: 0;
   padding: 0;
@@ -6,11 +6,28 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: radial-gradient(ellipse at top left, #000000, #0a0f1d, #000428);
   color: #fff;
   height: 100vh;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* Stars background animation */
+.stars {
+  background: transparent url('https://i.ibb.co/2Yv9dd5/stars.png') repeat;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  animation: starMove 100s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes starMove {
+  from {background-position: 0 0;}
+  to {background-position: 10000px 10000px;}
 }
 
 /* Sidebar */
@@ -18,10 +35,10 @@ body {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1000;
+  z-index: 10;
   top: 0;
   left: 0;
-  background-color: #050505;
+  background-color: #0b0b0b;
   overflow-x: hidden;
   transition: width 0.4s ease-in-out;
   padding-top: 60px;
@@ -46,6 +63,7 @@ body {
 }
 
 .sidebar a {
+  position: relative;
   display: flex;
   justify-content: center;
   padding: 20px 0;
@@ -59,6 +77,24 @@ body {
   background-color: #222;
 }
 
+.tooltip {
+  visibility: hidden;
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.sidebar a:hover .tooltip {
+  visibility: visible;
+}
+
 /* Open Button */
 .openbtn {
   font-size: 20px;
@@ -70,6 +106,8 @@ body {
   transition: 0.3s;
   margin: 10px;
   border-radius: 5px;
+  z-index: 999;
+  position: relative;
 }
 
 .openbtn:hover {
@@ -80,11 +118,28 @@ body {
 #main {
   transition: margin-left 0.4s;
   padding: 16px;
+  position: relative;
+  z-index: 1;
 }
 
 .container {
   text-align: center;
-  padding: 50px 20px;
+  padding: 60px 20px;
+}
+
+/* Typing Effect */
+.typing {
+  display: inline-block;
+  border-right: 2px solid #fff;
+  padding-right: 4px;
+  font-family: monospace;
+  font-size: 20px;
+  margin-top: 10px;
+  min-height: 26px;
+}
+
+.highlight {
+  color: #0dcaf0;
 }
 
 /* Profile Picture Frame */
@@ -99,7 +154,14 @@ body {
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto;
-  box-shadow: 0 0 15px rgba(0, 78, 146, 0.7);
+  box-shadow: 0 0 20px #0dcaf0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px #0dcaf0; }
+  50% { box-shadow: 0 0 20px #0dcaf0, 0 0 30px #0dcaf0; }
+  100% { box-shadow: 0 0 10px #0dcaf0; }
 }
 
 .profile-pic {
@@ -117,11 +179,31 @@ body {
   background-color: #004e92;
   text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
 }
 
 .btn:hover {
-  background-color: #0066cc;
+  background-color: #0dcaf0;
+  transform: scale(1.05);
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Fade-in animation */
+.fade-in {
+  animation: fadeIn ease 2s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive */
@@ -140,5 +222,9 @@ body {
 
   .sidebar {
     width: 0 !important;
+  }
+
+  .tooltip {
+    display: none;
   }
 }
