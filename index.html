@@ -5,15 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nitesh Neupane | Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"> <!-- Font Awesome for icons -->
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Hi, I'm Nitesh Neupane</h1>
-      <p>A passionate [Your Profession/Field, e.g., Web Developer, Designer] dedicated to creating innovative solutions.</p>
-      <a href="resume.pdf" download class="btn">Download Resume</a>
-      <div class="photo-placeholder"></div>
-    </div>
-  </header>
+  <!-- Sidebar -->
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+    <a href="https://www.linkedin.com/in/nitesh-neupane/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="#about"><i class="fas fa-user"></i> About Me</a>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>
+    <header>
+      <div class="container">
+        <h1>Hi, I'm Nitesh Neupane</h1>
+        <p>A passionate [Your Profession/Field, e.g., Web Developer, Designer] dedicated to creating innovative solutions.</p>
+        <a href="resume.pdf" download class="btn">Download Resume</a>
+        <!-- Photo Section -->
+        <div class="photo-section">
+          <img src="your-hosted-image-url.jpg" alt="Nitesh Neupane" class="profile-pic">
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+    }
+  </script>
 </body>
 </html>
