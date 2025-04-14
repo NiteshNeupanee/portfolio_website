@@ -15,14 +15,14 @@ body {
 
 /* Animated Star Background */
 .stars {
-  background: url("https://i.ibb.co/YQDg51f/star-bg.gif") repeat;
+  background: url("https://i.gifer.com/7VE.gif") repeat;
   position: fixed;
   width: 100%;
   height: 100%;
   z-index: -1;
   top: 0;
   left: 0;
-  opacity: 0.2;
+  opacity: 0.15;
 }
 
 /* Sidebar */
