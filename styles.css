@@ -1,4 +1,3 @@
-/* General Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -10,7 +9,7 @@ body {
   position: relative;
 }
 
-/* Spinning Earth Background */
+/* Earth Background and Stars */
 #earth-bg {
   position: fixed;
   top: 0; left: 0;
@@ -20,22 +19,38 @@ body {
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  background: #000;
   overflow: hidden;
+  background: #000;
 }
 #earth {
-  width: 350px; height: 350px;
+  width: 360px;
+  height: 360px;
   border-radius: 50%;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg') center center/cover no-repeat;
+  object-fit: cover;
   box-shadow: 0 0 80px 30px rgba(0,0,0,0.7), 0 0 0 10px #00d9ff33;
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  animation: earth-rotate 16s linear infinite;
+  animation: earth-spin 24s linear infinite;
+  pointer-events: none;
 }
-@keyframes earth-rotate {
+@keyframes earth-spin {
   0% { transform: translate(-50%, -50%) rotate(0deg);}
   100% { transform: translate(-50%, -50%) rotate(360deg);}
+}
+#stars {
+  position: absolute;
+  width: 100vw; height: 100vh;
+  left: 0; top: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+#satellite-canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 2;
+  pointer-events: none;
 }
 
 /* Top Header with Animated Headline */
