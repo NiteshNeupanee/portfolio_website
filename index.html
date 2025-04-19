@@ -8,10 +8,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
 </head>
 <body>
-  <!-- Spinning Earth and animated background -->
-  <div id="earth-bg">
+  <!-- Space Background and animated elements -->
+  <div id="space-bg">
     <div id="stars"></div>
-    <img id="earth" src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1200&q=80" alt="Earth from LEO" />
     <canvas id="satellite-canvas"></canvas>
   </div>
 
@@ -35,11 +34,12 @@
       <h2>N</h2>
       <a href="javascript:void(0)" class="closebtn" id="closeSidebar" aria-label="Close sidebar">&times;</a>
     </div>
-    <a href="#projects"><i class="fas fa-folder-open"></i><span class="tooltip">Projects</span></a>
+    <a href="#main"><i class="fas fa-home"></i><span class="tooltip">Home</span></a>
+    <a href="#about"><i class="fas fa-user"></i><span class="tooltip">About</span></a>
     <a href="#skills"><i class="fas fa-cogs"></i><span class="tooltip">Skills</span></a>
     <a href="#experience"><i class="fas fa-briefcase"></i><span class="tooltip">Experience</span></a>
+    <a href="#projects"><i class="fas fa-rocket"></i><span class="tooltip">Projects</span></a>
     <a href="#contact"><i class="fas fa-envelope"></i><span class="tooltip">Contact</span></a>
-    <a href="#about"><i class="fas fa-user"></i><span class="tooltip">About Me</span></a>
   </nav>
 
   <!-- Main Content -->
@@ -58,7 +58,7 @@
     <section id="about" class="about-section">
       <h2>About Me</h2>
       <div class="about-content">
-        <img src="images/profile.jpg" alt="Nitesh Neupane" class="about-pic" />
+        <img src="images/profile.jpg" alt="Nitesh Neupane" class="about-pic responsive-about-pic" />
         <div>
           <p>
             Hi, I'm <strong>Nitesh Neupane</strong> — an aspiring engineer with a passion for turning ideas into tangible things.
@@ -68,6 +68,49 @@
           </p>
           <p>
             Whether it's designing, coding, or questioning how things work, I'm always up for a challenge.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Skills Section ====== -->
+    <section id="skills" class="skills-section">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>SolidWorks, Fusion 360, AutoCAD</li>
+        <li>3D Printing & Rapid Prototyping</li>
+        <li>Arduino, Embedded Systems</li>
+        <li>MATLAB, Python, C/C++</li>
+        <li>Team Leadership & Collaboration</li>
+        <li>Project Management</li>
+        <li>Problem Solving & Critical Thinking</li>
+        <li>Technical Communication</li>
+      </ul>
+    </section>
+
+    <!-- ====== Experience Section ====== -->
+    <section id="experience" class="experience-section">
+      <h2>Experience</h2>
+      <div class="experience-list">
+        <div class="experience-item">
+          <h3>Propulsion Lead – Team Udaan, Kathmandu University</h3>
+          <span class="exp-date">Nov 2023 – Present</span>
+          <p>
+            Led propulsion subsystem for UDAAN sounding rocket R&D team. Designed ignitors, nozzles, and managed solid rocket motor development. Gained experience in planning, motivating, and strategic thinking.
+          </p>
+        </div>
+        <div class="experience-item">
+          <h3>Undergrad Intern – Design Lab, Kathmandu University</h3>
+          <span class="exp-date">July 2022 – Present</span>
+          <p>
+            Learned 3D printing, team collaboration, organizing, and problem solving. Worked under principal investigator, gaining skills in resourcefulness and leadership.
+          </p>
+        </div>
+        <div class="experience-item">
+          <h3>General Member – Robotics Club, Kathmandu University</h3>
+          <span class="exp-date">April 2022 – Present</span>
+          <p>
+            Built projects like Mars rover, RC planes, and robotic arms. Developed hands-on skills in tinkering, electronics, and teamwork.
           </p>
         </div>
       </div>
@@ -146,53 +189,6 @@
               Custom adapter to connect telescope to EQ mount. Prototyped and 3D printed in PLA for secure, vibration-free mounting.
             </p>
           </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ====== Skills Section ====== -->
-    <section id="skills" class="skills-section">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>SolidWorks, Fusion 360, AutoCAD</li>
-        <li>3D Printing & Rapid Prototyping</li>
-        <li>Arduino, Embedded Systems</li>
-        <li>MATLAB, Python, C/C++</li>
-        <li>Team Leadership & Collaboration</li>
-        <li>Project Management</li>
-        <li>Problem Solving & Critical Thinking</li>
-        <li>Technical Communication</li>
-      </ul>
-    </section>
-
-    <!-- ====== Experience Section ====== -->
-    <section id="experience" class="experience-section">
-      <h2>Experience</h2>
-      <div class="experience-list">
-
-        <div class="experience-item">
-          <h3>Propulsion Lead – Team Udaan, Kathmandu University</h3>
-          <span class="exp-date">Nov 2023 – Present</span>
-          <p>
-            Led propulsion subsystem for UDAAN sounding rocket R&D team. Designed ignitors, nozzles, and managed solid rocket motor development. Gained experience in planning, motivating, and strategic thinking.
-          </p>
-        </div>
-
-        <div class="experience-item">
-          <h3>Undergrad Intern – Design Lab, Kathmandu University</h3>
-          <span class="exp-date">July 2022 – Present</span>
-          <p>
-            Learned 3D printing, team collaboration, organizing, and problem solving. Worked under principal investigator, gaining skills in resourcefulness and leadership.
-          </p>
-        </div>
-
-        <div class="experience-item">
-          <h3>General Member – Robotics Club, Kathmandu University</h3>
-          <span class="exp-date">April 2022 – Present</span>
-          <p>
-            Built projects like Mars rover, RC planes, and robotic arms. Developed hands-on skills in tinkering, electronics, and teamwork.
-          </p>
         </div>
       </div>
     </section>
