@@ -52,4 +52,38 @@ for (let i = 0; i < 6; i++) {
   satellites.push({
     angle: Math.random() * Math.PI * 2,
     radius: 180 + Math.random() * 60,
-    speed: 0.003 + Math.random() * 0.002
+    speed: 0.003 + Math.random() * 0.002,
+    size: 10 + Math.random() * 8,
+    color: "#00d9ff"
+  });
+}
+
+function drawSatellites() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const {x, y} = earthCenter();
+  satellites.forEach(sat => {
+    sat.angle += sat.speed;
+    let sx = x + sat.radius * Math.cos(sat.angle);
+    let sy = y + sat.radius * Math.sin(sat.angle) * 0.7;
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(sx, sy, sat.size/2, 0, Math.PI * 2);
+    ctx.fillStyle = sat.color;
+    ctx.shadowColor = "#00d9ff";
+    ctx.shadowBlur = 8;
+    ctx.fill();
+    ctx.restore();
+
+    // Draw satellite "solar panels"
+    ctx.save();
+    ctx.strokeStyle = "#fff";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(sx - sat.size, sy);
+    ctx.lineTo(sx + sat.size, sy);
+    ctx.stroke();
+    ctx.restore();
+  });
+  requestAnimationFrame(drawSatellites);
+}
+drawSatellites();
