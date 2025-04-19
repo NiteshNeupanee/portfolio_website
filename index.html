@@ -1,210 +1,242 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nitesh Neupane | Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
-</head>
-<body>
-  <!-- Earth from ISS background and animated elements -->
-  <div id="space-bg">
-    <div id="stars"></div>
-    <canvas id="satellite-canvas"></canvas>
-  </div>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background: #000;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
 
-  <!-- Top Header -->
-  <header class="top-header">
-    <div class="header-content">
-      <span class="catchy-line">Engineering Ideas into Reality.</span>
-      <div class="header-buttons">
-        <a href="https://github.com/NiteshNeupanee/portfolio_website/blob/main/Nitesh_Neupane_Resume.pdf" target="_blank" class="btn btn-header">Download Resume</a>
-        <a href="https://github.com/NiteshNeupanee/portfolio_website/blob/main/engeneering%20portfolio.pdf" target="_blank" class="btn btn-header">View Projects</a>
-      </div>
-    </div>
-  </header>
+/* Earth from ISS Background */
+#space-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: url('https://images-assets.nasa.gov/image/iss067e054204/iss067e054204~large.jpg') center center/cover no-repeat;
+}
+#space-bg::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 1;
+  pointer-events: none;
+}
+#stars, #satellite-canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 2;
+  pointer-events: none;
+}
 
-  <!-- Fixed Sidebar -->
-  <nav class="sidebar" aria-label="Main Navigation">
-    <div class="sidebar-header">
-      <h2>N</h2>
-    </div>
-    <a href="#main"><i class="fas fa-home"></i><span class="tooltip">Home</span></a>
-    <a href="#about"><i class="fas fa-user"></i><span class="tooltip">About</span></a>
-    <a href="#skills"><i class="fas fa-cogs"></i><span class="tooltip">Skills</span></a>
-    <a href="#experience"><i class="fas fa-briefcase"></i><span class="tooltip">Experience</span></a>
-    <a href="#projects"><i class="fas fa-rocket"></i><span class="tooltip">Projects</span></a>
-    <a href="#contact"><i class="fas fa-envelope"></i><span class="tooltip">Contact</span></a>
-  </nav>
+/* Top Header */
+.top-header {
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  padding: 16px 0 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  box-shadow: 0 2px 16px #00d9ff33;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  width: 95vw;
+  margin: 0 auto;
+}
+.catchy-line {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #00d9ff;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 16px #00d9ff88;
+  margin-right: 24px;
+  animation: catchy-fade 2.5s infinite alternate;
+}
+@keyframes catchy-fade {
+  0% { opacity: 1; text-shadow: 0 2px 16px #00d9ff88;}
+  100% { opacity: 0.7; text-shadow: 0 4px 32px #00d9ffcc;}
+}
+.header-buttons {
+  display: flex;
+  gap: 14px;
+}
+.btn-header {
+  font-size: 1em;
+  padding: 8px 18px;
+  margin: 0;
+  background: #00d9ff;
+  color: #000;
+  border: none;
+  border-radius: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 10px #00d9ff44;
+}
+.btn-header:hover {
+  background: #00aacc;
+  color: #fff;
+  box-shadow: 0 4px 18px #00d9ff88;
+}
 
-  <!-- Main Content -->
-  <div id="main">
-    <section class="hero">
-      <div class="container">
-        <h1>Hi, I'm Nitesh Neupane</h1>
-        <p class="tagline" id="typing"></p>
-        <div class="photo-section">
-          <img src="images/profile.jpg" alt="Nitesh Neupane" class="about-pic responsive-about-pic" />
-        </div>
-      </div>
-    </section>
+/* Sidebar (Fixed, always visible) */
+.sidebar {
+  height: 100%;
+  width: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(17, 17, 17, 0.97);
+  overflow-x: hidden;
+  z-index: 1200;
+  padding-top: 32px;
+  box-shadow: 2px 0 12px #00d9ff11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidebar-header {
+  width: 100%;
+  background-color: #111;
+  padding: 10px 0;
+  text-align: center;
+}
+.sidebar-header h2 {
+  color: #00d9ff;
+  font-size: 28px;
+  margin-bottom: 0;
+  letter-spacing: 2px;
+}
+.sidebar a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 0 8px 0;
+  text-decoration: none;
+  font-size: 22px;
+  color: #ccc;
+  width: 100%;
+  transition: background 0.2s, color 0.2s;
+  border: none;
+  background: none;
+}
+.sidebar a:hover, .sidebar a.active {
+  color: #00d9ff;
+  background: #222;
+}
+.sidebar i {
+  font-size: 28px;
+  margin-bottom: 4px;
+  min-width: 32px;
+  text-align: center;
+}
+.sidebar .tooltip {
+  font-size: 0.95em;
+  color: #00d9ff;
+  background: none;
+  opacity: 1;
+  margin: 0;
+  padding: 0;
+  position: static;
+  pointer-events: none;
+}
 
-    <!-- ====== About Me Section ====== -->
-    <section id="about" class="about-section">
-      <h2>About Me</h2>
-      <div class="about-content">
-        <img src="images/profile.jpg" alt="Nitesh Neupane" class="about-pic responsive-about-pic" />
-        <div>
-          <p>
-            Hi, I'm <strong>Nitesh Neupane</strong> — an aspiring engineer with a passion for turning ideas into tangible things.
-          </p>
-          <p>
-            I’m a mechanical engineering student at Kathmandu University with a passion for building things that move, fly, or make a difference. From rockets with Team Udaan to stargazing and exploring the cosmos, I love blending hands-on engineering with curiosity about the universe.
-          </p>
-          <p>
-            Whether it's designing, coding, or questioning how things work, I'm always up for a challenge.
-          </p>
-        </div>
-      </div>
-    </section>
+/* Main Content */
+#main {
+  margin-left: 70px;
+  margin-top: 78px;
+  padding: 20px;
+  z-index: 1;
+  position: relative;
+  transition: margin-left 0.5s;
+}
+.hero .container {
+  text-align: center;
+  margin-top: 40px;
+}
+header h1, .hero h1 {
+  font-size: 2.8em;
+  z-index: 2;
+  position: relative;
+}
+.tagline {
+  font-size: 1.4em;
+  margin: 15px 0 30px;
+  color: #00d9ff;
+  min-height: 1.5em;
+  letter-spacing: 1px;
+  z-index: 2;
+  position: relative;
+}
+.photo-section {
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+}
 
-    <!-- ====== Skills Section ====== -->
-    <section id="skills" class="skills-section">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>SolidWorks, Fusion 360, AutoCAD</li>
-        <li>3D Printing & Rapid Prototyping</li>
-        <li>Arduino, Embedded Systems</li>
-        <li>MATLAB, Python, C/C++</li>
-        <li>Team Leadership & Collaboration</li>
-        <li>Project Management</li>
-        <li>Problem Solving & Critical Thinking</li>
-        <li>Technical Communication</li>
-      </ul>
-    </section>
+/* About Me Section */
+.about-section {
+  background: rgba(17, 17, 17, 0.85);
+  max-width: 800px;
+  margin: 40px auto 0 auto;
+  padding: 30px 24px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px #00d9ff33;
+  z-index: 2;
+  position: relative;
+}
+.about-section h2 {
+  color: #00d9ff;
+  margin-bottom: 18px;
+  font-size: 2em;
+  text-align: center;
+}
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.responsive-about-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 3px solid #00d9ff;
+  object-fit: cover;
+  box-shadow: 0 0 16px #00d9ff;
+  margin-bottom: 16px;
+  margin-right: 30px;
+  display: block;
+}
+@media (max-width: 900px) {
+  .responsive-about-pic {
+    width: 100px;
+    height: 100px;
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
 
-    <!-- ====== Experience Section ====== -->
-    <section id="experience" class="experience-section">
-      <h2>Experience</h2>
-      <div class="experience-list">
-        <div class="experience-item">
-          <h3>Propulsion Lead – Team Udaan, Kathmandu University</h3>
-          <span class="exp-date">Nov 2023 – Present</span>
-          <p>
-            Led propulsion subsystem for UDAAN sounding rocket R&D team. Designed ignitors, nozzles, and managed solid rocket motor development. Gained experience in planning, motivating, and strategic thinking.
-          </p>
-        </div>
-        <div class="experience-item">
-          <h3>Undergrad Intern – Design Lab, Kathmandu University</h3>
-          <span class="exp-date">July 2022 – Present</span>
-          <p>
-            Learned 3D printing, team collaboration, organizing, and problem solving. Worked under principal investigator, gaining skills in resourcefulness and leadership.
-          </p>
-        </div>
-        <div class="experience-item">
-          <h3>General Member – Robotics Club, Kathmandu University</h3>
-          <span class="exp-date">April 2022 – Present</span>
-          <p>
-            Built projects like Mars rover, RC planes, and robotic arms. Developed hands-on skills in tinkering, electronics, and teamwork.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====== Project Highlights Section ====== -->
-    <section id="projects" class="projects-section">
-      <h2>Project Highlights</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-03.jpg?height=540&width=2138&top_left_y=428&top_left_x=178" alt="Model Rocket">
-          <div>
-            <h3>Model Rocket ("Pandav")</h3>
-            <p>
-              Reusable mid-power rocket (700g) with datalogger and parachute. Developed subsystems like parachute deployment and flight datalogger. Achieved Mach 0.32 and 632m apogee using a G25W equivalent motor. Cardboard body tube, epoxy-reinforced.
-            </p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-05.jpg?height=1452&width=1092&top_left_y=275&top_left_x=1361" alt="Equatorial Mount">
-          <div>
-            <h3>Equatorial Mount</h3>
-            <p>
-              Mount for tracking planets and nebulae, cancelling Earth's rotation. Polar axis at 27°, concrete base for minimal vibration. Next: add motors and aluminum body.
-            </p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-06.jpg?height=913&width=1034&top_left_y=357&top_left_x=1409" alt="Rocket Motor Thrust Tester">
-          <div>
-            <h3>Rocket Motor Thrust Tester V1</h3>
-            <p>
-              Device to measure thrust of solid rocket motors (up to 20kg) using a load cell and Arduino Nano. Data stored on SD card. Used for real-world vs. simulated thrust comparison.
-            </p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-08.jpg?height=984&width=744&top_left_y=436&top_left_x=1573" alt="SMIOS Prototype">
-          <div>
-            <h3>Prototyping of SMIOS</h3>
-            <p>
-              Single Man Operated Stretch (SMIOS): a portable stretcher for emergency transport in remote areas. Designed for comfort and practicality, inspired by traditional Nepali Doko.
-            </p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-09.jpg?height=1582&width=1222&top_left_y=290&top_left_x=1277" alt="Project Udaya (HAB)">
-          <div>
-            <h3>Project Udaya (HAB)</h3>
-            <p>
-              High altitude balloon project at Kathmandu University. Designed shock absorption structures for CanSat payloads; performed simulations for deformation and elasticity.
-            </p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-10.jpg?height=1302&width=990&top_left_y=232&top_left_x=1415" alt="RC Plane">
-          <div>
-            <h3>RC Plane Restoration</h3>
-            <p>
-              Repaired and restored a Skywalker RC plane kit. Worked on electronics, RC transmitter/receiver, flight mechanics (roll, yaw, pitch), servos, and BLDC motor.
-            </p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-11.jpg?height=1514&width=2295&top_left_y=275&top_left_x=127" alt="Telescope Adapter">
-          <div>
-            <h3>Telescope Adapter</h3>
-            <p>
-              Custom adapter to connect telescope to EQ mount. Prototyped and 3D printed in PLA for secure, vibration-free mounting.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====== Contact Me Section ====== -->
-    <section id="contact" class="contact-section">
-      <h2>Contact Me</h2>
-      <div class="contact-content">
-        <p>
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:niteshneupane.16@gmail.com">niteshneupane.16@gmail.com</a>
-        </p>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/nitesh-neupane/" target="_blank" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://www.youtube.com/@noobneutron" target="_blank" title="YouTube">
-            <i class="fab fa-youtube"></i>
-          </a>
-          <a href="https://www.instagram.com/nitesh_neupaneeee/" target="_blank" title="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+/* Project, Skills, Experience, Contact sections ... (keep your previous styles here) */
