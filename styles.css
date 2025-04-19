@@ -11,10 +11,42 @@ html {
 
 body {
   font-family: Arial, sans-serif;
-  background: url('https://images.unsplash.com/photo-1470472304068-4398a9daab3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-  background-size: cover;
   color: #fff;
   overflow-x: hidden;
+  background: #000;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Spinning Earth Background */
+#earth-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  background: #000;
+  overflow: hidden;
+}
+
+#earth {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg') center center/cover no-repeat;
+  box-shadow: 0 0 80px 30px rgba(0,0,0,0.7), 0 0 0 10px #00d9ff33;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: earth-rotate 16s linear infinite;
+}
+
+@keyframes earth-rotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg);}
+  100% { transform: translate(-50%, -50%) rotate(360deg);}
 }
 
 /* Sidebar */
@@ -88,6 +120,8 @@ body {
 #main {
   transition: margin-left 0.5s;
   padding: 20px;
+  z-index: 1;
+  position: relative;
 }
 
 .openbtn {
@@ -100,6 +134,8 @@ body {
   margin-top: 20px;
   margin-left: 20px;
   border-radius: 4px;
+  z-index: 3;
+  position: relative;
 }
 
 header .container {
@@ -109,12 +145,18 @@ header .container {
 
 header h1 {
   font-size: 2.8em;
+  z-index: 2;
+  position: relative;
 }
 
 .tagline {
   font-size: 1.4em;
   margin: 15px 0 30px;
   color: #00d9ff;
+  min-height: 1.5em;
+  letter-spacing: 1px;
+  z-index: 2;
+  position: relative;
 }
 
 .btn {
@@ -128,6 +170,8 @@ header h1 {
   font-weight: bold;
   text-decoration: none;
   transition: background-color 0.3s;
+  z-index: 2;
+  position: relative;
 }
 
 .btn:hover {
@@ -139,6 +183,8 @@ header h1 {
   margin: 40px auto;
   display: flex;
   justify-content: center;
+  z-index: 2;
+  position: relative;
 }
 
 .profile-pic {
@@ -153,4 +199,64 @@ header h1 {
 
 .profile-pic:hover {
   transform: scale(1.05);
+}
+
+/* Context Table */
+.context-table {
+  width: 100%;
+  max-width: 700px;
+  margin: 30px auto;
+  border-collapse: collapse;
+  background: rgba(17,17,17,0.85);
+  color: #fff;
+  z-index: 2;
+  position: relative;
+  box-shadow: 0 0 20px #00d9ff33;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.context-table th, .context-table td {
+  border: 1px solid #00d9ff;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.context-table th {
+  background: #00aacc;
+  color: #000;
+}
+
+.context-table tr:nth-child(even) {
+  background: rgba(0, 217, 255, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  #earth {
+    width: 200px;
+    height: 200px;
+  }
+  .context-table, .context-table th, .context-table td {
+    font-size: 0.9em;
+    padding: 8px 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  #earth {
+    width: 120px;
+    height: 120px;
+  }
+  header h1 {
+    font-size: 1.5em;
+  }
+  .openbtn {
+    font-size: 18px;
+    padding: 7px 10px;
+  }
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
 }
