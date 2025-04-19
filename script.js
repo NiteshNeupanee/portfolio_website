@@ -28,17 +28,6 @@ document.querySelectorAll('.sidebar a').forEach(link => {
   });
 });
 
-// Animated headline (rotating words)
-document.addEventListener("DOMContentLoaded", function() {
-  const words = document.querySelectorAll('.animated-headline .words-wrapper b');
-  let wordIndex = 0;
-  setInterval(() => {
-    words[wordIndex].classList.remove('is-visible');
-    wordIndex = (wordIndex + 1) % words.length;
-    words[wordIndex].classList.add('is-visible');
-  }, 1200);
-});
-
 // Parallax stars background
 function createStars() {
   const stars = document.getElementById('stars');
@@ -116,31 +105,3 @@ function drawSatellites() {
   requestAnimationFrame(drawSatellites);
 }
 drawSatellites();
-
-// Interactive cursor effect
-document.body.addEventListener('mousemove', function(e) {
-  let cursor = document.getElementById('magic-cursor');
-  if (!cursor) {
-    cursor = document.createElement('div');
-    cursor.id = 'magic-cursor';
-    document.body.appendChild(cursor);
-    cursor.style.position = 'fixed';
-    cursor.style.zIndex = 2000;
-    cursor.style.pointerEvents = 'none';
-    cursor.style.width = '30px';
-    cursor.style.height = '30px';
-    cursor.style.border = '2px solid #00d9ff';
-    cursor.style.borderRadius = '50%';
-    cursor.style.transition = 'transform 0.15s cubic-bezier(.77,0,.18,1)';
-    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-    cursor.style.background = 'rgba(0,217,255,0.10)';
-    cursor.style.boxShadow = '0 0 16px #00d9ff77';
-  }
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top = e.clientY + 'px';
-  cursor.style.transform = 'translate(-50%, -50%) scale(1.1)';
-  clearTimeout(cursor._timeout);
-  cursor._timeout = setTimeout(() => {
-    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-  }, 100);
-});
