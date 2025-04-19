@@ -215,7 +215,50 @@ header h1 {
   transform: scale(1.05);
 }
 
-/* Context Table */
+/* About Me Section */
+.about-section {
+  background: rgba(17, 17, 17, 0.85);
+  max-width: 800px;
+  margin: 40px auto 0 auto;
+  padding: 30px 24px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px #00d9ff33;
+  z-index: 2;
+  position: relative;
+}
+
+.about-section h2 {
+  color: #00d9ff;
+  margin-bottom: 18px;
+  font-size: 2em;
+  text-align: center;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.about-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #00d9ff;
+  object-fit: cover;
+  box-shadow: 0 0 16px #00d9ff;
+  margin-bottom: 16px;
+}
+
+.about-content p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #e0f7fa;
+  margin-bottom: 8px;
+}
+
+/* Projects Table */
 .context-table {
   width: 100%;
   max-width: 700px;
@@ -243,6 +286,67 @@ header h1 {
 
 .context-table tr:nth-child(even) {
   background: rgba(0, 217, 255, 0.05);
+}
+
+/* Contact Me Section */
+.contact-section {
+  background: rgba(17, 17, 17, 0.85);
+  max-width: 800px;
+  margin: 40px auto 0 auto;
+  padding: 30px 24px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px #00d9ff33;
+  z-index: 2;
+  position: relative;
+  text-align: center;
+}
+
+.contact-section h2 {
+  color: #00d9ff;
+  margin-bottom: 18px;
+  font-size: 2em;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.contact-content p {
+  font-size: 1.1em;
+  color: #e0f7fa;
+  margin-bottom: 0;
+}
+
+.contact-content a {
+  color: #00d9ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-content a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.social-links {
+  margin-top: 8px;
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+}
+
+.social-links a {
+  color: #00d9ff;
+  font-size: 2em;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.social-links a:hover {
+  color: #fff;
+  transform: scale(1.15);
 }
 
 /* Responsive */
@@ -275,6 +379,14 @@ header h1 {
   .profile-pic {
     width: 120px;
     height: 120px;
+  }
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .about-section, .contact-section {
+    padding: 18px 6px;
   }
   #main {
     margin-left: 60px;
