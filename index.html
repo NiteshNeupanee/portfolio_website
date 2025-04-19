@@ -15,7 +15,7 @@
     <canvas id="satellite-canvas"></canvas>
   </div>
 
-  <!-- Top Header with Catchy Line and Buttons -->
+  <!-- Top Header -->
   <header class="top-header">
     <div class="header-content">
       <span class="catchy-line">Engineering Ideas into Reality.</span>
@@ -36,6 +36,8 @@
       <a href="javascript:void(0)" class="closebtn" id="closeSidebar" aria-label="Close sidebar">&times;</a>
     </div>
     <a href="#projects"><i class="fas fa-folder-open"></i><span class="tooltip">Projects</span></a>
+    <a href="#skills"><i class="fas fa-cogs"></i><span class="tooltip">Skills</span></a>
+    <a href="#experience"><i class="fas fa-briefcase"></i><span class="tooltip">Experience</span></a>
     <a href="#contact"><i class="fas fa-envelope"></i><span class="tooltip">Contact</span></a>
     <a href="#about"><i class="fas fa-user"></i><span class="tooltip">About Me</span></a>
   </nav>
@@ -71,51 +73,128 @@
       </div>
     </section>
 
-    <!-- ====== Projects Section ====== -->
-    <section id="projects">
+    <!-- ====== Project Highlights Section ====== -->
+    <section id="projects" class="projects-section">
       <h2>Project Highlights</h2>
-      <table class="context-table">
-        <thead>
-          <tr>
-            <th>Project</th>
-            <th>Role</th>
-            <th>Tech Stack</th>
-            <th>Year</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Design and Fabrication of a Water Rocket</td>
-            <td>Team Leader</td>
-            <td>CAD, Manufacturing, Testing</td>
-            <td>2022</td>
-          </tr>
-          <tr>
-            <td>Arduino-based Smart Dustbin</td>
-            <td>Developer</td>
-            <td>Arduino, Sensors, C++</td>
-            <td>2023</td>
-          </tr>
-          <tr>
-            <td>3D Printed RC Aircraft</td>
-            <td>Designer & Builder</td>
-            <td>3D Printing, CAD, Electronics</td>
-            <td>2023</td>
-          </tr>
-          <tr>
-            <td>Team Udaan Rocketry Projects</td>
-            <td>Core Member</td>
-            <td>Rocket Design, Simulation, Launch</td>
-            <td>2022-2024</td>
-          </tr>
-          <tr>
-            <td>Solar Tracker System</td>
-            <td>Developer</td>
-            <td>Embedded Systems, Sensors</td>
-            <td>2023</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-03.jpg?height=540&width=2138&top_left_y=428&top_left_x=178" alt="Model Rocket">
+          <div>
+            <h3>Model Rocket ("Pandav")</h3>
+            <p>
+              A reusable mid-power rocket (700g) with datalogger and parachute. Developed subsystems like parachute deployment and flight datalogger. Achieved Mach 0.32 and 632m apogee using a G25W equivalent motor. Cardboard body tube, epoxy-reinforced.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-05.jpg?height=1452&width=1092&top_left_y=275&top_left_x=1361" alt="Equatorial Mount">
+          <div>
+            <h3>Equatorial Mount</h3>
+            <p>
+              A mount for tracking planets and nebulae, cancelling Earth's rotation. Polar axis at 27°, concrete base for minimal vibration. Next: add motors and aluminum body.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-06.jpg?height=913&width=1034&top_left_y=357&top_left_x=1409" alt="Rocket Motor Thrust Tester">
+          <div>
+            <h3>Rocket Motor Thrust Tester V1</h3>
+            <p>
+              Device to measure thrust of solid rocket motors (up to 20kg) using a load cell and Arduino Nano. Data stored on SD card. Used for real-world vs. simulated thrust comparison.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-08.jpg?height=984&width=744&top_left_y=436&top_left_x=1573" alt="SMIOS Prototype">
+          <div>
+            <h3>Prototyping of SMIOS</h3>
+            <p>
+              Single Man Operated Stretch (SMIOS): a portable stretcher for emergency transport in remote areas. Designed for comfort and practicality, inspired by traditional Nepali Doko.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-09.jpg?height=1582&width=1222&top_left_y=290&top_left_x=1277" alt="Project Udaya (HAB)">
+          <div>
+            <h3>Project Udaya (HAB)</h3>
+            <p>
+              High altitude balloon project at Kathmandu University. Designed shock absorption structures for CanSat payloads; performed simulations for deformation and elasticity.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-10.jpg?height=1302&width=990&top_left_y=232&top_left_x=1415" alt="RC Plane">
+          <div>
+            <h3>RC Plane Restoration</h3>
+            <p>
+              Repaired and restored a Skywalker RC plane kit. Worked on electronics, RC transmitter/receiver, flight mechanics (roll, yaw, pitch), servos, and BLDC motor.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-11.jpg?height=1514&width=2295&top_left_y=275&top_left_x=127" alt="Telescope Adapter">
+          <div>
+            <h3>Telescope Adapter</h3>
+            <p>
+              Custom adapter to connect telescope to EQ mount. Prototyped and 3D printed in PLA for secure, vibration-free mounting.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====== Skills Section ====== -->
+    <section id="skills" class="skills-section">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>SolidWorks, Fusion 360, AutoCAD</li>
+        <li>3D Printing & Rapid Prototyping</li>
+        <li>Arduino, Embedded Systems</li>
+        <li>MATLAB, Python, C/C++</li>
+        <li>Team Leadership & Collaboration</li>
+        <li>Project Management</li>
+        <li>Problem Solving & Critical Thinking</li>
+        <li>Technical Communication</li>
+      </ul>
+    </section>
+
+    <!-- ====== Experience Section ====== -->
+    <section id="experience" class="experience-section">
+      <h2>Experience</h2>
+      <div class="experience-list">
+
+        <div class="experience-item">
+          <h3>Propulsion Lead – Team Udaan, Kathmandu University</h3>
+          <span class="exp-date">Nov 2023 – Present</span>
+          <p>
+            Led propulsion subsystem for UDAAN sounding rocket R&D team. Designed ignitors, nozzles, and managed solid rocket motor development. Gained experience in planning, motivating, and strategic thinking.
+          </p>
+        </div>
+
+        <div class="experience-item">
+          <h3>Undergrad Intern – Design Lab, Kathmandu University</h3>
+          <span class="exp-date">July 2022 – Present</span>
+          <p>
+            Learned 3D printing, team collaboration, organizing, and problem solving. Worked under principal investigator, gaining skills in resourcefulness and leadership.
+          </p>
+        </div>
+
+        <div class="experience-item">
+          <h3>General Member – Robotics Club, Kathmandu University</h3>
+          <span class="exp-date">April 2022 – Present</span>
+          <p>
+            Built projects like Mars rover, RC planes, and robotic arms. Developed hands-on skills in tinkering, electronics, and teamwork.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- ====== Contact Me Section ====== -->
