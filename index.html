@@ -8,9 +8,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
 </head>
 <body>
-  <!-- Spinning Earth Background -->
+  <!-- Spinning Earth and animated background -->
   <div id="earth-bg">
-    <div id="earth"></div>
+    <div id="stars"></div>
+    <img id="earth" src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1200&q=80" alt="Earth from LEO" />
+    <canvas id="satellite-canvas"></canvas>
   </div>
 
   <!-- Top Animated Header -->
@@ -25,7 +27,7 @@
     </span>
   </header>
 
-  <!-- Sidebar Menu Button (always visible) -->
+  <!-- Sidebar Menu Button -->
   <button class="openbtn" id="sidebarBtn" aria-label="Open sidebar">☰</button>
 
   <!-- Sidebar -->
@@ -130,50 +132,6 @@
     </section>
   </div>
 
-  <!-- Typing Animation Script, Sidebar Toggle, and Animated Headline -->
-  <script>
-    // Typing animation for tagline
-    const text = "A passionate Engineer | Innovator | Creator";
-    let idx = 0;
-    function typeWriter() {
-      if (idx < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(idx);
-        idx++;
-        setTimeout(typeWriter, 60);
-      }
-    }
-    window.onload = typeWriter;
-
-    // Sidebar toggle for mobile
-    const sidebarBtn = document.getElementById('sidebarBtn');
-    const sidebar = document.getElementById('mySidebar');
-    const closeSidebar = document.getElementById('closeSidebar');
-    function openSidebar() {
-      sidebar.classList.add('active');
-    }
-    function closeSidebarFunc() {
-      sidebar.classList.remove('active');
-    }
-    sidebarBtn.addEventListener('click', openSidebar);
-    closeSidebar.addEventListener('click', closeSidebarFunc);
-    // Close sidebar on link click (mobile)
-    document.querySelectorAll('.sidebar a').forEach(link => {
-      link.addEventListener('click', function() {
-        if(window.innerWidth <= 700) closeSidebarFunc();
-      });
-    });
-
-    // Animated headline (rotating words)
-    // Inspired by https://codepen.io/codrops/pen/YXxmYR
-    document.addEventListener("DOMContentLoaded", function() {
-      const words = document.querySelectorAll('.animated-headline .words-wrapper b');
-      let wordIndex = 0;
-      setInterval(() => {
-        words[wordIndex].classList.remove('is-visible');
-        wordIndex = (wordIndex + 1) % words.length;
-        words[wordIndex].classList.add('is-visible');
-      }, 1200);
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
