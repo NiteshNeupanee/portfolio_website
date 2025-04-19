@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
 </head>
 <body>
+  <!-- Spinning Earth Background -->
+  <div id="earth-bg">
+    <div id="earth"></div>
+  </div>
+
   <!-- Sidebar -->
   <div id="mySidebar" class="sidebar">
     <div class="sidebar-header">
@@ -27,7 +32,7 @@
     <header>
       <div class="container">
         <h1>Hi, I'm Nitesh Neupane</h1>
-        <p class="tagline">A passionate Engineer | Innovator | Creator</p>
+        <p class="tagline" id="typing"></p>
         <a href="resume.pdf" download class="btn">Download Resume</a>
         <a href="#projects" class="btn">View Projects</a>
         <!-- Photo Section -->
@@ -36,14 +41,62 @@
         </div>
       </div>
     </header>
+
+    <!-- Example Context Table -->
+    <section id="projects">
+      <h2>Project Highlights</h2>
+      <table class="context-table">
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th>Role</th>
+            <th>Tech Stack</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Portfolio Website</td>
+            <td>Developer</td>
+            <td>HTML, CSS, JS</td>
+            <td>2025</td>
+          </tr>
+          <tr>
+            <td>Smart Home System</td>
+            <td>Lead Engineer</td>
+            <td>IoT, Python, Node.js</td>
+            <td>2024</td>
+          </tr>
+          <tr>
+            <td>AI Chatbot</td>
+            <td>Creator</td>
+            <td>Python, TensorFlow</td>
+            <td>2023</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   </div>
 
+  <!-- Typing Animation Script & Sidebar Script -->
   <script>
+    // Typing animation
+    const text = "A passionate Engineer | Innovator | Creator";
+    let idx = 0;
+    function typeWriter() {
+      if (idx < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(idx);
+        idx++;
+        setTimeout(typeWriter, 60);
+      }
+    }
+    window.onload = typeWriter;
+
+    // Sidebar functions
     function openNav() {
       document.getElementById("mySidebar").style.width = "250px";
       document.getElementById("main").style.marginLeft = "250px";
     }
-
     function closeNav() {
       document.getElementById("mySidebar").style.width = "0";
       document.getElementById("main").style.marginLeft = "0";
