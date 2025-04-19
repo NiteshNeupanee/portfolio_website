@@ -13,11 +13,13 @@
     <div id="earth"></div>
   </div>
 
+  <!-- Sidebar Menu Button (always visible) -->
+  <button class="openbtn" id="sidebarBtn">☰</button>
+
   <!-- Sidebar -->
   <div id="mySidebar" class="sidebar">
     <div class="sidebar-header">
       <h2>N</h2>
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     </div>
     <a href="#projects"><i class="fas fa-folder-open"></i><span class="tooltip">Projects</span></a>
     <a href="#contact"><i class="fas fa-envelope"></i><span class="tooltip">Contact</span></a>
@@ -28,7 +30,6 @@
 
   <!-- Main Content -->
   <div id="main">
-    <button class="openbtn" onclick="openNav()">☰</button>
     <header>
       <div class="container">
         <h1>Hi, I'm Nitesh Neupane</h1>
@@ -78,7 +79,7 @@
     </section>
   </div>
 
-  <!-- Typing Animation Script & Sidebar Script -->
+  <!-- Typing Animation Script -->
   <script>
     // Typing animation
     const text = "A passionate Engineer | Innovator | Creator";
@@ -91,16 +92,6 @@
       }
     }
     window.onload = typeWriter;
-
-    // Sidebar functions
-    function openNav() {
-      document.getElementById("mySidebar").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
-    }
-    function closeNav() {
-      document.getElementById("mySidebar").style.width = "0";
-      document.getElementById("main").style.marginLeft = "0";
-    }
   </script>
 </body>
 </html>
