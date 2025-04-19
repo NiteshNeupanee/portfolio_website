@@ -1,14 +1,6 @@
 /* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   font-family: Arial, sans-serif;
   color: #fff;
@@ -31,10 +23,8 @@ body {
   background: #000;
   overflow: hidden;
 }
-
 #earth {
-  width: 350px;
-  height: 350px;
+  width: 350px; height: 350px;
   border-radius: 50%;
   background: url('https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg') center center/cover no-repeat;
   box-shadow: 0 0 80px 30px rgba(0,0,0,0.7), 0 0 0 10px #00d9ff33;
@@ -43,10 +33,68 @@ body {
   transform: translate(-50%, -50%);
   animation: earth-rotate 16s linear infinite;
 }
-
 @keyframes earth-rotate {
   0% { transform: translate(-50%, -50%) rotate(0deg);}
   100% { transform: translate(-50%, -50%) rotate(360deg);}
+}
+
+/* Top Header with Animated Headline */
+.top-header {
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  padding: 18px 0 12px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  box-shadow: 0 2px 16px #00d9ff33;
+}
+.animated-headline {
+  font-size: 2.1em;
+  font-weight: bold;
+  color: #00d9ff;
+  letter-spacing: 2px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  min-height: 1.2em;
+}
+.words-wrapper {
+  display: inline-block;
+  position: relative;
+}
+.words-wrapper b {
+  position: absolute;
+  opacity: 0;
+  left: 0; right: 0;
+  top: 0;
+  transition: opacity 0.5s, transform 0.5s;
+  transform: translateY(40px) scale(0.95);
+  font-weight: 700;
+  color: #00d9ff;
+  text-shadow: 0 2px 16px #00d9ff88;
+  letter-spacing: 2px;
+}
+.words-wrapper b.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1.08);
+  animation: headline-pop 1s cubic-bezier(.77,0,.18,1) forwards;
+}
+@keyframes headline-pop {
+  0% { opacity: 0; transform: translateY(40px) scale(0.95);}
+  40% { opacity: 1; transform: translateY(-8px) scale(1.11);}
+  100% { opacity: 1; transform: translateY(0) scale(1.08);}
+}
+
+/* Adjust for fixed header */
+#main {
+  margin-top: 70px;
+  transition: margin-left 0.5s;
+  padding: 20px;
+  z-index: 1;
+  position: relative;
+  margin-left: 80px;
 }
 
 /* Sidebar Menu Button (fixed) */
@@ -59,9 +107,9 @@ body {
   padding: 10px 15px;
   border-radius: 4px;
   position: fixed;
-  top: 20px;
+  top: 80px;
   left: 20px;
-  z-index: 1002;
+  z-index: 1200;
   transition: background 0.3s;
 }
 .openbtn:hover {
@@ -69,37 +117,43 @@ body {
   color: #000;
 }
 
-/* Sidebar (collapsed by default, expands on hover) */
+/* Sidebar */
 .sidebar {
   position: fixed;
-  top: 0;
+  top: 70px;
   left: 0;
-  height: 100%;
-  width: 60px; /* collapsed width */
+  height: calc(100% - 70px);
+  width: 60px;
   background-color: rgba(17, 17, 17, 0.95);
   overflow-x: hidden;
   transition: width 0.3s;
-  z-index: 1001;
-  padding-top: 60px;
+  z-index: 1101;
+  padding-top: 40px;
+  box-shadow: 2px 0 12px #00d9ff11;
 }
-
-.sidebar:hover {
-  width: 220px; /* expanded width */
-}
-
 .sidebar-header {
   width: 100%;
   background-color: #111;
   padding: 15px 0;
   text-align: center;
+  position: relative;
 }
-
 .sidebar-header h2 {
   color: #fff;
   font-size: 24px;
   margin-bottom: 0;
 }
-
+.sidebar .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  color: #fff;
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 .sidebar a {
   display: flex;
   align-items: center;
@@ -110,12 +164,10 @@ body {
   position: relative;
   transition: background 0.2s;
 }
-
 .sidebar a:hover {
   color: #fff;
   background: #222;
 }
-
 .sidebar a .tooltip {
   display: none;
   margin-left: 18px;
@@ -127,42 +179,66 @@ body {
   opacity: 0;
   color: #00d9ff;
 }
-
 .sidebar:hover a .tooltip {
   display: inline-block;
   opacity: 1;
 }
-
 .sidebar i {
   min-width: 24px;
   text-align: center;
 }
 
-/* Hide close button (not needed for hover sidebar) */
-.sidebar .closebtn {
-  display: none;
+/* Responsive Sidebar for Mobile */
+@media (max-width: 700px) {
+  .sidebar {
+    width: 0;
+    min-width: 0;
+    padding-top: 0;
+    overflow: hidden;
+    transition: width 0.3s;
+    box-shadow: none;
+  }
+  .sidebar.active {
+    width: 180px;
+    min-width: 180px;
+    padding-top: 40px;
+    overflow: visible;
+    box-shadow: 2px 0 12px #00d9ff22;
+  }
+  .sidebar-header h2 {
+    font-size: 20px;
+  }
+  .sidebar .closebtn {
+    display: block;
+  }
+  #main {
+    margin-left: 0;
+    padding: 10px;
+  }
+  .sidebar:hover a .tooltip,
+  .sidebar a .tooltip {
+    display: inline-block;
+    opacity: 1;
+  }
+  .openbtn {
+    top: 80px;
+    left: 20px;
+  }
+  .top-header {
+    font-size: 1.1em;
+  }
 }
 
-/* Main */
-#main {
-  transition: margin-left 0.5s;
-  padding: 20px;
-  z-index: 1;
-  position: relative;
-  margin-left: 80px; /* leave space for collapsed sidebar */
-}
-
-header .container {
+/* Main Content */
+.hero .container {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 40px;
 }
-
-header h1 {
+header h1, .hero h1 {
   font-size: 2.8em;
   z-index: 2;
   position: relative;
 }
-
 .tagline {
   font-size: 1.4em;
   margin: 15px 0 30px;
@@ -172,7 +248,6 @@ header h1 {
   z-index: 2;
   position: relative;
 }
-
 .btn {
   padding: 10px 20px;
   margin: 10px;
@@ -187,12 +262,9 @@ header h1 {
   z-index: 2;
   position: relative;
 }
-
 .btn:hover {
   background-color: #00aacc;
 }
-
-/* Profile Section */
 .photo-section {
   margin: 40px auto;
   display: flex;
@@ -200,7 +272,6 @@ header h1 {
   z-index: 2;
   position: relative;
 }
-
 .profile-pic {
   width: 220px;
   height: 220px;
@@ -210,7 +281,6 @@ header h1 {
   box-shadow: 0 0 25px #00d9ff;
   transition: transform 0.3s ease;
 }
-
 .profile-pic:hover {
   transform: scale(1.05);
 }
@@ -226,21 +296,18 @@ header h1 {
   z-index: 2;
   position: relative;
 }
-
 .about-section h2 {
   color: #00d9ff;
   margin-bottom: 18px;
   font-size: 2em;
   text-align: center;
 }
-
 .about-content {
   display: flex;
   align-items: center;
   gap: 28px;
   flex-wrap: wrap;
 }
-
 .about-pic {
   width: 120px;
   height: 120px;
@@ -250,7 +317,6 @@ header h1 {
   box-shadow: 0 0 16px #00d9ff;
   margin-bottom: 16px;
 }
-
 .about-content p {
   font-size: 1.1em;
   line-height: 1.7;
@@ -272,18 +338,15 @@ header h1 {
   border-radius: 8px;
   overflow: hidden;
 }
-
 .context-table th, .context-table td {
   border: 1px solid #00d9ff;
   padding: 12px 16px;
   text-align: left;
 }
-
 .context-table th {
   background: #00aacc;
   color: #000;
 }
-
 .context-table tr:nth-child(even) {
   background: rgba(0, 217, 255, 0.05);
 }
@@ -300,96 +363,61 @@ header h1 {
   position: relative;
   text-align: center;
 }
-
 .contact-section h2 {
   color: #00d9ff;
   margin-bottom: 18px;
   font-size: 2em;
 }
-
 .contact-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 18px;
 }
-
 .contact-content p {
   font-size: 1.1em;
   color: #e0f7fa;
   margin-bottom: 0;
 }
-
 .contact-content a {
   color: #00d9ff;
   text-decoration: none;
   font-weight: bold;
 }
-
 .contact-content a:hover {
   text-decoration: underline;
   color: #fff;
 }
-
 .social-links {
   margin-top: 8px;
   display: flex;
   gap: 22px;
   justify-content: center;
 }
-
 .social-links a {
   color: #00d9ff;
   font-size: 2em;
   transition: color 0.2s, transform 0.2s;
 }
-
 .social-links a:hover {
   color: #fff;
   transform: scale(1.15);
 }
 
-/* Responsive */
+/* Responsive Tweaks */
 @media (max-width: 900px) {
-  #earth {
-    width: 200px;
-    height: 200px;
-  }
+  #earth { width: 200px; height: 200px; }
   .context-table, .context-table th, .context-table td {
-    font-size: 0.9em;
-    padding: 8px 6px;
+    font-size: 0.9em; padding: 8px 6px;
   }
-  #main {
-    margin-left: 60px;
-  }
+  #main { margin-left: 60px; }
 }
-
 @media (max-width: 600px) {
-  #earth {
-    width: 120px;
-    height: 120px;
-  }
-  header h1 {
-    font-size: 1.5em;
-  }
-  .openbtn {
-    font-size: 18px;
-    padding: 7px 10px;
-  }
-  .profile-pic {
-    width: 120px;
-    height: 120px;
-  }
-  .about-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-  .about-section, .contact-section {
-    padding: 18px 6px;
-  }
-  #main {
-    margin-left: 60px;
-    padding: 10px;
-  }
+  #earth { width: 120px; height: 120px; }
+  header h1 { font-size: 1.5em; }
+  .openbtn { font-size: 18px; padding: 7px 10px; }
+  .profile-pic { width: 120px; height: 120px; }
+  .about-content { flex-direction: column; align-items: center; gap: 12px; }
+  .about-section, .contact-section { padding: 18px 6px; }
+  #main { margin-left: 0; padding: 10px; }
 }
