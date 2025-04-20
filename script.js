@@ -10,6 +10,14 @@ function typeWriter() {
 }
 window.onload = typeWriter;
 
+// Animate skill bars
+window.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.fill').forEach(bar => {
+    const width = bar.getAttribute('data-width');
+    bar.style.width = width;
+  });
+});
+
 // Parallax stars background
 function createStars() {
   const stars = document.getElementById('stars');
