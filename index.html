@@ -40,22 +40,21 @@
 
   <!-- Main Content -->
   <div id="main">
-    <section class="hero">
-      <div class="container">
+    <!-- ====== Hero Section ====== -->
+    <section class="hero" id="main">
+      <div class="hero-container">
+        <img src="images/profile.jpg" alt="Nitesh Neupane" class="hero-pic" />
         <h1>Hi, I'm Nitesh Neupane</h1>
         <p class="tagline" id="typing"></p>
-        <div class="photo-section">
-          <img src="images/profile.jpg" alt="Nitesh Neupane" class="about-pic responsive-about-pic" />
-        </div>
       </div>
     </section>
 
     <!-- ====== About Me Section ====== -->
     <section id="about" class="about-section">
       <h2>About Me</h2>
-      <div class="about-content">
-        <img src="images/profile.jpg" alt="Nitesh Neupane" class="about-pic responsive-about-pic" />
-        <div>
+      <div class="about-centered">
+        <img src="images/profile.jpg" alt="Nitesh Neupane" class="about-pic" />
+        <div class="about-text">
           <p>
             Hi, I'm <strong>Nitesh Neupane</strong> — an aspiring engineer with a passion for turning ideas into tangible things.
           </p>
@@ -71,142 +70,157 @@
 
     <!-- ====== Skills Section ====== -->
     <section id="skills" class="skills-section">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>SolidWorks, Fusion 360, AutoCAD</li>
-        <li>3D Printing & Rapid Prototyping</li>
-        <li>Arduino, Embedded Systems</li>
-        <li>MATLAB, Python, C/C++</li>
-        <li>Team Leadership & Collaboration</li>
-        <li>Project Management</li>
-        <li>Problem Solving & Critical Thinking</li>
-        <li>Technical Communication</li>
-      </ul>
+      <h2><i class="fas fa-cogs"></i> Skills</h2>
+      <div class="skills-bars">
+        <div class="skill-bar">
+          <span>SolidWorks / Fusion 360 / AutoCAD</span>
+          <div class="bar"><div class="fill" style="width: 90%"></div></div>
+        </div>
+        <div class="skill-bar">
+          <span>3D Printing & Prototyping</span>
+          <div class="bar"><div class="fill" style="width: 85%"></div></div>
+        </div>
+        <div class="skill-bar">
+          <span>Arduino / Embedded Systems</span>
+          <div class="bar"><div class="fill" style="width: 80%"></div></div>
+        </div>
+        <div class="skill-bar">
+          <span>MATLAB / Python / C/C++</span>
+          <div class="bar"><div class="fill" style="width: 75%"></div></div>
+        </div>
+      </div>
+      <div class="skills-badges">
+        <span>Team Leadership</span>
+        <span>Project Management</span>
+        <span>Critical Thinking</span>
+        <span>Technical Communication</span>
+        <span>Collaboration</span>
+      </div>
     </section>
 
     <!-- ====== Experience Section ====== -->
     <section id="experience" class="experience-section">
-      <h2>Experience</h2>
-      <div class="experience-list">
-        <div class="experience-item">
-          <h3>Propulsion Lead – Team Udaan, Kathmandu University</h3>
-          <span class="exp-date">Nov 2023 – Present</span>
-          <p>
-            As the subsystem propulsion lead of UDAAN sounding rocket research and development team, I learned planning, motivating, and strategic thinking. I also designed the ignitor, nozzle, etc. for the solid rocket motor.
-          </p>
+      <h2><i class="fas fa-briefcase"></i> Experience</h2>
+      <div class="experience-timeline">
+
+        <div class="exp-card">
+          <div class="exp-icon"><i class="fas fa-rocket"></i></div>
+          <div>
+            <h3>Propulsion Lead <span>@ Team Udaan, Kathmandu University</span></h3>
+            <span class="exp-date">Nov 2023 – Present</span>
+            <p>
+              Led propulsion subsystem for UDAAN sounding rocket R&D team. Designed ignitors, nozzles, and managed solid rocket motor development. Gained experience in planning, motivating, and strategic thinking.
+            </p>
+          </div>
         </div>
-        <div class="experience-item">
-          <h3>Undergrad Intern – Design Lab, Kathmandu University</h3>
-          <span class="exp-date">July 2022 – Present</span>
-          <p>
-            Learned 3D printing, team collaboration, organizing, and problem solving. Worked under principal investigator, gaining skills in resourcefulness and leadership.
-          </p>
+
+        <div class="exp-card">
+          <div class="exp-icon"><i class="fas fa-cube"></i></div>
+          <div>
+            <h3>Undergrad Intern <span>@ Design Lab, Kathmandu University</span></h3>
+            <span class="exp-date">July 2022 – Present</span>
+            <p>
+              Learned 3D printing, team collaboration, organizing, and problem solving. Worked under principal investigator, gaining skills in resourcefulness and leadership.
+            </p>
+          </div>
         </div>
-        <div class="experience-item">
-          <h3>General Member – Robotics Club, Kathmandu University</h3>
-          <span class="exp-date">April 2022 – Present</span>
-          <p>
-            Built projects like Mars rover, RC planes, and robotic arms. Developed hands-on skills in tinkering, electronics, and teamwork.
-          </p>
+
+        <div class="exp-card">
+          <div class="exp-icon"><i class="fas fa-robot"></i></div>
+          <div>
+            <h3>General Member <span>@ Robotics Club, Kathmandu University</span></h3>
+            <span class="exp-date">April 2022 – Present</span>
+            <p>
+              Built projects like Mars rover, RC planes, and robotic arms. Developed hands-on skills in tinkering, electronics, and teamwork.
+            </p>
+          </div>
         </div>
+
       </div>
     </section>
 
     <!-- ====== Project Highlights Section ====== -->
     <section id="projects" class="projects-section">
-      <h2>Project Highlights</h2>
-      <div class="project-timeline">
+      <h2><i class="fas fa-rocket"></i> Project Highlights</h2>
+      <div class="projects-grid">
 
-        <div class="project-highlight">
-          <div class="project-img">
-            <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-03.jpg?height=540&width=2138&top_left_y=428&top_left_x=178" alt="Model Rocket">
-          </div>
+        <div class="project-card">
+          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-03.jpg?height=540&width=2138&top_left_y=428&top_left_x=178" alt="Model Rocket">
           <div class="project-info">
             <h3>Model Rocket ("Pandav")</h3>
-            <p>Pandav is a mid-range rocket weighing 700g, developed to test subsystems like parachute deployment and flight datalogger. Cardboard body tube, epoxy-reinforced, powered by a G25W equivalent motor, Mach 0.32, apogee 632m.</p>
+            <p>Pandav is a mid-range rocket (700g) for subsystem testing—parachute, datalogger, etc. Achieved Mach 0.32 and 632m apogee with a G25W motor.</p>
           </div>
         </div>
 
-        <div class="project-highlight">
-          <div class="project-img">
-            <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-05.jpg?height=1452&width=1092&top_left_y=275&top_left_x=1361" alt="Equatorial Mount">
-          </div>
+        <div class="project-card">
+          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-05.jpg?height=1452&width=1092&top_left_y=275&top_left_x=1361" alt="Equatorial Mount">
           <div class="project-info">
             <h3>Equatorial Mount</h3>
-            <p>Mount for tracking planets and nebulae, cancelling Earth's rotation. Polar axis at 27°, concrete base for minimal vibration. Next: add motors and aluminum body.</p>
+            <p>Mount for tracking planets and nebulae; cancels Earth's rotation. Rigid concrete base, future plans for motorization and aluminum body.</p>
           </div>
         </div>
 
-        <div class="project-highlight">
-          <div class="project-img">
-            <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-06.jpg?height=913&width=1034&top_left_y=357&top_left_x=1409" alt="Rocket Motor Thrust Tester">
-          </div>
+        <div class="project-card">
+          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-06.jpg?height=913&width=1034&top_left_y=357&top_left_x=1409" alt="Rocket Motor Thrust Tester">
           <div class="project-info">
-            <h3>Rocket Motor Thrust Tester V1</h3>
-            <p>Device to measure thrust of solid rocket motors (up to 20kg) using a load cell and Arduino Nano. Data stored on SD card. Used for real-world vs. simulated thrust comparison.</p>
+            <h3>Rocket Motor Thrust Tester</h3>
+            <p>Device to measure thrust of solid rocket motors (up to 20kg) using a load cell and Arduino Nano. Used for real vs. simulated thrust comparison.</p>
           </div>
         </div>
 
-        <div class="project-highlight">
-          <div class="project-img">
-            <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-08.jpg?height=984&width=744&top_left_y=436&top_left_x=1573" alt="SMIOS Prototype">
-          </div>
+        <div class="project-card">
+          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-08.jpg?height=984&width=744&top_left_y=436&top_left_x=1573" alt="SMIOS Prototype">
           <div class="project-info">
             <h3>Prototyping of SMIOS</h3>
-            <p>Single Man Operated Stretch (SMIOS): a portable stretcher for emergency transport in remote areas. Designed for comfort and practicality, inspired by traditional Nepali Doko.</p>
+            <p>Single Man Operated Stretcher: portable, comfortable, inspired by Nepali Doko for emergency patient transport in remote areas.</p>
           </div>
         </div>
 
-        <div class="project-highlight">
-          <div class="project-img">
-            <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-09.jpg?height=1582&width=1222&top_left_y=290&top_left_x=1277" alt="Project Udaya (HAB)">
-          </div>
+        <div class="project-card">
+          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-09.jpg?height=1582&width=1222&top_left_y=290&top_left_x=1277" alt="Project Udaya (HAB)">
           <div class="project-info">
             <h3>Project Udaya (HAB)</h3>
-            <p>High altitude balloon project at Kathmandu University. Designed shock absorption structures for CanSat payloads; performed simulations for deformation and elasticity.</p>
+            <p>High altitude balloon project. Designed shock absorption structures for CanSat payloads; performed simulation for deformation and elasticity.</p>
           </div>
         </div>
 
-        <div class="project-highlight">
-          <div class="project-img">
-            <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-10.jpg?height=1302&width=990&top_left_y=232&top_left_x=1415" alt="RC Plane">
-          </div>
+        <div class="project-card">
+          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-10.jpg?height=1302&width=990&top_left_y=232&top_left_x=1415" alt="RC Plane">
           <div class="project-info">
             <h3>RC Plane Restoration</h3>
-            <p>Repaired and restored a Skywalker RC plane kit. Worked on electronics, RC transmitter/receiver, flight mechanics (roll, yaw, pitch), servos, and BLDC motor.</p>
+            <p>Repaired and restored a Skywalker RC plane kit. Worked on electronics, RC transmitter/receiver, flight mechanics, servos, and BLDC motor.</p>
           </div>
         </div>
 
-        <div class="project-highlight">
-          <div class="project-img">
-            <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-11.jpg?height=1514&width=2295&top_left_y=275&top_left_x=127" alt="Telescope Adapter">
-          </div>
+        <div class="project-card">
+          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-11.jpg?height=1514&width=2295&top_left_y=275&top_left_x=127" alt="Telescope Adapter">
           <div class="project-info">
             <h3>Telescope Adapter</h3>
             <p>Custom adapter to connect telescope to EQ mount. Prototyped and 3D printed in PLA for secure, vibration-free mounting.</p>
           </div>
         </div>
+
       </div>
     </section>
 
     <!-- ====== Contact Me Section ====== -->
     <section id="contact" class="contact-section">
-      <h2>Contact Me</h2>
-      <div class="contact-content">
-        <p>
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:niteshneupane.16@gmail.com">niteshneupane.16@gmail.com</a>
-        </p>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/nitesh-neupane/" target="_blank" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://www.youtube.com/@noobneutron" target="_blank" title="YouTube">
-            <i class="fab fa-youtube"></i>
-          </a>
-          <a href="https://www.instagram.com/nitesh_neupaneeee/" target="_blank" title="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
+      <div class="contact-card">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:niteshneupane.16@gmail.com">niteshneupane.16@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+9779841632440">+977 9841632440</a>
+          </div>
+          <div class="contact-socials">
+            <a href="https://www.linkedin.com/in/nitesh-neupane/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/@noobneutron" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/nitesh_neupaneeee/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
         </div>
       </div>
     </section>
