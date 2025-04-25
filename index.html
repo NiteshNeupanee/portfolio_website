@@ -1,223 +1,151 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nitesh Neupane | Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
-</head>
-<body>
-  <!-- Rotating Galaxy Video Background -->
-  <video id="galaxy-bg" autoplay loop muted playsinline>
-    <source src="https://assets.mixkit.co/videos/preview/mixkit-rotating-galaxy-in-space-1613-large.mp4" type="video/mp4">
-  </video>
-  <!-- Animated stars and satellites -->
-  <div id="space-bg">
-    <div id="stars"></div>
-    <canvas id="satellite-canvas"></canvas>
-  </div>
+// Typing animation for tagline
+const text = "A passionate Engineer | Innovator | Creator";
+let idx = 0;
+function typeWriter() {
+  if (idx < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(idx);
+    idx++;
+    setTimeout(typeWriter, 60);
+  }
+}
+window.onload = typeWriter;
 
-  <!-- Top Header -->
-  <header class="top-header">
-    <div class="header-content">
-      <span class="catchy-line">Engineering Ideas into Reality.</span>
-      <div class="header-buttons">
-        <a href="https://github.com/NiteshNeupanee/portfolio_website/blob/main/Nitesh_Neupane_Resume.pdf" target="_blank" class="btn btn-header">Download Resume</a>
-        <a href="https://github.com/NiteshNeupanee/portfolio_website/blob/main/engeneering%20portfolio.pdf" target="_blank" class="btn btn-header">View Projects</a>
-      </div>
-    </div>
-  </header>
+// Animate skill bars
+window.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.fill').forEach(bar => {
+    const width = bar.getAttribute('data-width');
+    bar.style.width = width;
+  });
+});
 
-  <!-- Sidebar -->
-  <nav class="sidebar" aria-label="Main Navigation">
-    <div class="sidebar-header">
-      <h2>N</h2>
-    </div>
-    <a href="#main" class="sidebar-link" id="nav-home"><i class="fas fa-home"></i><span class="tooltip">Home</span><span class="label">Home</span></a>
-    <a href="#about" class="sidebar-link" id="nav-about"><i class="fas fa-user"></i><span class="tooltip">About</span><span class="label">About</span></a>
-    <a href="#skills" class="sidebar-link" id="nav-skills"><i class="fas fa-cogs"></i><span class="tooltip">Skills</span><span class="label">Skills</span></a>
-    <a href="#experience" class="sidebar-link" id="nav-experience"><i class="fas fa-briefcase"></i><span class="tooltip">Experience</span><span class="label">Experience</span></a>
-    <a href="#projects" class="sidebar-link" id="nav-projects"><i class="fas fa-rocket"></i><span class="tooltip">Projects</span><span class="label">Projects</span></a>
-    <a href="#contact" class="sidebar-link" id="nav-contact"><i class="fas fa-envelope"></i><span class="tooltip">Contact</span><span class="label">Contact</span></a>
-  </nav>
+// Parallax stars background
+function createStars() {
+  const stars = document.getElementById('stars');
+  stars.innerHTML = '';
+  let w = window.innerWidth, h = window.innerHeight;
+  for (let i = 0; i < 100; i++) {
+    let star = document.createElement('div');
+    let size = Math.random() * 2 + 1;
+    star.style.position = 'absolute';
+    star.style.width = size + 'px';
+    star.style.height = size + 'px';
+    star.style.background = 'white';
+    star.style.borderRadius = '50%';
+    star.style.top = Math.random() * h + 'px';
+    star.style.left = Math.random() * w + 'px';
+    star.style.opacity = Math.random() * 0.8 + 0.2;
+    star.style.boxShadow = `0 0 6px 2px #00d9ff88`;
+    stars.appendChild(star);
+  }
+}
+window.addEventListener('resize', createStars);
+createStars();
 
-  <!-- Main Content -->
-  <div id="main">
-    <!-- ====== Hero Section ====== -->
-    <section class="hero" id="main">
-      <div class="hero-container">
-        <img src="images/profile.jpg" alt="Nitesh Neupane" class="hero-pic" />
-        <h1>Hi, I'm Nitesh Neupane</h1>
-        <p class="tagline" id="typing"></p>
-      </div>
-    </section>
+// LEO satellites animation
+const canvas = document.getElementById('satellite-canvas');
+const ctx = canvas.getContext('2d');
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
 
-    <!-- ====== About Me Section ====== -->
-    <section id="about" class="about-section">
-      <h2>About Me</h2>
-      <div class="about-centered">
-        <img src="images/profile.jpg" alt="Nitesh Neupane" class="about-pic" />
-        <div class="about-text">
-          <p>
-            Hi, I'm <strong>Nitesh Neupane</strong> — an aspiring engineer with a passion for turning ideas into tangible things.
-          </p>
-          <p>
-            I’m a mechanical engineering student at Kathmandu University with a passion for building things that move, fly, or make a difference. From rockets with Team Udaan to stargazing and exploring the cosmos, I love blending hands-on engineering with curiosity about the universe.
-          </p>
-          <p>
-            Whether it's designing, coding, or questioning how things work, I'm always up for a challenge.
-          </p>
-        </div>
-      </div>
-    </section>
+const satellites = [];
+const earthCenter = () => ({
+  x: window.innerWidth / 2,
+  y: window.innerHeight / 2
+});
+for (let i = 0; i < 6; i++) {
+  satellites.push({
+    angle: Math.random() * Math.PI * 2,
+    radius: 180 + Math.random() * 60,
+    speed: 0.003 + Math.random() * 0.002,
+    size: 10 + Math.random() * 8,
+    color: "#00d9ff"
+  });
+}
 
-    <!-- ====== Skills Section ====== -->
-    <section id="skills" class="skills-section">
-      <h2><i class="fas fa-cogs"></i> Skills</h2>
-      <div class="skills-bars">
-        <div class="skill-bar">
-          <span>SolidWorks / Fusion 360 / AutoCAD</span>
-          <div class="bar"><div class="fill" data-width="90%"></div></div>
-        </div>
-        <div class="skill-bar">
-          <span>3D Printing & Prototyping</span>
-          <div class="bar"><div class="fill" data-width="85%"></div></div>
-        </div>
-        <div class="skill-bar">
-          <span>Arduino / Embedded Systems</span>
-          <div class="bar"><div class="fill" data-width="80%"></div></div>
-        </div>
-        <div class="skill-bar">
-          <span>MATLAB / Python / C/C++</span>
-          <div class="bar"><div class="fill" data-width="75%"></div></div>
-        </div>
-      </div>
-      <div class="skills-badges">
-        <span>Team Leadership</span>
-        <span>Project Management</span>
-        <span>Critical Thinking</span>
-        <span>Technical Communication</span>
-        <span>Collaboration</span>
-      </div>
-    </section>
+function drawSatellites() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const {x, y} = earthCenter();
+  satellites.forEach(sat => {
+    sat.angle += sat.speed;
+    let sx = x + sat.radius * Math.cos(sat.angle);
+    let sy = y + sat.radius * Math.sin(sat.angle) * 0.7;
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(sx, sy, sat.size/2, 0, Math.PI * 2);
+    ctx.fillStyle = sat.color;
+    ctx.shadowColor = "#00d9ff";
+    ctx.shadowBlur = 8;
+    ctx.fill();
+    ctx.restore();
 
-    <!-- ====== Experience Section ====== -->
-    <section id="experience" class="experience-section">
-      <h2><i class="fas fa-briefcase"></i> Experience</h2>
-      <div class="experience-timeline">
-        <div class="exp-card">
-          <div class="exp-icon"><i class="fas fa-rocket"></i></div>
-          <div>
-            <h3>Propulsion Lead <span>@ Team Udaan, Kathmandu University</span></h3>
-            <span class="exp-date">Nov 2023 – Present</span>
-            <p>
-              As the subsystem propulsion lead of UDAAN sounding rocket research and development team, I learned planning, motivating, and strategic thinking. I also designed the ignitor, nozzle, etc. for the solid rocket motor.
-            </p>
-          </div>
-        </div>
-        <div class="exp-card">
-          <div class="exp-icon"><i class="fas fa-cube"></i></div>
-          <div>
-            <h3>Undergrad Intern <span>@ Design Lab, Kathmandu University</span></h3>
-            <span class="exp-date">July 2022 – Present</span>
-            <p>
-              Learned 3D printing, team collaboration, organizing, and problem solving. Worked under principal investigator, gaining skills in resourcefulness and leadership.
-            </p>
-          </div>
-        </div>
-        <div class="exp-card">
-          <div class="exp-icon"><i class="fas fa-robot"></i></div>
-          <div>
-            <h3>General Member <span>@ Robotics Club, Kathmandu University</span></h3>
-            <span class="exp-date">April 2022 – Present</span>
-            <p>
-              Built projects like Mars rover, RC planes, and robotic arms. Developed hands-on skills in tinkering, electronics, and teamwork.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    // Draw satellite "solar panels"
+    ctx.save();
+    ctx.strokeStyle = "#fff";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(sx - sat.size, sy);
+    ctx.lineTo(sx + sat.size, sy);
+    ctx.stroke();
+    ctx.restore();
+  });
+  requestAnimationFrame(drawSatellites);
+}
+drawSatellites();
 
-    <!-- ====== Project Highlights Section ====== -->
-    <section id="projects" class="projects-section">
-      <h2><i class="fas fa-rocket"></i> Project Highlights</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-03.jpg?height=540&width=2138&top_left_y=428&top_left_x=178" alt="Model Rocket">
-          <div class="project-info">
-            <h3>Model Rocket ("Pandav")</h3>
-            <p>Pandav is a mid-range rocket weighing 700g, developed to test subsystems like parachute deployment and flight datalogger. Cardboard body tube, epoxy-reinforced, powered by a G25W equivalent motor, Mach 0.32, apogee 632m.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-05.jpg?height=1452&width=1092&top_left_y=275&top_left_x=1361" alt="Equatorial Mount">
-          <div class="project-info">
-            <h3>Equatorial Mount</h3>
-            <p>Mount for tracking planets and nebulae, cancelling Earth's rotation. Polar axis at 27°, concrete base for minimal vibration. Next: add motors and aluminum body.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-06.jpg?height=913&width=1034&top_left_y=357&top_left_x=1409" alt="Rocket Motor Thrust Tester">
-          <div class="project-info">
-            <h3>Rocket Motor Thrust Tester V1</h3>
-            <p>Device to measure thrust of solid rocket motors (up to 20kg) using a load cell and Arduino Nano. Data stored on SD card. Used for real-world vs. simulated thrust comparison.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-08.jpg?height=984&width=744&top_left_y=436&top_left_x=1573" alt="SMIOS Prototype">
-          <div class="project-info">
-            <h3>Prototyping of SMIOS</h3>
-            <p>Single Man Operated Stretch (SMIOS): a portable stretcher for emergency transport in remote areas. Designed for comfort and practicality, inspired by traditional Nepali Doko.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-09.jpg?height=1582&width=1222&top_left_y=290&top_left_x=1277" alt="Project Udaya (HAB)">
-          <div class="project-info">
-            <h3>Project Udaya (HAB)</h3>
-            <p>High altitude balloon project at Kathmandu University. Designed shock absorption structures for CanSat payloads; performed simulations for deformation and elasticity.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-10.jpg?height=1302&width=990&top_left_y=232&top_left_x=1415" alt="RC Plane">
-          <div class="project-info">
-            <h3>RC Plane Restoration</h3>
-            <p>Repaired and restored a Skywalker RC plane kit. Worked on electronics, RC transmitter/receiver, flight mechanics (roll, yaw, pitch), servos, and BLDC motor.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-11.jpg?height=1514&width=2295&top_left_y=275&top_left_x=127" alt="Telescope Adapter">
-          <div class="project-info">
-            <h3>Telescope Adapter</h3>
-            <p>Custom adapter to connect telescope to EQ mount. Prototyped and 3D printed in PLA for secure, vibration-free mounting.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+// --- SCROLLSPY SIDEBAR HIGHLIGHT ---
 
-    <!-- ====== Contact Me Section ====== -->
-    <section id="contact" class="contact-section">
-      <div class="contact-card">
-        <h2>Contact Me</h2>
-        <div class="contact-info">
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:niteshneupane.16@gmail.com">niteshneupane.16@gmail.com</a>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-phone"></i>
-            <a href="tel:+9779841632440">+977 9841632440</a>
-          </div>
-          <div class="contact-socials">
-            <a href="https://www.linkedin.com/in/nitesh-neupane/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.youtube.com/@noobneutron" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/nitesh_neupaneeee/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+// Map each section to its sidebar link ID
+const scrollspySections = [
+  { id: "main", nav: "nav-home" },
+  { id: "about", nav: "nav-about" },
+  { id: "skills", nav: "nav-skills" },
+  { id: "experience", nav: "nav-experience" },
+  { id: "projects", nav: "nav-projects" },
+  { id: "contact", nav: "nav-contact" }
+];
 
-  <script src="script.js"></script>
-</body>
-</html>
+function activateSidebarLink() {
+  let scrollPos = window.scrollY || document.documentElement.scrollTop;
+  let offset = 120; // adjust for your header height
+  let currentSection = scrollspySections[0].id;
+  for (let i = 0; i < scrollspySections.length; i++) {
+    let section = document.getElementById(scrollspySections[i].id);
+    if (section && section.offsetTop - offset <= scrollPos) {
+      currentSection = scrollspySections[i].id;
+    }
+  }
+  scrollspySections.forEach(s => {
+    let nav = document.getElementById(s.nav);
+    if (nav) {
+      if (s.id === currentSection) {
+        nav.classList.add("active");
+      } else {
+        nav.classList.remove("active");
+      }
+    }
+  });
+}
+
+// Smooth scroll on sidebar click (optional, for a better UX)
+document.querySelectorAll('.sidebar-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 80, // adjust for header
+          behavior: 'smooth'
+        });
+      }
+    }
+  });
+});
+
+window.addEventListener("scroll", activateSidebarLink);
+window.addEventListener("DOMContentLoaded", activateSidebarLink);
