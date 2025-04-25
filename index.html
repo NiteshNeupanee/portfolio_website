@@ -8,7 +8,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
 </head>
 <body>
-  <!-- Earth from ISS background and animated elements -->
+  <!-- Rotating Galaxy Video Background -->
+  <video id="galaxy-bg" autoplay loop muted playsinline>
+    <source src="https://assets.mixkit.co/videos/preview/mixkit-rotating-galaxy-in-space-1613-large.mp4" type="video/mp4">
+  </video>
+  <!-- Animated stars and satellites -->
   <div id="space-bg">
     <div id="stars"></div>
     <canvas id="satellite-canvas"></canvas>
@@ -30,12 +34,12 @@
     <div class="sidebar-header">
       <h2>N</h2>
     </div>
-    <a href="#main"><i class="fas fa-home"></i><span class="tooltip">Home</span><span class="label">Home</span></a>
-    <a href="#about"><i class="fas fa-user"></i><span class="tooltip">About</span><span class="label">About</span></a>
-    <a href="#skills"><i class="fas fa-cogs"></i><span class="tooltip">Skills</span><span class="label">Skills</span></a>
-    <a href="#experience"><i class="fas fa-briefcase"></i><span class="tooltip">Experience</span><span class="label">Experience</span></a>
-    <a href="#projects"><i class="fas fa-rocket"></i><span class="tooltip">Projects</span><span class="label">Projects</span></a>
-    <a href="#contact"><i class="fas fa-envelope"></i><span class="tooltip">Contact</span><span class="label">Contact</span></a>
+    <a href="#main" class="sidebar-link" id="nav-home"><i class="fas fa-home"></i><span class="tooltip">Home</span><span class="label">Home</span></a>
+    <a href="#about" class="sidebar-link" id="nav-about"><i class="fas fa-user"></i><span class="tooltip">About</span><span class="label">About</span></a>
+    <a href="#skills" class="sidebar-link" id="nav-skills"><i class="fas fa-cogs"></i><span class="tooltip">Skills</span><span class="label">Skills</span></a>
+    <a href="#experience" class="sidebar-link" id="nav-experience"><i class="fas fa-briefcase"></i><span class="tooltip">Experience</span><span class="label">Experience</span></a>
+    <a href="#projects" class="sidebar-link" id="nav-projects"><i class="fas fa-rocket"></i><span class="tooltip">Projects</span><span class="label">Projects</span></a>
+    <a href="#contact" class="sidebar-link" id="nav-contact"><i class="fas fa-envelope"></i><span class="tooltip">Contact</span><span class="label">Contact</span></a>
   </nav>
 
   <!-- Main Content -->
@@ -102,7 +106,6 @@
     <section id="experience" class="experience-section">
       <h2><i class="fas fa-briefcase"></i> Experience</h2>
       <div class="experience-timeline">
-
         <div class="exp-card">
           <div class="exp-icon"><i class="fas fa-rocket"></i></div>
           <div>
@@ -113,7 +116,6 @@
             </p>
           </div>
         </div>
-
         <div class="exp-card">
           <div class="exp-icon"><i class="fas fa-cube"></i></div>
           <div>
@@ -124,7 +126,6 @@
             </p>
           </div>
         </div>
-
         <div class="exp-card">
           <div class="exp-icon"><i class="fas fa-robot"></i></div>
           <div>
@@ -135,7 +136,6 @@
             </p>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -143,7 +143,6 @@
     <section id="projects" class="projects-section">
       <h2><i class="fas fa-rocket"></i> Project Highlights</h2>
       <div class="projects-grid">
-
         <div class="project-card">
           <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-03.jpg?height=540&width=2138&top_left_y=428&top_left_x=178" alt="Model Rocket">
           <div class="project-info">
@@ -151,7 +150,6 @@
             <p>Pandav is a mid-range rocket weighing 700g, developed to test subsystems like parachute deployment and flight datalogger. Cardboard body tube, epoxy-reinforced, powered by a G25W equivalent motor, Mach 0.32, apogee 632m.</p>
           </div>
         </div>
-
         <div class="project-card">
           <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-05.jpg?height=1452&width=1092&top_left_y=275&top_left_x=1361" alt="Equatorial Mount">
           <div class="project-info">
@@ -159,7 +157,6 @@
             <p>Mount for tracking planets and nebulae, cancelling Earth's rotation. Polar axis at 27°, concrete base for minimal vibration. Next: add motors and aluminum body.</p>
           </div>
         </div>
-
         <div class="project-card">
           <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-06.jpg?height=913&width=1034&top_left_y=357&top_left_x=1409" alt="Rocket Motor Thrust Tester">
           <div class="project-info">
@@ -167,7 +164,6 @@
             <p>Device to measure thrust of solid rocket motors (up to 20kg) using a load cell and Arduino Nano. Data stored on SD card. Used for real-world vs. simulated thrust comparison.</p>
           </div>
         </div>
-
         <div class="project-card">
           <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-08.jpg?height=984&width=744&top_left_y=436&top_left_x=1573" alt="SMIOS Prototype">
           <div class="project-info">
@@ -175,7 +171,6 @@
             <p>Single Man Operated Stretch (SMIOS): a portable stretcher for emergency transport in remote areas. Designed for comfort and practicality, inspired by traditional Nepali Doko.</p>
           </div>
         </div>
-
         <div class="project-card">
           <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-09.jpg?height=1582&width=1222&top_left_y=290&top_left_x=1277" alt="Project Udaya (HAB)">
           <div class="project-info">
@@ -183,7 +178,6 @@
             <p>High altitude balloon project at Kathmandu University. Designed shock absorption structures for CanSat payloads; performed simulations for deformation and elasticity.</p>
           </div>
         </div>
-
         <div class="project-card">
           <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-10.jpg?height=1302&width=990&top_left_y=232&top_left_x=1415" alt="RC Plane">
           <div class="project-info">
@@ -191,7 +185,6 @@
             <p>Repaired and restored a Skywalker RC plane kit. Worked on electronics, RC transmitter/receiver, flight mechanics (roll, yaw, pitch), servos, and BLDC motor.</p>
           </div>
         </div>
-
         <div class="project-card">
           <img src="https://cdn.mathpix.com/cropped/2025_04_19_6cbec3a2c06ae82d62c5g-11.jpg?height=1514&width=2295&top_left_y=275&top_left_x=127" alt="Telescope Adapter">
           <div class="project-info">
@@ -211,7 +204,10 @@
             <i class="fas fa-envelope"></i>
             <a href="mailto:niteshneupane.16@gmail.com">niteshneupane.16@gmail.com</a>
           </div>
-          
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+9779841632440">+977 9841632440</a>
+          </div>
           <div class="contact-socials">
             <a href="https://www.linkedin.com/in/nitesh-neupane/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.youtube.com/@noobneutron" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
