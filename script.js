@@ -95,3 +95,57 @@ function drawSatellites() {
   requestAnimationFrame(drawSatellites);
 }
 drawSatellites();
+
+// --- SCROLLSPY SIDEBAR HIGHLIGHT ---
+
+// Map each section to its sidebar link ID
+const scrollspySections = [
+  { id: "main", nav: "nav-home" },
+  { id: "about", nav: "nav-about" },
+  { id: "skills", nav: "nav-skills" },
+  { id: "experience", nav: "nav-experience" },
+  { id: "projects", nav: "nav-projects" },
+  { id: "contact", nav: "nav-contact" }
+];
+
+function activateSidebarLink() {
+  let scrollPos = window.scrollY || document.documentElement.scrollTop;
+  let offset = 120; // adjust for your header height
+  let currentSection = scrollspySections[0].id;
+  for (let i = 0; i < scrollspySections.length; i++) {
+    let section = document.getElementById(scrollspySections[i].id);
+    if (section && section.offsetTop - offset <= scrollPos) {
+      currentSection = scrollspySections[i].id;
+    }
+  }
+  scrollspySections.forEach(s => {
+    let nav = document.getElementById(s.nav);
+    if (nav) {
+      if (s.id === currentSection) {
+        nav.classList.add("active");
+      } else {
+        nav.classList.remove("active");
+      }
+    }
+  });
+}
+
+// Smooth scroll on sidebar click (optional, for a better UX)
+document.querySelectorAll('.sidebar-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 80, // adjust for header
+          behavior: 'smooth'
+        });
+      }
+    }
+  });
+});
+
+window.addEventListener("scroll", activateSidebarLink);
+window.addEventListener("DOMContentLoaded", activateSidebarLink);
