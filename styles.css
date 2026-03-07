@@ -1,10 +1,14 @@
 :root {
-  --nebula-magenta: #ff2d75;
-  --nebula-purple: #7b2ff7;
-  --nebula-teal: #077e7e;
-  --nebula-deep-pink: #c41847;
-  --space-dark: #0a0a0f;
-  --accent-glow: rgba(255, 45, 117, 0.5);
+  --color-camel: #AF9671;
+  --color-coffee: #140F13;
+  --color-cerulean: #0082AF;
+  --color-grey-olive: #999A95;
+  --color-tan: #CFB083;
+  --nebula-magenta: var(--color-cerulean);
+  /* Mapping old names to new for easier migration */
+  --nebula-purple: var(--color-camel);
+  --space-dark: var(--color-coffee);
+  --accent-glow: rgba(0, 130, 175, 0.5);
 }
 
 body {
