@@ -82,8 +82,8 @@ document.querySelectorAll('.sidebar a').forEach(link => {
 
   // Plume parameters
   const NOZZLE_EXIT_DIAMETER = 120; // px, matches SVG diverging exit width
-  const DIAMOND_SPACING = NOZZLE_EXIT_DIAMETER * 0.7;
-  const MAX_DIAMONDS = isMobile ? 3 : 5;
+  const navLinks = document.querySelectorAll('.sidebar a');
+  const MAX_DIAMONDS = navLinks.length;
   let CANVAS_W = 0;
   let CANVAS_H = 0;
   let CENTER_X = 0;
@@ -174,7 +174,7 @@ document.querySelectorAll('.sidebar a').forEach(link => {
       // State 5: full throttle — 4–5 diamonds
       const t = Math.min(1, (p - 0.60) / 0.35);
       target.thrust = lerp(0.75, 1, t);
-      target.plumeLength = lerp(380, CANVAS_H - 20, t);
+      target.plumeLength = lerp(380, CANVAS_H + 50, t);
       target.diamondCount = lerp(3, MAX_DIAMONDS, t);
       target.diamondBrightness = lerp(0.85, 1, t);
       target.coreOpacity = lerp(0.95, 1, t);
@@ -269,16 +269,23 @@ document.querySelectorAll('.sidebar a').forEach(link => {
     // --- Draw shock diamonds ---
     const numDiamonds = Math.floor(current.diamondCount);
     if (numDiamonds > 0 && current.diamondBrightness > 0.01) {
+      const canvasRect = canvas.getBoundingClientRect();
+      const diamondYs = Array.from(navLinks).map(link => {
+        const r = link.getBoundingClientRect();
+        return r.top + r.height / 2 - canvasRect.top;
+      });
+
       for (let i = 0; i < numDiamonds; i++) {
-        const diamondY = DIAMOND_SPACING * (i + 0.8);
-        if (diamondY > plumeLen) break;
+        if (i >= diamondYs.length) break;
+        const diamondY = diamondYs[i];
+        if (diamondY < 0 || diamondY > plumeLen) continue;
 
         const dFlicker = 1 + (Math.random() - 0.5) * 0.04;
         const brightness = current.diamondBrightness * dFlicker;
 
         // Bright compressed shock node (diamond shape)
-        const dw = current.flameWidth * (0.35 - i * 0.04);
-        const dh = DIAMOND_SPACING * 0.3;
+        const dw = current.flameWidth * Math.max(0.15, (0.35 - i * 0.04));
+        const dh = 24; // Fixed diamond half-height
 
         // Mach disk (bright horizontal band at diamond center)
         const diskGrad = ctx.createRadialGradient(cx, diamondY, 0, cx, diamondY, dw);
@@ -297,9 +304,9 @@ document.querySelectorAll('.sidebar a').forEach(link => {
         ctx.fill();
 
         // Expansion fan (darker zone after each diamond)
-        if (i < numDiamonds - 1) {
+        if (i < numDiamonds - 1 && i + 1 < diamondYs.length) {
           const fanY = diamondY + dh;
-          const fanEnd = diamondY + DIAMOND_SPACING * 0.6;
+          const fanEnd = diamondYs[i + 1] - dh;
           const fanGrad = ctx.createLinearGradient(cx, fanY, cx, fanEnd);
           fanGrad.addColorStop(0, `rgba(20, 10, 5, ${brightness * 0.15})`);
           fanGrad.addColorStop(1, 'rgba(20, 10, 5, 0)');
