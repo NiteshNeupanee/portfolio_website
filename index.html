@@ -4,198 +4,197 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nitesh Neupane | Portfolio</title>
+  <title>Nitesh Neupane — Mechanical Engineer</title>
+  <meta name="description"
+    content="Portfolio of Nitesh Neupane — Mechanical Engineer specializing in rocket propulsion, aerospace systems, and product design at Kathmandu University." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-  <!-- Earth from ISS background and animated elements -->
-  <div id="space-bg">
-    <div id="stars"></div>
-    <canvas id="satellite-canvas"></canvas>
-  </div>
+
+  <!-- Atmospheric background -->
+  <div id="atmosphere"></div>
 
   <!-- Top Header -->
   <header class="top-header">
     <div class="header-content">
-      <span class="catchy-line">Engineering Ideas into Reality.</span>
-      <div class="header-buttons">
-        <a href="./Nitesh_Neupane_Resume.pdf" target="_blank" class="btn btn-header"><i class="fas fa-file-pdf"></i>
-          View Resume</a>
-        <a href="./engeneering portfolio.pdf" target="_blank" class="btn btn-header"><i
-            class="fas fa-project-diagram"></i> View Projects</a>
-      </div>
+      <span class="header-name">NITESH NEUPANE</span>
+      <nav class="header-links">
+        <a href="./Nitesh_Neupane_Resume.pdf" target="_blank">Resume</a>
+        <a href="./engeneering portfolio.pdf" target="_blank">Projects</a>
+      </nav>
     </div>
   </header>
 
   <!-- Sidebar -->
   <nav class="sidebar" aria-label="Main Navigation">
     <div class="sidebar-header">
-      <div class="logo-custom"><span>N</span></div>
+      <div class="logo-monogram">NN</div>
     </div>
-    <a href="#main"><span class="icon-custom icon-home"></span><span class="tooltip">Home</span><span
-        class="label">Home</span></a>
-    <a href="#about"><span class="icon-custom icon-user"></span><span class="tooltip">About</span><span
-        class="label">About</span></a>
-    <a href="#skills"><span class="icon-custom icon-cogs"></span><span class="tooltip">Skills</span><span
-        class="label">Skills</span></a>
-    <a href="#experience"><span class="icon-custom icon-briefcase"></span><span class="tooltip">Experience</span><span
-        class="label">Experience</span></a>
-    <a href="#projects"><span class="icon-custom icon-rocket"></span><span class="tooltip">Projects</span><span
-        class="label">Projects</span></a>
-    <a href="#contact"><span class="icon-custom icon-envelope"></span><span class="tooltip">Contact</span><span
-        class="label">Contact</span></a>
+    <a href="#hero" id="nav-home"><i class="fas fa-home"></i><span class="nav-label">Home</span></a>
+    <a href="#about" id="nav-about"><i class="fas fa-user"></i><span class="nav-label">About</span></a>
+    <a href="#skills" id="nav-skills"><i class="fas fa-cogs"></i><span class="nav-label">Skills</span></a>
+    <a href="#experience" id="nav-experience"><i class="fas fa-briefcase"></i><span
+        class="nav-label">Experience</span></a>
+    <a href="#projects" id="nav-projects"><i class="fas fa-rocket"></i><span class="nav-label">Projects</span></a>
+    <a href="#contact" id="nav-contact"><i class="fas fa-envelope"></i><span class="nav-label">Contact</span></a>
   </nav>
 
   <!-- Main Content -->
   <div id="main">
+
     <!-- ====== Hero Section ====== -->
-    <section class="hero" id="main">
+    <section class="hero" id="hero">
       <div class="hero-container">
         <img src="images/profile.jpg" alt="Nitesh Neupane" class="hero-pic" />
-        <h1>Hi, I'm Nitesh Neupane</h1>
-        <p class="tagline" id="typing"></p>
+        <h1 class="hero-name">NITESH NEUPANE</h1>
+        <p class="hero-subtitle">Mechanical Engineer — Kathmandu University, Nepal</p>
+        <p class="hero-tags">Rocket Propulsion · Space Systems · Product Design · OpenFOAM · Additive Manufacturing</p>
       </div>
     </section>
 
-    <!-- ====== About Me Section ====== -->
-    <section id="about" class="about-section">
-      <h2>About Me</h2>
-      <div class="about-centered">
-        <img src="images/profile.jpg" alt="Nitesh Neupane" class="about-pic" />
-        <div class="about-text">
-          <p class="about-tagline"><strong>Mechanical Engineer | Space Systems | Rocket Propulsion | OpenFOAM | Additive
-              Manufacturing | Product Design</strong></p>
-          <p>
-            I'm <strong>Nitesh Neupane</strong>, a mechanical engineering student at Kathmandu University who builds
-            things — from solid rockets to prosthetic knee joints to RC planes.
-          </p>
-          <p>
-            My work spans aerospace and product design: I've designed and machined rocket nozzles, conducted Class-M
-            static fire tests, and engineered pneumatic umbilical release mechanisms at <strong>Mach24
-              Orbitals</strong>. On the product side, I've developed an additive-manufactured polycentric knee joint for
-            children, reprocessed PET bottles into 3D printing filament, and led RC plane builds through the KU Robotics
-            Club — each project driven by the same principle: thoughtful design, built to function.
-          </p>
-          <p>
-            I'm fluent across the full design-to-fabrication pipeline — <strong>SolidWorks, OpenFOAM, ANSYS, 3D
-              printing, CNC machining, and composite layup</strong>. Whether it's a launch vehicle component or a
-            human-centered assistive device, I care about getting the details right.
-          </p>
-        </div>
+    <!-- ====== About Section ====== -->
+    <section id="about" class="section-block">
+      <h2>ABOUT</h2>
+      <div class="about-content">
+        <p class="about-tagline">Mechanical Engineer · Space Systems · Rocket Propulsion · OpenFOAM · Additive
+          Manufacturing · Product Design</p>
+        <p>
+          I'm Nitesh Neupane, a mechanical engineering student at Kathmandu University who builds things — from solid
+          rockets to prosthetic knee joints to RC planes.
+        </p>
+        <p>
+          My work spans aerospace and product design: I've designed and machined rocket nozzles, conducted Class-M
+          static fire tests, and engineered pneumatic umbilical release mechanisms at <strong>Mach24 Orbitals</strong>.
+          On the product side, I've developed an additive-manufactured polycentric knee joint for children, reprocessed
+          PET bottles into 3D printing filament, and led RC plane builds through the KU Robotics Club — each project
+          driven by the same principle: thoughtful design, built to function.
+        </p>
+        <p>
+          I'm fluent across the full design-to-fabrication pipeline — <strong>SolidWorks</strong>,
+          <strong>OpenFOAM</strong>, <strong>ANSYS</strong>, 3D printing, CNC machining, and composite layup. Whether
+          it's a launch vehicle component or a human-centered assistive device, I care about getting the details right.
+        </p>
       </div>
     </section>
 
     <!-- ====== Skills Section ====== -->
-    <section id="skills" class="skills-section">
-      <h2>Skills & Expertise</h2>
-      <div class="skills-bars">
-        <div class="skill-bar">
-          <span>CAD — SolidWorks / Fusion 360 / AutoCAD</span>
-          <div class="bar">
-            <div class="fill" style="width: 90%;"></div>
+    <section id="skills" class="section-block">
+      <h2>SKILLS & EXPERTISE</h2>
+      <div class="skills-grouped">
+
+        <div class="skill-group">
+          <h3 class="skill-category">SIMULATION & ANALYSIS</h3>
+          <div class="skill-tags">
+            <span>OpenFOAM</span>
+            <span>ANSYS FEA</span>
+            <span>OpenRocket</span>
+            <span>OpenMotor</span>
+            <span>MATLAB</span>
           </div>
         </div>
-        <div class="skill-bar">
-          <span>FEA / CFD — ANSYS / OpenFOAM</span>
-          <div class="bar">
-            <div class="fill" style="width: 80%;"></div>
+
+        <div class="skill-group">
+          <h3 class="skill-category">DESIGN & CAD</h3>
+          <div class="skill-tags">
+            <span>SolidWorks</span>
+            <span>Fusion 360</span>
+            <span>AutoCAD</span>
+            <span>Generative Design</span>
+            <span>Topology Opt.</span>
           </div>
         </div>
-        <div class="skill-bar">
-          <span>Manufacturing — 3D Printing / CNC / Composite Layup</span>
-          <div class="bar">
-            <div class="fill" style="width: 90%;"></div>
+
+        <div class="skill-group">
+          <h3 class="skill-category">MANUFACTURING</h3>
+          <div class="skill-tags">
+            <span>FDM 3D Printing</span>
+            <span>CNC / PocketNC</span>
+            <span>Composite Layup</span>
+            <span>Lathe Machining</span>
           </div>
         </div>
-        <div class="skill-bar">
-          <span>Systems — OpenRocket / OpenMotor</span>
-          <div class="bar">
-            <div class="fill" style="width: 85%;"></div>
+
+        <div class="skill-group">
+          <h3 class="skill-category">PROGRAMMING</h3>
+          <div class="skill-tags">
+            <span>Python</span>
+            <span>C++</span>
+            <span>MATLAB scripting</span>
           </div>
         </div>
-        <div class="skill-bar">
-          <span>Programming — C++ / Python / MATLAB</span>
-          <div class="bar">
-            <div class="fill" style="width: 70%;"></div>
-          </div>
-        </div>
-      </div>
-      <div class="skills-badges">
-        <span>Generative Design</span>
-        <span>Topology Optimization</span>
-        <span>Thermal Protection</span>
-        <span>Team Leadership</span>
-        <span>Problem Solving</span>
-        <span>Critical Thinking</span>
+
       </div>
     </section>
 
     <!-- ====== Experience Section ====== -->
-    <section id="experience" class="experience-section">
-      <h2>Experience</h2>
-      <div class="experience-timeline">
+    <section id="experience" class="section-block">
+      <h2>EXPERIENCE</h2>
+      <div class="timeline">
 
-        <div class="exp-card">
-          <div class="exp-icon">🚀</div>
-          <div>
-            <h3>Propulsion Intern <span>@ Mach24 Orbitals, NAST</span></h3>
-            <span class="exp-date">Sept 2025 – Dec 2025</span>
-            <p>
-              Designed, fabricated, and tested an umbilical cord release mechanism using pneumatic actuators to
-              disengage Quick Disconnect (QD) couplers — critical for launch vehicle ground integration.
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-body">
+            <h3 class="timeline-role">PROPULSION INTERN</h3>
+            <span class="timeline-company">Mach24 Orbitals, NAST</span>
+            <span class="timeline-date">Sept 2025 – Dec 2025</span>
+            <p>Designed, fabricated, and tested an umbilical cord release mechanism using pneumatic actuators to
+              disengage Quick Disconnect (QD) couplers — critical for launch vehicle ground integration.</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-body">
+            <h3 class="timeline-role">PROPULSION LEAD</h3>
+            <span class="timeline-company">Team Udaan, Kathmandu University</span>
+            <span class="timeline-date">Nov 2023 – Sept 2025</span>
+            <p>Led subsystem design (ignitor, nozzle) for a solid rocket motor. Developed skills in planning,
+              motivation, and strategic thinking while driving complex aerospace assemblies from concept to realization.
             </p>
           </div>
         </div>
 
-        <div class="exp-card">
-          <div class="exp-icon">🔥</div>
-          <div>
-            <h3>Propulsion Lead <span>@ Team Udaan, Kathmandu University</span></h3>
-            <span class="exp-date">Nov 2023 – Sept 2025</span>
-            <p>
-              Led subsystem design (ignitor, nozzle) for a solid rocket motor. Developed skills in planning, motivation,
-              and strategic thinking while driving complex aerospace assemblies from concept to realization.
-            </p>
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-body">
+            <h3 class="timeline-role">UNDERGRAD INTERN</h3>
+            <span class="timeline-company">Design Lab, Kathmandu University</span>
+            <span class="timeline-date">July 2022 – Present</span>
+            <p>Gained hands-on experience in 3D printing, CNC (PocketNC), team collaboration, and problem-solving under
+              Principal Investigator Pratisthit Lal Shrestha.</p>
           </div>
         </div>
 
-        <div class="exp-card">
-          <div class="exp-icon">🔧</div>
-          <div>
-            <h3>Undergrad Intern <span>@ Design Lab, Kathmandu University</span></h3>
-            <span class="exp-date">July 2022 – Present</span>
-            <p>
-              Gained hands-on experience in 3D printing, CNC (PocketNC), team collaboration, and problem-solving under
-              Principal Investigator Pratisthit Lal Shrestha.
-            </p>
-          </div>
-        </div>
-
-        <div class="exp-card">
-          <div class="exp-icon">⚙️</div>
-          <div>
-            <h3>Team Lead & Member <span>@ Robotics Club, Kathmandu University</span></h3>
-            <span class="exp-date">April 2022 – Present</span>
-            <p>
-              Led RC plane builds and contributed to Mars Rover and robotic arm projects as part of a team of tinkerers
-              and problem solvers.
-            </p>
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-body">
+            <h3 class="timeline-role">TEAM LEAD & MEMBER</h3>
+            <span class="timeline-company">Robotics Club, Kathmandu University</span>
+            <span class="timeline-date">April 2022 – Present</span>
+            <p>Led RC plane builds and contributed to Mars Rover and robotic arm projects as part of a team of tinkerers
+              and problem solvers.</p>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ====== Project Highlights Section ====== -->
-    <section id="projects" class="projects-section">
-      <h2>Project Highlights</h2>
+    <!-- ====== Projects Section ====== -->
+    <section id="projects" class="section-block">
+      <h2>PROJECT HIGHLIGHTS</h2>
       <div class="projects-grid">
 
-        <div class="project-card">
+        <div class="project-card featured">
+          <div class="featured-bg"></div>
           <div class="project-info">
-            <h3>🔗 Umbilical Release Mechanism</h3>
+            <h3><span class="project-dot"></span>Umbilical Release Mechanism</h3>
             <span class="project-date">Nov 2025</span>
             <p>Designed and fabricated a pneumatic actuator-based mechanism to disengage Quick Disconnect (QD) couplers,
               critical for launch vehicle ground integration. Iterated from preliminary to final design.</p>
@@ -204,16 +203,16 @@
 
         <div class="project-card">
           <div class="project-info">
-            <h3>🦿 Polycentric Knee Joint for Children</h3>
+            <h3><span class="project-dot"></span>Polycentric Knee Joint</h3>
             <span class="project-date">2024 — 3rd Year Project</span>
             <p>Developed an additive-manufactured polycentric 4-bar mechanism knee joint for children under age 5.
-              Performed FEA in ANSYS, applied the Pugh Matrix, and focused on Design for Assembly (DFA).</p>
+              Performed FEA in ANSYS, applied the Pugh Matrix, and focused on Design for Assembly.</p>
           </div>
         </div>
 
         <div class="project-card">
           <div class="project-info">
-            <h3>🧪 Static Test — Class-M Solid Rocket Motor</h3>
+            <h3><span class="project-dot"></span>Static Test — Class-M Motor</h3>
             <span class="project-date">2025</span>
             <p>Conducted static firing tests up to Class-M using load cells and implemented rigorous safety protocols
               for the solid rocket motor developed by Team Udaan.</p>
@@ -222,7 +221,7 @@
 
         <div class="project-card">
           <div class="project-info">
-            <h3>🔥 Solid Rocket Ignitor & Nozzle</h3>
+            <h3><span class="project-dot"></span>Solid Rocket Ignitor & Nozzle</h3>
             <span class="project-date">2024</span>
             <p>Designed ignitor and nozzle for a solid rocket motor up to M-class. Used OpenMotor for performance
               analysis and Richard Nakka Excel tool for nozzle validation. Machined the nozzle on a lathe.</p>
@@ -231,7 +230,7 @@
 
         <div class="project-card">
           <div class="project-info">
-            <h3>🛡️ Fiberglass Composite Rocket Liner</h3>
+            <h3><span class="project-dot"></span>Fiberglass Composite Liner</h3>
             <span class="project-date">2025</span>
             <p>Engineered a fiberglass composite liner for a solid rocket motor, optimizing thermal protection and
               structural integrity for extreme operating conditions.</p>
@@ -240,7 +239,7 @@
 
         <div class="project-card">
           <div class="project-info">
-            <h3>🚀 Mid Power Rocket</h3>
+            <h3><span class="project-dot"></span>Mid Power Rocket</h3>
             <span class="project-date">2023</span>
             <p>Utilized OpenRocket for simulation, designed parts in SolidWorks, and employed 3D printing technology for
               fabrication of a mid-power sounding rocket.</p>
@@ -249,7 +248,7 @@
 
         <div class="project-card">
           <div class="project-info">
-            <h3>♻️ PET Bottle to 3D Printing Filament</h3>
+            <h3><span class="project-dot"></span>PET Bottle to 3D Filament</h3>
             <span class="project-date">2023 — 2nd Year Project</span>
             <p>Reprocessed PET bottles into usable FDM 3D printing filament. Explored materials science, iterative
               development, and user-centric design principles.</p>
@@ -259,27 +258,20 @@
       </div>
     </section>
 
-    <!-- ====== Contact Me Section ====== -->
-    <section id="contact" class="contact-section">
-      <div class="contact-card">
-        <h2>Contact Me</h2>
-        <div class="contact-info">
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:niteshneupane.16@gmail.com">niteshneupane.16@gmail.com</a>
-          </div>
-
-          <div class="contact-socials">
-            <a href="https://www.linkedin.com/in/nitesh-neupane/" target="_blank" title="LinkedIn"><i
-                class="fab fa-linkedin"></i></a>
-            <a href="https://www.youtube.com/@noobneutron" target="_blank" title="YouTube"><i
-                class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/nitesh_neupaneeee/" target="_blank" title="Instagram"><i
-                class="fab fa-instagram"></i></a>
-          </div>
-        </div>
+    <!-- ====== Contact Section ====== -->
+    <section id="contact" class="section-block contact-section">
+      <h2>CONTACT</h2>
+      <a href="mailto:niteshneupane.16@gmail.com" class="contact-email">NITESHNEUPANE.16@GMAIL.COM</a>
+      <div class="contact-socials">
+        <a href="https://www.linkedin.com/in/nitesh-neupane/" target="_blank" title="LinkedIn"><i
+            class="fab fa-linkedin"></i></a>
+        <a href="https://www.youtube.com/@noobneutron" target="_blank" title="YouTube"><i
+            class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/nitesh_neupaneeee/" target="_blank" title="Instagram"><i
+            class="fab fa-instagram"></i></a>
       </div>
     </section>
+
   </div>
 
   <script src="script.js"></script>
