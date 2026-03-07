@@ -6,7 +6,8 @@
 /* --- Design Tokens --- */
 :root {
   --deep-bg: #0D0C0B;
-  --surface: #141210;
+  --surface: #1E1A17;
+  /* Lighter surface to contrast deep-bg */
   --camel: #AF9671;
   --tan: #CFB083;
   --steel: #0082AF;
@@ -114,7 +115,7 @@ body {
 
 .top-header {
   width: 100%;
-  background: var(--deep-bg);
+  background: var(--surface);
   padding: 16px 0;
   position: fixed;
   top: 0;
@@ -169,7 +170,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background: var(--deep-bg);
+  background: var(--surface);
   overflow-x: hidden;
   z-index: 1200;
   padding-top: 24px;
@@ -429,7 +430,8 @@ body {
   font-size: 0.78em;
   color: var(--tan);
   border: 1px solid rgba(175, 150, 113, 0.35);
-  background: transparent;
+  background: rgba(175, 150, 113, 0.08);
+  /* Faint camel background so it looks like a tile */
   padding: 7px 16px;
   border-radius: 100px;
   transition: background 0.3s ease, border-color 0.3s ease;
@@ -525,12 +527,15 @@ body {
 
 .project-card {
   background: var(--surface);
-  border: 1px solid rgba(175, 150, 113, 0.12);
+  border: 1px solid rgba(175, 150, 113, 0.25);
+  /* Stronger border so cards pop */
   border-radius: 8px;
   padding: 28px;
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  /* Add shadow to lift from deep-bg */
 }
 
 .project-card:hover {
