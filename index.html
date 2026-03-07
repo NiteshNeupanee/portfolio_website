@@ -24,36 +24,56 @@
   <!-- === ROCKET ENGINE ELEMENT START === -->
   <div id="rocket-engine" class="rocket-engine">
     <div id="engine-bloom" class="engine-bloom"></div>
-    <svg id="nozzle-svg" class="nozzle-svg" viewBox="0 0 160 220" xmlns="http://www.w3.org/2000/svg">
-      <!-- Injector plate / mounting flange -->
-      <rect x="30" y="0" width="100" height="12" rx="2" fill="#2A2A2A" stroke="#4A4A4A" stroke-width="1" />
-      <line x1="45" y1="3" x2="115" y2="3" stroke="#555" stroke-width="0.5" opacity="0.8" />
-      <line x1="45" y1="9" x2="115" y2="9" stroke="#555" stroke-width="0.5" opacity="0.8" />
-      <!-- Bolts -->
-      <circle cx="40" cy="6" r="3" fill="#383838" stroke="#5A5A5A" stroke-width="0.8" />
-      <circle cx="120" cy="6" r="3" fill="#383838" stroke="#5A5A5A" stroke-width="0.8" />
-      <circle cx="80" cy="6" r="2.5" fill="#383838" stroke="#5A5A5A" stroke-width="0.8" />
-      <!-- Combustion chamber (converging section) -->
-      <path d="M 35,12 L 35,70 Q 35,90 55,110 L 105,110 Q 125,90 125,70 L 125,12 Z" fill="#252525" stroke="#444"
+    <svg id="nozzle-svg" class="nozzle-svg" viewBox="0 0 180 280" xmlns="http://www.w3.org/2000/svg">
+      <!-- === FULL CONVERGENT-DIVERGENT NOZZLE === -->
+
+      <!-- Injector plate / top flange -->
+      <rect x="35" y="0" width="110" height="14" rx="2" fill="#2A2A2A" stroke="#4A4A4A" stroke-width="1" />
+      <line x1="50" y1="4" x2="130" y2="4" stroke="#555" stroke-width="0.5" opacity="0.7" />
+      <line x1="50" y1="10" x2="130" y2="10" stroke="#555" stroke-width="0.5" opacity="0.7" />
+      <!-- Bolts on flange -->
+      <circle cx="45" cy="7" r="3.5" fill="#383838" stroke="#5A5A5A" stroke-width="0.8" />
+      <circle cx="90" cy="7" r="3" fill="#383838" stroke="#5A5A5A" stroke-width="0.8" />
+      <circle cx="135" cy="7" r="3.5" fill="#383838" stroke="#5A5A5A" stroke-width="0.8" />
+
+      <!-- Combustion chamber — cylindrical section -->
+      <rect x="38" y="14" width="104" height="70" rx="1" fill="#252525" stroke="#444" stroke-width="0.8" />
+      <!-- Chamber metallic sheen lines -->
+      <line x1="55" y1="20" x2="55" y2="80" stroke="#3A3A3A" stroke-width="0.7" opacity="0.8" />
+      <line x1="72" y1="18" x2="72" y2="82" stroke="#353535" stroke-width="0.5" opacity="0.6" />
+      <line x1="90" y1="16" x2="90" y2="83" stroke="#333" stroke-width="0.4" opacity="0.5" />
+      <line x1="108" y1="18" x2="108" y2="82" stroke="#353535" stroke-width="0.5" opacity="0.6" />
+      <line x1="125" y1="20" x2="125" y2="80" stroke="#3A3A3A" stroke-width="0.7" opacity="0.8" />
+      <!-- Cooling channel rings on chamber -->
+      <line x1="38" y1="35" x2="142" y2="35" stroke="#3E3E3E" stroke-width="0.6" opacity="0.5" />
+      <line x1="38" y1="55" x2="142" y2="55" stroke="#3E3E3E" stroke-width="0.6" opacity="0.5" />
+      <line x1="38" y1="75" x2="142" y2="75" stroke="#3E3E3E" stroke-width="0.6" opacity="0.5" />
+
+      <!-- Converging section — smooth contraction from chamber to throat -->
+      <path d="M 38,84 C 38,100 45,130 70,145 L 110,145 C 135,130 142,100 142,84 Z" fill="#252525" stroke="#444"
         stroke-width="0.8" />
-      <!-- Metallic sheen lines on chamber -->
-      <line x1="50" y1="20" x2="50" y2="100" stroke="#3A3A3A" stroke-width="0.7" opacity="0.9" />
-      <line x1="70" y1="15" x2="70" y2="105" stroke="#353535" stroke-width="0.5" opacity="0.7" />
-      <line x1="90" y1="15" x2="90" y2="105" stroke="#353535" stroke-width="0.5" opacity="0.7" />
-      <line x1="110" y1="20" x2="110" y2="100" stroke="#3A3A3A" stroke-width="0.7" opacity="0.9" />
-      <!-- Throat (narrowest point) -->
-      <rect x="55" y="108" width="50" height="6" rx="1" fill="#222" stroke="#4A4A4A" stroke-width="0.8" />
-      <!-- Diverging bell nozzle (parabolic expansion) -->
-      <path d="M 55,114 Q 45,150 20,220 L 140,220 Q 115,150 105,114 Z" fill="#252525" stroke="#444"
+      <!-- Converging sheen -->
+      <path d="M 55,84 C 55,100 60,128 72,143" fill="none" stroke="#3A3A3A" stroke-width="0.6" opacity="0.7" />
+      <path d="M 90,84 L 90,143" fill="none" stroke="#333" stroke-width="0.4" opacity="0.5" />
+      <path d="M 125,84 C 125,100 120,128 108,143" fill="none" stroke="#3A3A3A" stroke-width="0.6" opacity="0.7" />
+
+      <!-- Throat — the narrowest point (clearly defined) -->
+      <rect x="68" y="143" width="44" height="8" rx="1.5" fill="#222" stroke="#4A4A4A" stroke-width="1" />
+      <line x1="72" y1="147" x2="108" y2="147" stroke="#555" stroke-width="0.4" opacity="0.6" />
+
+      <!-- Diverging bell nozzle — parabolic expansion -->
+      <path d="M 68,151 C 58,175 35,220 15,278 L 165,278 C 145,220 122,175 112,151 Z" fill="#252525" stroke="#444"
         stroke-width="0.8" />
-      <!-- Metallic sheen on bell -->
-      <path d="M 60,114 Q 52,150 30,218" fill="none" stroke="#3A3A3A" stroke-width="0.7" opacity="0.8" />
-      <path d="M 80,114 L 80,218" fill="none" stroke="#353535" stroke-width="0.5" opacity="0.6" />
-      <path d="M 100,114 Q 108,150 130,218" fill="none" stroke="#3A3A3A" stroke-width="0.7" opacity="0.8" />
+      <!-- Diverging sheen lines -->
+      <path d="M 72,151 C 64,175 44,220 25,275" fill="none" stroke="#3A3A3A" stroke-width="0.6" opacity="0.7" />
+      <path d="M 90,151 L 90,275" fill="none" stroke="#333" stroke-width="0.4" opacity="0.5" />
+      <path d="M 108,151 C 116,175 136,220 155,275" fill="none" stroke="#3A3A3A" stroke-width="0.6" opacity="0.7" />
+
       <!-- Nozzle exit lip -->
-      <path d="M 18,218 Q 18,222 22,222 L 138,222 Q 142,222 142,218" fill="none" stroke="#4A4A4A" stroke-width="2" />
+      <path d="M 13,276 Q 13,280 17,280 L 163,280 Q 167,280 167,276" fill="none" stroke="#4A4A4A" stroke-width="2" />
+
       <!-- Nozzle heat glow overlay (controlled by JS) -->
-      <ellipse id="nozzle-glow" cx="80" cy="160" rx="50" ry="80" fill="url(#nozzleHeatGrad)" opacity="0" />
+      <ellipse id="nozzle-glow" cx="90" cy="200" rx="60" ry="100" fill="url(#nozzleHeatGrad)" opacity="0" />
       <defs>
         <radialGradient id="nozzleHeatGrad" cx="50%" cy="70%" r="50%">
           <stop offset="0%" stop-color="#FF6400" stop-opacity="0.3" />

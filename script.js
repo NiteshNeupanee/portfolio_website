@@ -83,7 +83,7 @@ document.querySelectorAll('.sidebar a').forEach(link => {
   const MAX_DIAMONDS = isMobile ? 3 : 5;
   const CANVAS_W = canvas.getBoundingClientRect().width;
   const CANVAS_H = canvas.getBoundingClientRect().height;
-  const CENTER_X = CANVAS_W / 2 + 10; // offset to match nozzle center
+  const CENTER_X = CANVAS_W / 2; // centered on nozzle
 
   // Lerp utility
   function lerp(a, b, t) { return a + (b - a) * t; }
@@ -113,7 +113,7 @@ document.querySelectorAll('.sidebar a').forEach(link => {
   }
 
   function updateTargets() {
-    const p = getScrollPercent();
+    const p = 1 - getScrollPercent(); // REVERSED: full thrust at top, idle at bottom
 
     if (p < 0.05) {
       // State 1: idle / cold
