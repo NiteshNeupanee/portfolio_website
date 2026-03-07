@@ -1,0 +1,168 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Nitesh 
+Neupane 
+Profile 
+A results-driven mechanical engineer with 
+extensive 
+hands-on 
+experience 
+in 
+propulsion 
+system 
+design, 
+additive 
+manufacturing, and rapid prototyping. 
+Experienced in the end-to-end realization 
+of complex aerospace assemblies, from 
+designing umbilical release mechanisms 
+using pneumatic actuators . Skilled in using  
+engineering tools and passionate about 
+pushing the boundaries of private space 
+technology. 
+Contact 
+Work Experience 
+Propulsion Intern  
+ 
+ 
+          
+Mach24 Orbitals, NAST                                    
+Sept 2025- Dec 2025 
+ Design, Fabricate and tested the umbilical cord 
+release mechanism.  
+Team Lead  
+ 
+ 
+             
+Team Udaan, Kathmandu University             
+Aug 2024 – Sept 2025 
+Propulsion Lead 
+          
+             
+Team Udaan, Kathmandu University             
+Nov 2023 - Sept 2025 
+ Led subsystem design (ignitor, nozzle) for solid 
+rocket motor. Developed skills in planning, 
+motivation, and strategic thinking. 
+Undergrad Intern                                             
+Design Lab, Kathmandu University                
+July 2022 – Present 
+ Gained hands-on experience in 3D printing, 
+CNC(PocketNC), team collaboration, and problem 
+solving. Learned leadership, motivation, and 
+resourcefulness 
+working 
+under 
+Principal 
+Investigator 
+Pratisthit 
+Lal 
+Shrestha.
+ 
+General Member                                           
+Robotics Club, Kathmandu University           
+April 2022 - Present 
+ Contributed and led to hands-on projects 
+including Mars Rover, RC planes (team lead), and 
+a robotic arm as part of a team of tinkerers and 
+problem solvers. 
+ 
+ 
+ 
+Skills 
+ 
+Education 
+Bachelor in mechanical engineering 
+Kathmandu university 
+Mar 2022 – Feb 2026 
+Projects 
+Design and Fabrication of Umbilical  
+release mechanism (Nov 2025) 
+ This project demonstrates the ability to design 
+and detail complex assemblies. I developed 
+preliminary and iterated final design using 
+pneumatic actuators to disengage Quick 
+Disconnect (QD) couplers, which is critical for 
+launch vehicle ground integration 
+Design and Fabrication of Mid power 
+rocket (2023) 
+ Utilized OpenRocket. Designed parts in 
+SolidWorks. Employed 3D printing technology 
+fabrication.  
+Design and Fabrication of Ignitor for 
+solid rocket motor up-to M-class (2024) 
+ Integrated OpenMotor for solid rocket    motor 
+design and performance analysis. 
+Design and Fabrication of solid Rocket 
+nozzle(2024) 
+ Utilized the Richard Nakka Excel tool for 
+performance calculations and nozzle design 
+validation. machined the nozzle using a lathe 
+Design and Fabrication of Liner for 
+Solid Rocket(2025) 
+ Engineered a fiberglass composite liner for a 
+solid rocket motor, focusing on optimizing 
+thermal protection and structural integrity.  
+Static Test of Solid Rocket motor class-
+M(2025) 
+ Conducted static firing tests up to Class-M 
+using load cells ,implemented rigorous safety 
+protocols. 
+ 
+Reprocessing of PET bottle to 3d printing 
+filament|2ND Year(2023) 
+ Learned about materials for FDM 3D printing, 
+iterative development, and user-centric design. 
+ 
+Additive Manufacturing Processes For 
+The Fabrication Of Polycentric 4 Bar 
+Mechanism Based Knee Joint For 
+Children Under Age 5|3rd Year (2024) 
+ Gained 
+hands-on 
+experience 
+using 
+UTM, 
+performing FEA in ANSYS, applying the Pugh 
+Matrix, and understanding the importance of 
+Design for Assembly (DFA)  
+ 
+0.8
+0.4
+0.6
+0.1
+0.2
+0.9
+0.9
+0.9
+0.4
+CAD
+FEA
+CFD
+Topology optmize
+Generative design
+3D Printing
+Problem solving
+Team Work
+C++
