@@ -747,8 +747,8 @@ body {
    =================================================================== */
 
 .rocket-engine {
-  position: absolute;
-  right: -40px;
+  position: fixed;
+  right: -20px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
