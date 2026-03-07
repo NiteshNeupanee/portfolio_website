@@ -65,6 +65,10 @@ document.querySelectorAll('.sidebar a').forEach(link => {
 
   // Canvas sizing
   const dpr = window.devicePixelRatio || 1;
+  let CANVAS_W = 0;
+  let CANVAS_H = 0;
+  let CENTER_X = 0;
+
   function resizeCanvas() {
     const rect = canvas.getBoundingClientRect();
     canvas.width = rect.width * dpr;
@@ -84,10 +88,6 @@ document.querySelectorAll('.sidebar a').forEach(link => {
   const NOZZLE_EXIT_DIAMETER = 120; // px, matches SVG diverging exit width
   const navLinks = document.querySelectorAll('.sidebar a');
   const MAX_DIAMONDS = navLinks.length;
-  let CANVAS_W = 0;
-  let CANVAS_H = 0;
-  let CENTER_X = 0;
-  resizeCanvas(); // Initialize values
 
   // Lerp utility
   function lerp(a, b, t) { return a + (b - a) * t; }
