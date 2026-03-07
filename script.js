@@ -85,7 +85,7 @@ document.querySelectorAll('.sidebar a').forEach(link => {
   });
 
   // Plume parameters
-  const NOZZLE_EXIT_DIAMETER = 120; // px, matches SVG diverging exit width
+  const NOZZLE_EXIT_DIAMETER = 70; // px, adjusted down to match smaller CSS nozzle
   const navLinks = document.querySelectorAll('.sidebar a');
   const MAX_DIAMONDS = navLinks.length;
 
@@ -130,7 +130,7 @@ document.querySelectorAll('.sidebar a').forEach(link => {
       target.blueOpacity = 0.05;
       target.nozzleHeat = 0;
       target.bloomOpacity = 0;
-      target.flameWidth = 15;
+      target.flameWidth = 10;
     } else if (p < 0.15) {
       // Transition to State 2: ignition
       const t = (p - 0.05) / 0.10;
@@ -143,7 +143,7 @@ document.querySelectorAll('.sidebar a').forEach(link => {
       target.blueOpacity = lerp(0.05, 0.15, t);
       target.nozzleHeat = lerp(0, 0.15, t);
       target.bloomOpacity = lerp(0, 0.1, t);
-      target.flameWidth = lerp(15, 30, t);
+      target.flameWidth = lerp(10, 20, t);
     } else if (p < 0.35) {
       // State 3: low thrust — first shock diamond
       const t = (p - 0.15) / 0.20;
@@ -156,7 +156,7 @@ document.querySelectorAll('.sidebar a').forEach(link => {
       target.blueOpacity = lerp(0.15, 0.3, t);
       target.nozzleHeat = lerp(0.15, 0.35, t);
       target.bloomOpacity = lerp(0.1, 0.3, t);
-      target.flameWidth = lerp(30, 50, t);
+      target.flameWidth = lerp(20, 35, t);
     } else if (p < 0.60) {
       // State 4: medium thrust — 2–3 diamonds
       const t = (p - 0.35) / 0.25;
@@ -169,7 +169,7 @@ document.querySelectorAll('.sidebar a').forEach(link => {
       target.blueOpacity = lerp(0.3, 0.5, t);
       target.nozzleHeat = lerp(0.35, 0.65, t);
       target.bloomOpacity = lerp(0.3, 0.6, t);
-      target.flameWidth = lerp(50, 65, t);
+      target.flameWidth = lerp(35, 45, t);
     } else {
       // State 5: full throttle — 4–5 diamonds
       const t = Math.min(1, (p - 0.60) / 0.35);
@@ -182,7 +182,7 @@ document.querySelectorAll('.sidebar a').forEach(link => {
       target.blueOpacity = lerp(0.5, 0.7, t);
       target.nozzleHeat = lerp(0.65, 1, t);
       target.bloomOpacity = lerp(0.6, 1, t);
-      target.flameWidth = lerp(65, 80, t);
+      target.flameWidth = lerp(45, 60, t); // Reduced maximum flame width
     }
   }
 
