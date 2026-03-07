@@ -70,6 +70,9 @@ document.querySelectorAll('.sidebar a').forEach(link => {
     canvas.width = rect.width * dpr;
     canvas.height = rect.height * dpr;
     ctx.scale(dpr, dpr);
+    CANVAS_W = rect.width;
+    CANVAS_H = rect.height;
+    CENTER_X = CANVAS_W / 2;
   }
   resizeCanvas();
   window.addEventListener('resize', () => {
@@ -81,9 +84,10 @@ document.querySelectorAll('.sidebar a').forEach(link => {
   const NOZZLE_EXIT_DIAMETER = 120; // px, matches SVG diverging exit width
   const DIAMOND_SPACING = NOZZLE_EXIT_DIAMETER * 0.7;
   const MAX_DIAMONDS = isMobile ? 3 : 5;
-  const CANVAS_W = canvas.getBoundingClientRect().width;
-  const CANVAS_H = canvas.getBoundingClientRect().height;
-  const CENTER_X = CANVAS_W / 2; // centered on nozzle
+  let CANVAS_W = 0;
+  let CANVAS_H = 0;
+  let CENTER_X = 0;
+  resizeCanvas(); // Initialize values
 
   // Lerp utility
   function lerp(a, b, t) { return a + (b - a) * t; }
