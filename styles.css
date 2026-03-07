@@ -260,6 +260,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-container {
@@ -738,4 +740,67 @@ body {
 ::selection {
   background: rgba(175, 150, 113, 0.3);
   color: var(--white);
+}
+
+/* ===================================================================
+   ROCKET ENGINE ELEMENT
+   =================================================================== */
+
+.rocket-engine {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.nozzle-svg {
+  width: 160px;
+  height: 220px;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.plume-canvas {
+  width: 200px;
+  height: 600px;
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin-top: -2px;
+  margin-left: -20px;
+}
+
+.engine-bloom {
+  position: absolute;
+  top: 210px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 100, 0, 0.15), transparent 70%);
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.1s ease;
+}
+
+/* === ROCKET ENGINE RESPONSIVE === */
+@media (max-width: 768px) {
+  .rocket-engine {
+    right: -20px;
+    bottom: 20px;
+    top: auto;
+    transform: scale(0.6) translateY(0);
+    transform-origin: bottom right;
+    z-index: 5;
+    opacity: 0.7;
+  }
+
+  .plume-canvas {
+    height: 400px;
+  }
 }
