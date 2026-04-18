@@ -144,6 +144,7 @@ body {
 .header-links {
   display: flex;
   gap: 28px;
+  align-items: center;
 }
 
 .header-links a {
@@ -163,8 +164,8 @@ body {
 /* --- Header Dropdown --- */
 .dropdown {
   position: relative;
-  display: inline-block;
-  align-self: center;
+  display: flex;
+  align-items: center;
 }
 
 .dropdown-content {
