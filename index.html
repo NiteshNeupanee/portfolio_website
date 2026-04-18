@@ -258,8 +258,44 @@
       <h2>PROJECT HIGHLIGHTS</h2>
       <div class="projects-grid">
 
-        <div class="project-card featured">
+        <!-- ISOGRID STUDIO — Featured Project Card -->
+        <div class="project-card featured" id="project-isogrid-studio" style="cursor: pointer;" onclick="window.open('https://niteshneupane.com.np/grid/', '_blank')">
           <div class="featured-bg"></div>
+          <div class="project-info">
+            <h3><span class="project-dot"></span>ISOGRID STUDIO — Parametric Rib-Grid Design Tool</h3>
+            <span class="project-date">2024 — Present · Open Source · Web App</span>
+            <p>
+              Browser-based parametric isogrid/stiffener design tool for aerospace and mechanical engineering. 
+              Import STEP/STL/OBJ models, select faces, and generate isogrid, square, hex, rhombus, rectangular, 
+              or orthogrid patterns with real-time 3D preview. Includes material library, NASA presets, 
+              mass/stiffness metrics, and multi-format export (STL, STEP, OBJ). Built with Three.js.
+            </p>
+            <div style="margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="https://niteshneupane.com.np/grid/" target="_blank" rel="noopener"
+                 style="font-family: 'JetBrains Mono', monospace; font-size: 0.78em; color: #0082AF; 
+                        border: 1px solid rgba(0,130,175,0.4); background: rgba(0,130,175,0.08); 
+                        padding: 7px 16px; border-radius: 100px; text-decoration: none; 
+                        transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 6px;"
+                 onmouseover="this.style.background='rgba(0,130,175,0.15)'; this.style.borderColor='#0082AF'"
+                 onmouseout="this.style.background='rgba(0,130,175,0.08)'; this.style.borderColor='rgba(0,130,175,0.4)'"
+                 onclick="event.stopPropagation()">
+                ⬡ Launch Tool
+              </a>
+              <a href="https://github.com/NiteshNeupanee/grid" target="_blank" rel="noopener"
+                 style="font-family: 'JetBrains Mono', monospace; font-size: 0.78em; color: #AF9671; 
+                        border: 1px solid rgba(175,150,113,0.35); background: rgba(175,150,113,0.08); 
+                        padding: 7px 16px; border-radius: 100px; text-decoration: none; 
+                        transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 6px;"
+                 onmouseover="this.style.background='rgba(175,150,113,0.12)'; this.style.borderColor='#AF9671'"
+                 onmouseout="this.style.background='rgba(175,150,113,0.08)'; this.style.borderColor='rgba(175,150,113,0.35)'"
+                 onclick="event.stopPropagation()">
+                ⟨/⟩ Source Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
           <div class="project-info">
             <h3><span class="project-dot"></span>Umbilical Release Mechanism</h3>
             <span class="project-date">Nov 2025</span>
