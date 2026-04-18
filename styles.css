@@ -198,11 +198,11 @@ body {
   color: var(--camel) !important;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown-content.show {
   display: block;
 }
 
-.dropdown:hover .dropbtn {
+.dropbtn.active {
   color: var(--camel) !important;
 }
 

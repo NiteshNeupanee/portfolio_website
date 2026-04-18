@@ -333,3 +333,29 @@ document.querySelectorAll('.sidebar a').forEach(link => {
 })();
 
 // === ROCKET ENGINE ELEMENT END ===
+
+// --- DROPDOWN MENU LOGIC ---
+window.toggleDropdown = function(event) {
+  event.preventDefault();
+  event.stopPropagation();
+  var dropdownContent = document.getElementById("toolsDropdownContent");
+  dropdownContent.classList.toggle("show");
+  event.currentTarget.classList.toggle("active");
+};
+
+window.addEventListener('click', function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var dropbtns = document.getElementsByClassName("dropbtn");
+    for (var i = 0; i < dropdowns.length; i++) {
+      if (dropdowns[i].classList.contains('show')) {
+        dropdowns[i].classList.remove('show');
+      }
+    }
+    for (var i = 0; i < dropbtns.length; i++) {
+      if (dropbtns[i].classList.contains('active')) {
+        dropbtns[i].classList.remove('active');
+      }
+    }
+  }
+});
