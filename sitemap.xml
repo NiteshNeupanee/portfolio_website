@@ -1,15 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage / Portfolio -->
   <url>
     <loc>https://niteshneupane.com.np/</loc>
     <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- ISOGRID STUDIO — Primary tool page -->
   <url>
     <loc>https://niteshneupane.com.np/grid/</loc>
     <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Resume / CV (PDF) -->
+  <url>
+    <loc>https://niteshneupane.com.np/Nitesh_Neupane_Resume.pdf</loc>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Engineering Portfolio (PDF) -->
+  <url>
+    <loc>https://niteshneupane.com.np/engeneering%20portfolio.pdf</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
