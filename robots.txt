@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /pdf2txt.py
+
+Sitemap: https://niteshneupane.com.np/sitemap.xml
