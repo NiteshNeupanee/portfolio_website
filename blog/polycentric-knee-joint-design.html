@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Additive Manufacturing and FEA Testing of Polycentric 4-Bar Pediatric Knee Joints — Nitesh Neupane</title>
+  <meta name="description" content="Technical analysis of pediatric knee joint design: 4-bar kinematics, finite element analysis in ANSYS, and ISO 10328 compliance testing." />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6497701089961965" crossorigin="anonymous"></script>
+  <style>
+    .article-container {
+      max-width: 800px;
+      margin: 120px auto 80px;
+      padding: 0 20px;
+    }
+
+    .article-header {
+      margin-bottom: 40px;
+    }
+
+    .article-category {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85em;
+      color: var(--camel);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .article-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      font-size: 2.5em;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .article-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8em;
+      color: var(--muted);
+      display: flex;
+      gap: 15px;
+      border-bottom: 1px solid rgba(175, 150, 113, 0.15);
+      padding-bottom: 20px;
+    }
+
+    .article-content {
+      line-height: 1.8;
+      color: rgba(240, 237, 232, 0.9);
+      font-size: 1.05em;
+    }
+
+    .article-content h2 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      color: var(--tan);
+      margin-top: 40px;
+      margin-bottom: 16px;
+      font-size: 1.5em;
+      letter-spacing: 0.5px;
+    }
+
+    .article-content p {
+      margin-bottom: 24px;
+    }
+
+    .article-content blockquote {
+      border-left: 3px solid var(--camel);
+      padding-left: 20px;
+      margin: 30px 0;
+      color: rgba(240, 237, 232, 0.75);
+      font-style: italic;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .article-content pre {
+      background: var(--surface);
+      border: 1px solid rgba(175, 150, 113, 0.15);
+      padding: 16px 20px;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 30px 0;
+    }
+
+    .article-content code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9em;
+      color: var(--tan);
+    }
+
+    .article-content ul, .article-content ol {
+      margin-left: 24px;
+      margin-bottom: 24px;
+    }
+
+    .article-content li {
+      margin-bottom: 10px;
+    }
+
+    .back-blog {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 30px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8em;
+      color: var(--steel);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .back-blog:hover {
+      color: var(--tan);
+    }
+
+    .article-footer {
+      border-top: 1px solid rgba(175, 150, 113, 0.1);
+      padding: 40px 0 0;
+      margin-top: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85em;
+    }
+
+    .article-footer a {
+      color: var(--camel);
+      text-decoration: none;
+    }
+
+    .article-footer a:hover {
+      color: var(--white);
+    }
+
+    /* Fixed top header navigation settings for subpages */
+    .legal-header {
+      width: 100%;
+      background: var(--surface);
+      padding: 16px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1100;
+      border-bottom: 1px solid rgba(175, 150, 113, 0.2);
+    }
+
+    .legal-header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 800px;
+      width: 90%;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="atmosphere"></div>
+
+  <!-- Header -->
+  <header class="legal-header">
+    <div class="legal-header-content">
+      <a href="../index.html" class="header-name" style="text-decoration: none; color: inherit;">NITESH NEUPANE</a>
+      <nav class="header-links">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <article class="article-container">
+    <a href="index.html" class="back-blog">&larr; Back to Blog</a>
+
+    <div class="article-header">
+      <div class="article-category">Bio-Mechanics & FEA</div>
+      <h1 class="article-title">Additive Manufacturing and FEA Testing of Polycentric 4-Bar Pediatric Knee Joints</h1>
+      <div class="article-meta">
+        <span>Published: June 28, 2026</span>
+        <span>·</span>
+        <span>By: Nitesh Neupane</span>
+        <span>·</span>
+        <span>4 min read</span>
+      </div>
+    </div>
+
+    <div class="article-content">
+      <p>Designing prosthetic joints for pediatric patients under the age of five presents a unique set of biomechanical and manufacturing challenges. Unlike adult prosthetics, which focus primarily on heavy fatigue resistance and standardized weight classes, pediatric devices must prioritize extreme light weight, low cost (due to rapid child growth rates), and specific kinematic stability. Standard single-axis hinge joints are often insufficient because they provide minimal foot clearance during the swing phase of walking, increasing the risk of tripping. To address these demands, my undergraduate third-year design project focused on the fabrication and structural testing of a <strong>polycentric four-bar linkage pediatric knee joint</strong> utilizing Fused Deposition Modeling (FDM) additive manufacturing.</p>
+
+      <h2>1. Kinematics of the Polycentric 4-Bar Linkage</h2>
+      <p>A polycentric knee joint contains multiple centers of rotation, mimicking the complex roll-and-glide mechanics of a natural human knee joint (the sliding motion of the femoral condyles relative to the tibial plateau). Geometrically, a four-bar linkage consists of four link arms (frame, input, coupler, and output links) connected in a closed loop by four revolute pin joints. The Instantaneous Center of Rotation (ICR) of the joint is determined by the intersection point of the projection lines of the two side links.</p>
+      
+      <p>By carefully adjusting the lengths of these links, we can configure the ICR to position itself high and posterior (backwards) during early leg extension. This kinematic layout provides two critical clinical advantages:</p>
+      <ul>
+        <li><strong>Stance Stability</strong>: During heel strike, the posterior position of the ICR creates a large self-locking moment, preventing the knee from buckling under the child's body weight.</li>
+        <li><strong>Toe Clearance</strong>: During the swing phase, the linkage kinematics compress the overall leg length slightly as the knee flexes. This shortened swing radius provides greater toe clearance above the ground, enabling a smoother and safer gait without the child needing to vault or swing the leg outwards.</li>
+      </ul>
+
+      <h2>2. Finite Element Analysis (FEA) in ANSYS</h2>
+      <p>Before physical fabrication, we simulated the structural stresses on the prosthetic parts in <strong>ANSYS Workbench</strong>. The parts were designed in SolidWorks and imported as an assembly. Since the joint was to be fabricated via FDM 3D printing, standard isotropic assumptions were insufficient. FDM plastics exhibit orthotropic mechanical behavior due to layer-by-layer extrusion. To compensate, we modeled the material properties with a 15% reduction in tensile strength along the Z-axis (print build direction) relative to the X-Y print plane.</p>
+
+      <p>Our boundary conditions were based on ISO 10328 protocols. For a pediatric subject weight of 15 kg, we applied a factor-of-safety load of 450 N (approximately three times body weight) representing peak stance forces during running or stumbling. The load was applied vertically at the upper pyra-link connector while the lower shin bracket was fixed.
+      ANSYS stress plots revealed severe shear concentrations at the linkage pivot holes, which could lead to joint failure. To mitigate this stress concentration, we modified the CAD geometry to increase the web thickness around the pivot bosses and introduced fillet radii ($R = 2.0\text{ mm}$) to smooth the sharp inner corners.</p>
+
+      <h2>3. Additive Manufacturing Parameter Optimization</h2>
+      <p>We evaluated various printing filaments (PLA+, PETG, and Carbon-Fiber Reinforced Nylon) using a <strong>Pugh Decision Matrix</strong>. PLA+ was selected for initial testing due to its high tensile strength and print stability, while Carbon-Fiber PETG was chosen for final assemblies because of its superior impact resistance and durability in outdoor environments.</p>
+      
+      <p>To ensure structural integrity under load, we optimized the FDM printing parameters:
+      <ul>
+        <li><strong>Infill Density</strong>: Set to 100% rectilinear infill for the load-bearing side links to eliminate void spaces that act as stress nodes.</li>
+        <li><strong>Wall Line Count</strong>: Increased to 6 perimeters (perimeter shells) to ensure that the pin holes, which experience high radial compression, are composed of solid, continuous plastic loops rather than weak infill segments.</li>
+        <li><strong>Print Orientation</strong>: The side links were printed flat on the print bed. This orientation aligned the continuous plastic fibers along the primary axis of tensile and bending stress, avoiding interlayer shear failure.</li>
+      </ul>
+      </p>
+
+      <h2>4. Universal Testing Machine (UTM) Validation</h2>
+      <p>We validated our FEA predictions by subjecting the 3D-printed prototypes to destructive compression testing on a computer-controlled <strong>Universal Testing Machine (UTM)</strong>. The knee joint was mounted in a custom steel fixture mimicking the ISO 10328 static loading alignment.
+      The experimental results showed that the joint resisted loads up to $720\text{ N}$ before structural failure—exceeding our design requirement of $450\text{ N}$. Failure occurred due to delamination at the main coupler link pin joint, showing excellent agreement with our ANSYS stress concentration models.
+      Additionally, we implemented **Design for Assembly (DFA)** modifications. By replacing threaded bolt joints with smooth steel pins locked by polymer E-clips and embedding brass heat-set inserts inside the plastic frame, we created a highly durable, modular assembly that can be quickly serviced or scaled up as the pediatric patient grows.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="article-footer">
+      <span>Category: Bio-Mechanics & FEA</span>
+      <a href="index.html">Back to Blog</a>
+    </footer>
+  </article>
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reprocessing PET Bottles into FDM 3D Printing Filament: A Hardware Guide — Nitesh Neupane</title>
+  <meta name="description" content="A comprehensive hardware design guide for slicing and extruding recycled PET plastic bottles into high-quality 3D printer filament." />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6497701089961965" crossorigin="anonymous"></script>
+  <style>
+    .article-container {
+      max-width: 800px;
+      margin: 120px auto 80px;
+      padding: 0 20px;
+    }
+
+    .article-header {
+      margin-bottom: 40px;
+    }
+
+    .article-category {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85em;
+      color: var(--camel);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .article-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      font-size: 2.5em;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .article-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8em;
+      color: var(--muted);
+      display: flex;
+      gap: 15px;
+      border-bottom: 1px solid rgba(175, 150, 113, 0.15);
+      padding-bottom: 20px;
+    }
+
+    .article-content {
+      line-height: 1.8;
+      color: rgba(240, 237, 232, 0.9);
+      font-size: 1.05em;
+    }
+
+    .article-content h2 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      color: var(--tan);
+      margin-top: 40px;
+      margin-bottom: 16px;
+      font-size: 1.5em;
+      letter-spacing: 0.5px;
+    }
+
+    .article-content p {
+      margin-bottom: 24px;
+    }
+
+    .article-content blockquote {
+      border-left: 3px solid var(--camel);
+      padding-left: 20px;
+      margin: 30px 0;
+      color: rgba(240, 237, 232, 0.75);
+      font-style: italic;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .article-content pre {
+      background: var(--surface);
+      border: 1px solid rgba(175, 150, 113, 0.15);
+      padding: 16px 20px;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 30px 0;
+    }
+
+    .article-content code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9em;
+      color: var(--tan);
+    }
+
+    .article-content ul, .article-content ol {
+      margin-left: 24px;
+      margin-bottom: 24px;
+    }
+
+    .article-content li {
+      margin-bottom: 10px;
+    }
+
+    .back-blog {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 30px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8em;
+      color: var(--steel);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .back-blog:hover {
+      color: var(--tan);
+    }
+
+    .article-footer {
+      border-top: 1px solid rgba(175, 150, 113, 0.1);
+      padding: 40px 0 0;
+      margin-top: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85em;
+    }
+
+    .article-footer a {
+      color: var(--camel);
+      text-decoration: none;
+    }
+
+    .article-footer a:hover {
+      color: var(--white);
+    }
+
+    /* Fixed top header navigation settings for subpages */
+    .legal-header {
+      width: 100%;
+      background: var(--surface);
+      padding: 16px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1100;
+      border-bottom: 1px solid rgba(175, 150, 113, 0.2);
+    }
+
+    .legal-header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 800px;
+      width: 90%;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="atmosphere"></div>
+
+  <!-- Header -->
+  <header class="legal-header">
+    <div class="legal-header-content">
+      <a href="../index.html" class="header-name" style="text-decoration: none; color: inherit;">NITESH NEUPANE</a>
+      <nav class="header-links">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <article class="article-container">
+    <a href="index.html" class="back-blog">&larr; Back to Blog</a>
+
+    <div class="article-header">
+      <div class="article-category">Additive Manufacturing</div>
+      <h1 class="article-title">Reprocessing PET Bottles into FDM 3D Printing Filament: A Hardware Guide</h1>
+      <div class="article-meta">
+        <span>Published: April 20, 2026</span>
+        <span>·</span>
+        <span>By: Nitesh Neupane</span>
+        <span>·</span>
+        <span>4 min read</span>
+      </div>
+    </div>
+
+    <div class="article-content">
+      <p>Fused Deposition Modeling (FDM) 3D printing has democratized rapid prototyping, but the material cost of virgin thermoplastic spools remains a financial constraint in academic labs. Concurrently, plastic waste—specifically Polyethylene Terephthalate (PET) water and soda bottles—presents a severe global recycling challenge. PET water bottles are composed of a high-quality semi-crystalline polymer that is chemically identical to the base polymer of PETG, a standard 3D printing filament (the 'G' in PETG stands for glycol-modification, which reduces crystallization). As my second-year engineering project, I designed and built an open-source recycling machine capable of stripping waste PET bottles, melting them, and extruding them back into consistent 1.75mm diameter printing filament.</p>
+
+      <h2>1. The Mechanical Slicing Mechanism</h2>
+      <p>The first step in the reprocessing pipeline is converting a three-dimensional curved PET bottle into a continuous flat ribbon. Slicing bottles by hand results in width variations that cause irregular filament diameter during extrusion.
+      To achieve a uniform cut, we engineered a slicing rig using standard bearings, M8 washers, and a utility razor blade mounted inside a 3D-printed plastic housing. 
+      The bottle is prepared by cutting off the bottom, inflating it to smooth out wrinkles, and inserting it into the guide. As the bottle rotates against the blade, it strips into a continuous ribbon. 
+      
+      The target ribbon width ($W$) is calculated using the average bottle wall thickness ($t_w$) to maintain a constant cross-sectional area equivalent to a 1.75mm solid circle:</p>
+      <pre><code>W = (pi * (D_f / 2)^2) / t_w</code></pre>
+      <p>For standard soda bottles with a measured wall thickness ($t_w = 0.25\text{ mm}$), the target ribbon width was calculated to be approximately $9.6\text{ mm}$.</p>
+
+      <h2>2. Thermal Extrusion & PID Calibration</h2>
+      <p>The core extrusion assembly consists of a modified E3D V6 style 3D printer hotend block. The standard nozzle is replaced by a brass nozzle drilled out to an internal throat diameter of $1.75\text{ mm}$.
+      As the PET ribbon is pulled through the nozzle, it undergoes a folding process: the flat ribbon curls inward as it enters the wide inlet of the nozzle and merges into a solid cylinder as it squeezes out of the $1.75\text{ mm}$ hole.
+      
+      This folding and extrusion requires precise temperature control. PET has a high melting point ($T_m \approx 255^\circ\text{C}$ to $260^\circ\text{C}$). If the temperature is too low, the plastic will not fold smoothly, causing high friction and jamming. If the temperature is too high, the polymer will undergo thermal degradation, resulting in bubbles, low tensile strength, and discoloration.
+      
+      We implemented a 12V 40W ceramic cartridge heater regulated by a microcontroller running a **Proportional-Integral-Derivative (PID)** feedback loop. A 100k NTC thermistor sits close to the nozzle orifice to monitor real-time temperature. The PID parameters were tuned using the Ziegler-Nichols frequency response method, achieving a temperature stability of $\pm0.5^\circ\text{C}$ at a setpoint of $260^\circ\text{C}$.</p>
+
+      <h2>3. Synchronized Pulling & Spooling System</h2>
+      <p>To draw the molten plastic out of the nozzle, we designed a geared puller mechanism powered by a Nema 17 stepper motor. The stepper motor drives a pair of compression rollers that grab the solidifying filament and pull it at a constant speed of $200\text{ mm/min}$.
+      The pulling speed is a critical variable in controlling the filament diameter:
+      <ul>
+        <li>If the pulling speed is too fast, the filament is stretched, reducing the diameter below the 1.75mm threshold.</li>
+        <li>If the pulling speed is too slow, the plastic bunches at the nozzle, leading to an oversized diameter that will jam standard 3D printer Bowden tubes.</li>
+      </ul>
+      After exiting the puller, the filament is wound onto a custom spool driven by a DC slip-clutch motor to prevent excessive tension from snapping the newly extruded strand.</p>
+
+      <h2>4. Crystallization Controls & Print Settings</h2>
+      <p>A primary challenge with recycled PET (rPET) is its high crystallization rate. Unlike glycol-modified PETG, raw PET crystallizes slowly when cooled in ambient air, turning opaque and extremely brittle, making it impossible to spool without snapping.
+      To solve this, we positioned a high-airflow cooling fan directly at the nozzle exit. By rapidly quenching the extruded filament, we lock the polymer chains in an **amorphous state**, yielding a transparent, highly flexible filament that spools easily.
+      
+      rPET is highly hygroscopic; moisture absorbed from the air will hydrolyze the polymer bonds during print melting, destroying layer adhesion. Therefore, the reprocessed filament must be baked in a dry oven at $65^\circ\text{C}$ for four hours before printing. When printed at $260^\circ\text{C}$ with a bed temperature of $75^\circ\text{C}$, the recycled rPET filament yields parts with tensile properties and surface finish matching commercial PETG filaments, completing a circular recycling loop.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="article-footer">
+      <span>Category: Additive Manufacturing</span>
+      <a href="index.html">Back to Blog</a>
+    </footer>
+  </article>
+</body>
+
+</html>

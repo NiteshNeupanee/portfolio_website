@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mathematical Design and Lathe Machining of Class-M Rocket Nozzles — Nitesh Neupane</title>
+  <meta name="description" content="Detailed guide on solid rocket motor CD nozzle design, gas dynamics formulas, Nakka Excel validation, and metal lathe machining." />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6497701089961965" crossorigin="anonymous"></script>
+  <style>
+    .article-container {
+      max-width: 800px;
+      margin: 120px auto 80px;
+      padding: 0 20px;
+    }
+
+    .article-header {
+      margin-bottom: 40px;
+    }
+
+    .article-category {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85em;
+      color: var(--camel);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .article-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      font-size: 2.5em;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .article-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8em;
+      color: var(--muted);
+      display: flex;
+      gap: 15px;
+      border-bottom: 1px solid rgba(175, 150, 113, 0.15);
+      padding-bottom: 20px;
+    }
+
+    .article-content {
+      line-height: 1.8;
+      color: rgba(240, 237, 232, 0.9);
+      font-size: 1.05em;
+    }
+
+    .article-content h2 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      color: var(--tan);
+      margin-top: 40px;
+      margin-bottom: 16px;
+      font-size: 1.5em;
+      letter-spacing: 0.5px;
+    }
+
+    .article-content p {
+      margin-bottom: 24px;
+    }
+
+    .article-content blockquote {
+      border-left: 3px solid var(--camel);
+      padding-left: 20px;
+      margin: 30px 0;
+      color: rgba(240, 237, 232, 0.75);
+      font-style: italic;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .article-content pre {
+      background: var(--surface);
+      border: 1px solid rgba(175, 150, 113, 0.15);
+      padding: 16px 20px;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 30px 0;
+    }
+
+    .article-content code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9em;
+      color: var(--tan);
+    }
+
+    .article-content ul, .article-content ol {
+      margin-left: 24px;
+      margin-bottom: 24px;
+    }
+
+    .article-content li {
+      margin-bottom: 10px;
+    }
+
+    .back-blog {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 30px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8em;
+      color: var(--steel);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .back-blog:hover {
+      color: var(--tan);
+    }
+
+    .article-footer {
+      border-top: 1px solid rgba(175, 150, 113, 0.1);
+      padding: 40px 0 0;
+      margin-top: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85em;
+    }
+
+    .article-footer a {
+      color: var(--camel);
+      text-decoration: none;
+    }
+
+    .article-footer a:hover {
+      color: var(--white);
+    }
+
+    /* Fixed top header navigation settings for subpages */
+    .legal-header {
+      width: 100%;
+      background: var(--surface);
+      padding: 16px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1100;
+      border-bottom: 1px solid rgba(175, 150, 113, 0.2);
+    }
+
+    .legal-header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 800px;
+      width: 90%;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="atmosphere"></div>
+
+  <!-- Header -->
+  <header class="legal-header">
+    <div class="legal-header-content">
+      <a href="../index.html" class="header-name" style="text-decoration: none; color: inherit;">NITESH NEUPANE</a>
+      <nav class="header-links">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <article class="article-container">
+    <a href="index.html" class="back-blog">&larr; Back to Blog</a>
+
+    <div class="article-header">
+      <div class="article-category">Propulsion & Machining</div>
+      <h1 class="article-title">Mathematical Design and Lathe Machining of Class-M Rocket Nozzles</h1>
+      <div class="article-meta">
+        <span>Published: May 15, 2026</span>
+        <span>·</span>
+        <span>By: Nitesh Neupane</span>
+        <span>·</span>
+        <span>5 min read</span>
+      </div>
+    </div>
+
+    <div class="article-content">
+      <p>The nozzle of a solid rocket motor is the critical boundary component where chemical combustion energy is converted into kinetic thrust. Through a convergent-divergent (CD or de Laval) nozzle profile, subsonic exhaust gases generated in the motor casing are compressed, choked at the throat to sonic velocity ($M=1$), and expanded supersonically into the atmosphere. For amateur rocketry projects, such as the Class-M propellant motor engineered by Kathmandu University's **Team Udaan**, designing and fabricating a nozzle demands high-precision gas dynamics modeling, thermal material considerations, and strict machining tolerances. This article details the mathematical design flow and manual lathe-turning processes used to manufacture a high-performance rocket nozzle.</p>
+
+      <h2>1. Gas Dynamics & Nozzle Sizing</h2>
+      <p>The primary task of nozzle sizing is to determine the throat area ($A_t$) and exit area ($A_e$) for a target chamber pressure ($P_c$). The throat area dictates the mass flow rate ($\dot{m}$) of the motor and, consequently, the casing internal pressure. If the throat is too wide, chamber pressure remains low, resulting in a poor propellant burn rate and low specific impulse ($I_{sp}$). If the throat is too narrow, chamber pressure will exceed the design yield strength of the motor casing, causing a catastrophic failure (a "CATO").</p>
+      
+      <p>Using the steady-state mass balance, the throat area is calculated as:</p>
+      <pre><code>A_t = (A_b * r * rho_p) / (P_c * C_star)</code></pre>
+      <p>Where $A_b$ is the burning surface area of the propellant, $r$ is the linear propellant burn rate, $\rho_p$ is the propellant density, and $C^*$ is the characteristic velocity of the gas. 
+      For our Class-M solid propellant (a Potassium Nitrate and Sorbitol mixture, commonly known as KNSB candy propellant), we targeted a maximum chamber pressure of $4.5\text{ MPa}$ ($650\text{ psi}$).</p>
+
+      <p>The expansion ratio ($\epsilon = A_e / A_t$) defines how much the gas expands. Under ideal gas expansion equations, the exit pressure of the gas ($P_e$) should equal the local atmospheric pressure ($P_a$) at the target burn altitude to prevent over-expansion (loss of exit velocity) or under-expansion (exhaust energy wasted as radial pressure).</p>
+      
+      <p>The geometry of the nozzle features two cones:
+      <ul>
+        <li><strong>Converging Section</strong>: Formed as a cone with a half-angle of 30 to 45 degrees. A steeper angle keeps the nozzle short but can lead to flow turbulence, while a shallow angle increases nozzle mass.</li>
+        <li><strong>Diverging Section</strong>: Machined with a half-angle of 12 to 15 degrees. This angle is a critical compromise: exceeding 15 degrees risks gas boundary-layer separation from the nozzle walls (creating shocks and loss of thrust), while a smaller angle increases the length and mass of the nozzle.</li>
+      </ul>
+      </p>
+
+      <h2>2. Simulation with OpenMotor and Richard Nakka Models</h2>
+      <p>We verified our manual calculations using two key tools: **Richard Nakka's Solid Rocket Motor design spreadsheet** and **OpenMotor** (an open-source interior ballistics simulator).
+      By inputting our motor dimensions, casing ID, and propellant grain geometry (four BATES grains), OpenMotor simulated the transient burn. 
+      Since solid propellant grains burn radially outward, the burning area ($A_b$) changes over time, altering the chamber pressure and nozzle mass flow. The simulation predicted a peak thrust of $1,400\text{ N}$ with a total burn duration of 2.1 seconds, yielding a total impulse corresponding to a mid-range Class-M rocket motor.</p>
+
+      <h2>3. Material Selection & Lathe Machining</h2>
+      <p>Exhaust temperatures for KNSB propellant reach approximately $1,600^\circ\text{C}$ ($2,900^\circ\text{F}$), combined with high-velocity abrasive particulate flow (primarily liquid potassium carbonate droplets). For a reusable nozzle, the material must withstand these conditions without throat erosion, which would enlarge $A_t$ and drop chamber pressure during the burn.</p>
+
+      <p>We selected **Mild Steel (AISI 1018)** for the nozzle body because of its high melting point, thermal conductivity, and machinability on Kathmandu University's manual lathe. To completely eliminate throat erosion, we designed the nozzle with a press-fit **graphite throat insert**, which acts as a sacrificial thermal shield.
+      
+      The machining workflow on the lathe proceeded as follows:
+      <ol>
+        <li><strong>Outer Diameter Turning</strong>: A solid round bar of steel was mounted in a 3-jaw chuck, faced, and turned to match the internal diameter of the motor casing, leaving groove recesses for high-temperature rubber O-rings.</li>
+        <li><strong>Boring the Throat & Insert Seat</strong>: A pilot hole was drilled through the center. We then bored a counterbore seat to hold the cylindrical graphite insert. The graphite insert itself was turned to fit this seat with an interference fit of $0.02\text{ mm}$.</li>
+        <li><strong>Convergent Angle Machining</strong>: The lathe compound slide was rotated to $30^\circ$ relative to the spindle axis. Using manual feed, we cut the convergent entry cone leading to the graphite throat.</li>
+        <li><strong>Divergent Cone Machining</strong>: The compound slide was reset to $12^\circ$. Using a boring bar with a sharp carbide insert, we machined the diverging cone, widening the nozzle exit to the calculated exit diameter.</li>
+      </ol>
+      </p>
+
+      <h2>4. Verification via Static Testing</h2>
+      <p>We verified the completed nozzle design through a series of **static fire tests**. The motor assembly was anchored in a horizontal steel testing rig. Thrust was measured using a pre-calibrated S-beam load cell connected to an Arduino-based data acquisition system recording at $80\text{ Hz}$.
+      The static test results showed a smooth thrust curve peaking at $1,345\text{ N}$, with a chamber pressure envelope matching our OpenMotor projections within 5.2%. Post-test inspection of the nozzle confirmed zero visible erosion at the graphite throat throat and intact O-ring seals, qualifying the nozzle design for integration into Team Udaan's flight vehicles.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="article-footer">
+      <span>Category: Propulsion & Machining</span>
+      <a href="index.html">Back to Blog</a>
+    </footer>
+  </article>
+</body>
+
+</html>

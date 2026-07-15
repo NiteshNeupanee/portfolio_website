@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineering Blog — Nitesh Neupane</title>
+  <meta name="description" content="Technical engineering articles, aerospace research, and product design blogs by Nitesh Neupane." />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6497701089961965" crossorigin="anonymous"></script>
+  <style>
+    /* Blog specific style overrides */
+    .blog-container {
+      max-width: 900px;
+      margin: 120px auto 80px;
+      padding: 0 20px;
+    }
+
+    .blog-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.5em;
+      letter-spacing: 4px;
+      color: var(--white);
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .blog-subtitle {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9em;
+      color: var(--camel);
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .blog-card {
+      background: var(--surface);
+      border: 1px solid rgba(175, 150, 113, 0.12);
+      border-radius: 8px;
+      padding: 30px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: transparent;
+      transition: background 0.3s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 130, 175, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .blog-card:hover::before {
+      background: var(--steel);
+    }
+
+    .post-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8em;
+      color: var(--muted);
+      margin-bottom: 12px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .post-meta span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .post-meta .category {
+      color: var(--camel);
+      font-weight: 500;
+    }
+
+    .post-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      font-size: 1.5em;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.3;
+      transition: color 0.3s ease;
+    }
+
+    .blog-card:hover .post-title {
+      color: var(--tan);
+    }
+
+    .post-excerpt {
+      color: rgba(240, 237, 232, 0.75);
+      font-size: 0.95em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .read-more {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8em;
+      color: var(--steel);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: auto;
+      transition: color 0.3s ease;
+    }
+
+    .blog-card:hover .read-more {
+      color: var(--tan);
+    }
+
+    /* Keep footer clean */
+    .blog-footer {
+      border-top: 1px solid rgba(175, 150, 113, 0.1);
+      padding: 40px 0;
+      margin-top: 80px;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8em;
+      color: var(--muted);
+    }
+
+    .blog-footer a {
+      color: var(--camel);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .blog-footer a:hover {
+      color: var(--white);
+    }
+
+    /* Fixed top header navigation settings for subpages */
+    .legal-header {
+      width: 100%;
+      background: var(--surface);
+      padding: 16px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1100;
+      border-bottom: 1px solid rgba(175, 150, 113, 0.2);
+    }
+
+    .legal-header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 900px;
+      width: 90%;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="atmosphere"></div>
+
+  <!-- Header -->
+  <header class="legal-header">
+    <div class="legal-header-content">
+      <a href="../index.html" class="header-name" style="text-decoration: none; color: inherit;">NITESH NEUPANE</a>
+      <nav class="header-links">
+        <a href="../index.html">Home</a>
+        <a href="../Nitesh_Neupane_Resume.pdf" target="_blank">Resume</a>
+        <a href="../grid/" target="_blank">Isogrid Studio</a>
+        <a href="../engeneering portfolio.pdf" target="_blank">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <div class="blog-container">
+    <h1 class="blog-title">Engineering Blog</h1>
+    <p class="blog-subtitle">Hobbyist rocket propulsion, structural simulations, & mechanical design notes</p>
+
+    <div class="blog-grid">
+
+      <!-- Post 1 -->
+      <article class="blog-card" style="cursor: pointer;" onclick="location.href='isogrid-studio-development.html'">
+        <div class="post-meta">
+          <span class="category">Aerospace & Software</span>
+          <span>·</span>
+          <span>July 14, 2026</span>
+          <span>·</span>
+          <span>5 min read</span>
+        </div>
+        <h2 class="post-title">Developing Isogrid Studio: Parametric Rib-Grid Synthesis in the Browser</h2>
+        <p class="post-excerpt">
+          An in-depth look at building Isogrid Studio—a Three.js browser-based tool for synthesizing parametric weight-optimized structural rib patterns. Discussing mass vs. stiffness optimization (NASA SP-8007) and WebGL export formats.
+        </p>
+        <span class="read-more">Read Article &rarr;</span>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="blog-card" style="cursor: pointer;" onclick="location.href='polycentric-knee-joint-design.html'">
+        <div class="post-meta">
+          <span class="category">Bio-Mechanics & FEA</span>
+          <span>·</span>
+          <span>June 28, 2026</span>
+          <span>·</span>
+          <span>4 min read</span>
+        </div>
+        <h2 class="post-title">Additive Manufacturing and FEA Testing of Polycentric 4-Bar Pediatric Knee Joints</h2>
+        <p class="post-excerpt">
+          Exploring the development of custom pediatric prosthetic joints under age 5. Applying ANSYS Finite Element Analysis (FEA) to isolate peak stress nodes and optimizing FDM 3D printing parameters for ISO 10328 UTM load compliance.
+        </p>
+        <span class="read-more">Read Article &rarr;</span>
+      </article>
+
+      <!-- Post 3 -->
+      <article class="blog-card" style="cursor: pointer;" onclick="location.href='solid-rocket-motor-nozzle-machining.html'">
+        <div class="post-meta">
+          <span class="category">Propulsion & Machining</span>
+          <span>·</span>
+          <span>May 15, 2026</span>
+          <span>·</span>
+          <span>5 min read</span>
+        </div>
+        <h2 class="post-title">Mathematical Design and Lathe Machining of Class-M Rocket Nozzles</h2>
+        <p class="post-excerpt">
+          Breaking down gas dynamics for a solid propellant convergent-divergent (de Laval) nozzle. How calculations from Richard Nakka's models map to OpenMotor simulations and lathe machining of alloy structures.
+        </p>
+        <span class="read-more">Read Article &rarr;</span>
+      </article>
+
+      <!-- Post 4 -->
+      <article class="blog-card" style="cursor: pointer;" onclick="location.href='pet-bottle-recycling-3d-filament.html'">
+        <div class="post-meta">
+          <span class="category">Additive Manufacturing</span>
+          <span>·</span>
+          <span>April 20, 2026</span>
+          <span>·</span>
+          <span>4 min read</span>
+        </div>
+        <h2 class="post-title">Reprocessing PET Bottles into FDM 3D Printing Filament: A Hardware Guide</h2>
+        <p class="post-excerpt">
+          A design walkthrough for building a recycling system that strips PET water bottles, heats, and extrudes them into 1.75mm diameter filament. Investigating nozzle thermodynamics and crystallisation control.
+        </p>
+        <span class="read-more">Read Article &rarr;</span>
+      </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="blog-footer">
+      <p>&copy; 2026 Nitesh Neupane. All rights reserved.</p>
+      <div style="margin-top: 10px;">
+        <a href="../index.html">Home</a> | 
+        <a href="../privacy-policy.html">Privacy Policy</a> | 
+        <a href="../terms.html">Terms & Conditions</a>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

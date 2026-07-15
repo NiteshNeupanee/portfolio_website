@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Nitesh Neupane</title>
+  <meta name="description" content="Terms of Service for Nitesh Neupane's engineering portfolio site." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Styling overrides for legal pages */
+    .legal-container {
+      max-width: 800px;
+      margin: 120px auto 80px;
+      padding: 0 20px;
+    }
+    
+    .legal-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3em;
+      letter-spacing: 3px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    
+    .legal-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85em;
+      color: var(--camel);
+      margin-bottom: 40px;
+    }
+    
+    .legal-content h3 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      color: var(--tan);
+      margin-top: 32px;
+      margin-bottom: 12px;
+      font-size: 1.3em;
+      letter-spacing: 0.5px;
+    }
+    
+    .legal-content p {
+      margin-bottom: 16px;
+      color: rgba(240, 237, 232, 0.85);
+      font-size: 0.95em;
+    }
+    
+    .legal-content ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+      color: rgba(240, 237, 232, 0.8);
+      font-size: 0.95em;
+    }
+    
+    .legal-content li {
+      margin-bottom: 8px;
+    }
+    
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 40px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8em;
+      color: var(--steel);
+      text-decoration: none;
+      border: 1px solid rgba(0, 130, 175, 0.3);
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    .back-home:hover {
+      background: rgba(0, 130, 175, 0.1);
+      border-color: var(--steel);
+    }
+    
+    /* Hide sidebar on legal page, extend margins */
+    body {
+      overflow-x: hidden;
+    }
+    
+    .legal-header {
+      width: 100%;
+      background: var(--surface);
+      padding: 16px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1100;
+      border-bottom: 1px solid rgba(175, 150, 113, 0.2);
+    }
+    
+    .legal-header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 800px;
+      width: 90%;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="atmosphere"></div>
+
+  <!-- Header -->
+  <header class="legal-header">
+    <div class="legal-header-content">
+      <a href="index.html" class="header-name" style="text-decoration: none; color: inherit;">NITESH NEUPANE</a>
+      <nav class="header-links">
+        <a href="index.html">Home</a>
+        <a href="blog/index.html">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <div class="legal-container">
+    <h1 class="legal-title">Terms of Service</h1>
+    <div class="legal-meta">Last Updated: July 15, 2026</div>
+
+    <div class="legal-content">
+      <p>Welcome to niteshneupane.com.np. By accessing this website (and its tools, such as Isogrid Studio), you agree to comply with and be bound by the following terms and conditions of use. Please read them carefully.</p>
+
+      <h3>1. Acceptance of Terms</h3>
+      <p>The services and information provided on this website are subject to these Terms of Service ("TOS"). By using or visiting this website, you express your understanding and agreement to be bound by these terms. If you do not agree to any of these terms, please do not use this website.</p>
+
+      <h3>2. Intellectual Property & Code License</h3>
+      <p>All content on this website, including but not limited to text, graphics, CAD files, simulations, reports, designs, and code (including Isogrid Studio), is the intellectual property of Nitesh Neupane unless otherwise noted.
+      Specific open-source resources or applications (like the Isogrid Studio code hosted on GitHub) are subject to their respective open-source licensing terms. Unlicensed use of the website design, portfolio copy, or custom visual elements without explicit written permission is prohibited.</p>
+
+      <h3>3. Disclaimers & Engineering Liability</h3>
+      <p>The information, computational tools, and documentation published on this website are intended solely for educational, hobbyist, and academic reference. 
+      <strong>Aerospace propulsion, mechanical manufacturing, and high-energy physics testing (including solid rocket motor static fires, pressure vessel calculations, and assistive medical devices) carry significant physical risk.</strong>
+      You acknowledge that:</p>
+      <ul>
+        <li>Any calculations, designs, nozzle diameters, or simulations (such as OpenMotor, OpenFOAM, or ANSYS results) are models and may not reflect real-world mechanical behaviors.</li>
+        <li>The author provides NO guarantee of structural integrity, safety, or functional viability of any design files.</li>
+        <li>You assume full liability for any physical fabrication, testing, or utilization of materials or concepts derived from this website. The author will not be held responsible for any damage, injuries, or legal implications arising from your attempt to build or deploy these designs.</li>
+      </ul>
+
+      <h3>4. Use of Online Tools (Isogrid Studio)</h3>
+      <p>Isogrid Studio is a browser-based calculation and visualization tool provided as-is. 
+      The export files (STL, STEP, OBJ) and engineering metrics displayed inside the tool are estimates. Users must independently verify these meshes and load values before committing to structural engineering applications or additive manufacturing builds.</p>
+
+      <h3>5. External Hyperlinks</h3>
+      <p>Our website contains links to external sites (such as LinkedIn, GitHub, YouTube, and Kathmandu University sites) that are not operated by us. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party websites.</p>
+
+      <h3>6. Site Modifications</h3>
+      <p>Nitesh Neupane reserves the right to revise, modify, or delete any portion of this website, its tools, or its documentation at any time without prior notice.</p>
+
+      <h3>7. Governing Law</h3>
+      <p>Any disputes arising out of the use of this website or these Terms of Service shall be governed by and construed in accordance with the laws of Nepal, without giving effect to any principles of conflicts of law.</p>
+
+      <h3>8. Contact Information</h3>
+      <p>If you have any questions about these Terms of Service, please contact us at niteshneupane.16@gmail.com.</p>
+    </div>
+
+    <a href="index.html" class="back-home">← Back to Portfolio</a>
+  </div>
+</body>
+
+</html>

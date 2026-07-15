@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developing Isogrid Studio: Parametric Rib-Grid Synthesis in the Browser — Nitesh Neupane</title>
+  <meta name="description" content="Technical walkthrough of Isogrid Studio development: Three.js integration, NASA SP-8007 structural calculations, and CAD model export." />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6497701089961965" crossorigin="anonymous"></script>
+  <style>
+    .article-container {
+      max-width: 800px;
+      margin: 120px auto 80px;
+      padding: 0 20px;
+    }
+
+    .article-header {
+      margin-bottom: 40px;
+    }
+
+    .article-category {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85em;
+      color: var(--camel);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .article-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      font-size: 2.5em;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .article-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8em;
+      color: var(--muted);
+      display: flex;
+      gap: 15px;
+      border-bottom: 1px solid rgba(175, 150, 113, 0.15);
+      padding-bottom: 20px;
+    }
+
+    .article-content {
+      line-height: 1.8;
+      color: rgba(240, 237, 232, 0.9);
+      font-size: 1.05em;
+    }
+
+    .article-content h2 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      color: var(--tan);
+      margin-top: 40px;
+      margin-bottom: 16px;
+      font-size: 1.5em;
+      letter-spacing: 0.5px;
+    }
+
+    .article-content p {
+      margin-bottom: 24px;
+    }
+
+    .article-content blockquote {
+      border-left: 3px solid var(--camel);
+      padding-left: 20px;
+      margin: 30px 0;
+      color: rgba(240, 237, 232, 0.75);
+      font-style: italic;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .article-content pre {
+      background: var(--surface);
+      border: 1px solid rgba(175, 150, 113, 0.15);
+      padding: 16px 20px;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 30px 0;
+    }
+
+    .article-content code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9em;
+      color: var(--tan);
+    }
+
+    .article-content ul, .article-content ol {
+      margin-left: 24px;
+      margin-bottom: 24px;
+    }
+
+    .article-content li {
+      margin-bottom: 10px;
+    }
+
+    .back-blog {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 30px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8em;
+      color: var(--steel);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .back-blog:hover {
+      color: var(--tan);
+    }
+
+    .article-footer {
+      border-top: 1px solid rgba(175, 150, 113, 0.1);
+      padding: 40px 0 0;
+      margin-top: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85em;
+    }
+
+    .article-footer a {
+      color: var(--camel);
+      text-decoration: none;
+    }
+
+    .article-footer a:hover {
+      color: var(--white);
+    }
+
+    /* Fixed top header navigation settings for subpages */
+    .legal-header {
+      width: 100%;
+      background: var(--surface);
+      padding: 16px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1100;
+      border-bottom: 1px solid rgba(175, 150, 113, 0.2);
+    }
+
+    .legal-header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 800px;
+      width: 90%;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="atmosphere"></div>
+
+  <!-- Header -->
+  <header class="legal-header">
+    <div class="legal-header-content">
+      <a href="../index.html" class="header-name" style="text-decoration: none; color: inherit;">NITESH NEUPANE</a>
+      <nav class="header-links">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <article class="article-container">
+    <a href="index.html" class="back-blog">&larr; Back to Blog</a>
+
+    <div class="article-header">
+      <div class="article-category">Aerospace & Software</div>
+      <h1 class="article-title">Developing Isogrid Studio: Parametric Rib-Grid Synthesis in the Browser</h1>
+      <div class="article-meta">
+        <span>Published: July 14, 2026</span>
+        <span>·</span>
+        <span>By: Nitesh Neupane</span>
+        <span>·</span>
+        <span>5 min read</span>
+      </div>
+    </div>
+
+    <div class="article-content">
+      <p>Isogrids are integral stiffening structures consisting of triangular rib patterns machined directly into sheets of metal or composite materials. Popularized by aerospace engineers during the Apollo era, isogrid panels act as sandwich structures but are manufactured from a single piece of material, eliminating weak adhesive bonds. They are widely utilized in rocket propellant tanks, payload fairings, and spacecraft structures (such as the Delta IV and Space Launch System) to optimize structural stiffness while minimizing total mass. However, generating these complex topologies in standard CAD tools is historically a tedious process involving manual sketching, patterning, and variable projection.</p>
+
+      <p>To solve this CAD bottle-neck, I developed <strong>Isogrid Studio</strong> (accessible at <a href="../grid/" target="_blank" style="color: var(--steel);">niteshneupane.com.np/grid/</a>), a browser-based, interactive tool designed for parametric synthesis, real-time WebGL visualization, and export of rib-grid configurations. This article covers the engineering principles behind isogrids and the technical challenges in building a parametric CAD tool within a client-side JavaScript environment.</p>
+
+      <h2>1. The Mechanical Advantage of Isogrids</h2>
+      <p>The core structural advantage of the isogrid is its isotropic behavior. Standard orthogrids (square patterns) possess high directional stiffness but perform poorly under torsional or multi-axial loading. The equilateral triangular layout of the isogrid ensures that the mechanical property of the panel is uniform in all directions. Mathematically, the isogrid acts as an equivalent homogeneous solid plate with a thickness $t^*$ and elastic modulus $E^*$. Under the NASA SP-8007 design manual, the stability equations for an isogrid cylinder under compressive loading require a balance of skin buckling and rib crippling parameters:</p>
+
+      <blockquote>
+        "The isogrid acts as an isotropic material. The structural shell configuration is defined by three primary geometric variables: the skin thickness (t), rib depth (d), and rib width (b), arranged in an equilateral triangle of height (h)."
+      </blockquote>
+
+      <p>To evaluate the mass efficiency of an isogrid panel compared to a flat plate, we analyze the structural density. By replacing a thick uniform plate with a thin skin reinforced by deep, narrow ribs, we can maintain the same moment of inertia ($I$) while eliminating up to 50% of the material weight. The mathematical modeling requires finding the optimum rib height-to-width ratio ($d/b$) that avoids local buckling before the gross structural buckling limit is reached.</p>
+
+      <h2>2. Parametric Synthesis in Three.js</h2>
+      <p>Creating a client-side CAD engine requires a robust geometry generation pipeline. In Isogrid Studio, the core rendering is powered by <strong>Three.js</strong> via WebGL. The application flow proceeds as follows:</p>
+      <ol>
+        <li><strong>Model Import</strong>: Users can import standard meshes (OBJ/STL/OBJ). The engine parses the vertex data and extracts flat planar boundary paths.</li>
+        <li><strong>Pattern Generation</strong>: Rather than performing heavy Boolean operations (which are slow in JavaScript), the tool uses a parametric projection algorithm. It projects a two-dimensional grid array of equilateral triangles onto the bounding canvas of the target face.</li>
+        <li><strong>Dynamic Instancing</strong>: To maintain a consistent 60 FPS viewport render during real-time value adjustments (such as changing rib spacing, height, or fillet radii), the ribs are constructed using `InstancedMesh`. This offloads vertex translation and duplication to the GPU, allowing thousands of visual grid intersections to update instantaneously.</li>
+      </ol>
+
+      <p>Below is a simplified conceptual snippet of how the coordinate system generates the triangular grid nodes:</p>
+
+      <pre><code>// Generating equilateral triangle grid nodes
+function generateTriGrid(width, height, a) {
+  const points = [];
+  const rowHeight = a * Math.sqrt(3) / 2;
+  const numRows = Math.ceil(height / rowHeight);
+  const numCols = Math.ceil(width / a);
+
+  for (let r = 0; r <= numRows; r++) {
+    const y = r * rowHeight;
+    const xOffset = (r % 2 === 0) ? 0 : a / 2;
+    for (let c = 0; c <= numCols; c++) {
+      const x = c * a + xOffset;
+      points.push({ x, y });
+    }
+  }
+  return points;
+}</code></pre>
+
+      <h2>3. Overcoming WebGL/CAD Export Barriers</h2>
+      <p>One of the most challenging aspects of Isogrid Studio was exporting the generated mesh into formats usable by industry-standard engineering software like SolidWorks, ANSYS, or Fusion 360. While exporting STL meshes is relatively straightforward, STL structures are polygonal and lack true curvature or mathematical surface representations (NURBS). This makes them difficult to edit or apply finite element analysis (FEA) boundary conditions to.</p>
+
+      <p>To address this, I implemented a multi-format exporter:
+      <ul>
+        <li><strong>STL Exporter</strong>: Constructs a binary buffer of face normals and indices directly in JavaScript, providing a fast export for immediate 3D printing or prototyping.</li>
+        <li><strong>STEP Parser Integration</strong>: By generating discrete parametric lines and planar boundary curves, the tool writes ASCII STEP file format headers (`ISO-10303-21`). This allows the browser to download a solid CAD body that mechanical software parses as native features, retaining planar face groupings.</li>
+      </ul>
+      </p>
+
+      <h2>4. Impact and Future Enhancements</h2>
+      <p>By enabling quick web-based prototyping of isogrid panels, Isogrid Studio bypasses the need for high-end workstation licenses during the initial concept phase. A student or designer can evaluate the structural weight reduction metrics of various rib topologies directly in their browser in seconds.</p>
+      <p>Future iterations of the tool will focus on integrating a WebAssembly (WASM) compiler running a simplified 2D Finite Element Analysis solver. This will allow users to not only design their isogrid structures but also run displacement and structural stress simulations under simulated compressive loads directly in the browser, providing a comprehensive design-to-evaluation pipeline.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="article-footer">
+      <span>Category: Aerospace & Software</span>
+      <a href="index.html">Back to Blog</a>
+    </footer>
+  </article>
+</body>
+
+</html>

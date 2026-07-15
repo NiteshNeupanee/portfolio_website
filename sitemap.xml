@@ -3,7 +3,7 @@
   <!-- Homepage / Portfolio -->
   <url>
     <loc>https://niteshneupane.com.np/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,24 +11,80 @@
   <!-- ISOGRID STUDIO — Primary tool page -->
   <url>
     <loc>https://niteshneupane.com.np/grid/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+  </url>
+
+  <!-- Blog Index -->
+  <url>
+    <loc>https://niteshneupane.com.np/blog/</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Blog Post 1: Isogrid Studio -->
+  <url>
+    <loc>https://niteshneupane.com.np/blog/isogrid-studio-development.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Blog Post 2: Pediatric Prosthetic Knee Joint -->
+  <url>
+    <loc>https://niteshneupane.com.np/blog/polycentric-knee-joint-design.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Blog Post 3: Solid Rocket Nozzle Machining -->
+  <url>
+    <loc>https://niteshneupane.com.np/blog/solid-rocket-motor-nozzle-machining.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Blog Post 4: Recycled PET Filament Extruder -->
+  <url>
+    <loc>https://niteshneupane.com.np/blog/pet-bottle-recycling-3d-filament.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://niteshneupane.com.np/privacy-policy.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://niteshneupane.com.np/terms.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
   </url>
 
   <!-- Resume / CV (PDF) -->
   <url>
     <loc>https://niteshneupane.com.np/Nitesh_Neupane_Resume.pdf</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.60</priority>
   </url>
 
   <!-- Engineering Portfolio (PDF) -->
   <url>
     <loc>https://niteshneupane.com.np/engeneering%20portfolio.pdf</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.60</priority>
   </url>
 </urlset>
